@@ -1,0 +1,61 @@
+/* class called outerbox and it's styling */
+.outerbox{
+    background-image: linear-gradient(#12c2e9, #05FFA3); /* Gradient */
+    filter: blur(4px); /* how i blurred the background */
+    -webkit-filter: blur(4px); /* for multiple different support */
+}
+
+/* classed called bg-text with it's styling */
+.bg-text {
+    background-color: rgba(0,0,0, 0.8); /* opacity with background color */
+    color: white;  /*text color white */
+    font-weight: bold; /* font-weight bold */
+    position: absolute;  /* postion absolute won't let other div's interfere */
+    top: 50%;  /* top padding */
+    left: 50%;  /* left padding */
+    transform: translate(-50%, -63%);  /* Postioning this middle the number on the left is horizontal the right is vertical*/
+    width: 350px;  /* The width of the box */
+    height: 350px;  /* The height of the box */
+    text-align: center;  /* makes the text align is center to center the text */
+    border-radius: 4px; /* makes the background of the from round no one likes spikey corners :D */ 
+}
+
+
+/* form styling */
+form{
+	padding-top: 20px; /* this part will push the input field down a bit */
+}
+
+/* input styling */
+input{
+    display: block; /* Displays an element as a block it will start on a new line because it takes up the whole width */
+    border: 0; /* removes default border around the input field */
+    outline: 0; /* when you click on the field it won't have the blue border around it highlighting it */
+    border-radius: 4px; /* Round input fields because it looks cleaner */ 
+    padding: 10px 15px; /* makes the field bigger so you can click on it better */
+    margin: 0 auto 20px auto; /* centers the input fields */
+    text-align: center; /* centers the placeholders */
+    font-size: 1.1rem; /* font size */
+    color:black;  /* text color when people type in it */
+}
+
+/* button styling */
+button{
+    outline: 0; /* removes the blue thing around the button when u click it */
+    border: 0; /* removes the default border around button */
+    padding: 10px 30px; /* button padding makes it thicker */
+    border-radius: 4px; /* border radius makes corner less spikey */
+    width: 250px; /* width of the button */
+    cursor: pointer; /* only works on pc, when you hover over it changes the mouse to a pointer */
+    font-size: 18px; /* this is for the font size */
+} 
+
+/* media query for i phone 5 */
+@media only screen and (max-width: 320px) {  /* I phone 5 people i've got you covered everyone else your already covered ;) */
+    .bg-text{
+        width: 300px;  /* The width of the box */
+        height: 300px;  /* The height of the box */
+    }
+}
+
+/* let phill know when u change something here thanks */
