@@ -9,25 +9,25 @@ import '../partials/navbar.style.css'
 
 function Navbar() {
     return (
-       
+
         <div className='na'>
             <h1 className='ti'>Miho</h1>
-       
-            
-        <BrowserRouter>
-            <div className='ha'>
-                <Link to="/">Top</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/price">Price</Link>
-                <Link to="/photos">PhotoGallery</Link>
-                <Route exact path="/" component={TopPage} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact path="/price" component={Price} />
-                <Route exact path="/photos" component={PhotoGallery} />
-            </div>
-        </BrowserRouter>
+
+
+            <BrowserRouter>
+                <div className='ha'>
+                    <Link to="/">Top</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/contact">Contact</Link>
+                    <Link to="/price">Price</Link>
+                    <Link to="/photos">PhotoGallery</Link>
+                    <Route exact path="/" component={TopPage} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/price" component={Price} />
+                    <Route exact path="/photos" component={PhotoGallery} />
+                </div>
+            </BrowserRouter>
         </div>
     );
 };
