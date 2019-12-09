@@ -1,15 +1,11 @@
-import React, { Component } from "./node_modules/react";
+import React from "react";
 
-class TopPage extends Component {
-    render() {
+function TopPage() {
         return (
             <div>
-
-                <h1>Top</h1>
-
+                <h1>Topage</h1>
             </div>
         );
-    };
 };
 
 export default TopPage;
