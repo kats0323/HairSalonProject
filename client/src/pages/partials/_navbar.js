@@ -16,11 +16,11 @@ function Navbar() {
             
         <BrowserRouter>
             <div className='ha'>
-                <Link to="/">Top</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/price">Price</Link>
-                <Link to="/photos">PhotoGallery</Link>
+                <Link class="nav-right" to="/">Top</Link>
+                <Link class="nav-right" to="/about">About</Link>
+                <Link class="nav-right" to="/contact">Contact</Link>
+                <Link class="nav-right" to="/price">Price</Link>
+                <Link class="nav-right" to="/photos">PhotoGallery</Link>
                 <Route exact path="/" component={TopPage} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
