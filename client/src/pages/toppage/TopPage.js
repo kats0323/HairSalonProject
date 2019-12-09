@@ -1,6 +1,8 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
-const { Carousel } = antd;
+import 'antd/dist/antd.css'; 
+import './carousel.css'; 
+import { Carousel } from 'antd';
+
 
 
 class TopPage extends Component {
@@ -21,16 +23,8 @@ class TopPage extends Component {
                     <h3>4</h3>
                 </div>
             </Carousel>
-=======
-import React from "react";
-
-function TopPage() {
-        return (
-            <div>
-                <h1>Topage</h1>
-            </div>
->>>>>>> 2f42887a04b0575cf892a0a3f3e135292cb31726
         );
+    };
 };
 
 export default TopPage;
