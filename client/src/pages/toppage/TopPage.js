@@ -1,13 +1,25 @@
-import React, { Component } from "./node_modules/react";
+import React, { Component } from "react";
+const { Carousel } = antd;
+
 
 class TopPage extends Component {
     render() {
+        
         return (
-            <div>
-
-                <h1>Top</h1>
-
-            </div>
+            <Carousel autoplay>
+                <div>
+                    <h3>1</h3>
+                </div>
+                <div>
+                    <h3>2</h3>
+                </div>
+                <div>
+                    <h3>3</h3>
+                </div>
+                <div>
+                    <h3>4</h3>
+                </div>
+            </Carousel>
         );
     };
 };
