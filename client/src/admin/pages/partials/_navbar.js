@@ -1,6 +1,6 @@
 import React from 'react';
 import '../partials/Navbar.css'
-export default function List() { //exporting this component into react app
+export default function Navbar() { //exporting this component into react app
     return (
         <div>
             <aside>
