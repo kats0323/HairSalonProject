@@ -21,11 +21,12 @@ function Navbar() {
                     <Link to="/contact">Contact</Link>
                     <Link to="/price">Price</Link>
                     <Link to="/photos">PhotoGallery</Link>
-                    <Route exact path="/" component={TopPage} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
                     <Route exact path="/price" component={Price} />
                     <Route exact path="/photos" component={PhotoGallery} />
+                    <Route exact path="/" component={TopPage} />
+
                 </div>
             </BrowserRouter>
         </div>
