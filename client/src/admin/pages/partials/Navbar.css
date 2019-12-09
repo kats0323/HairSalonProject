@@ -1,0 +1,62 @@
+
+/* Selects all the elements gives it 0 margin 0 padding and no outline */
+*{ 
+    margin:0px;
+    padding:0px;
+    outline:none;
+}
+
+
+body{
+    padding:10px;
+    font-family:'Source Sans Pro', sans-serif;;
+    padding:0px;
+    margin:0px;
+}
+
+h1{
+    font-size: 2rem;
+    padding-top:10px;
+    padding-bottom:40px;
+    color:#fff;
+}
+
+aside{
+    height:100vh;
+    width:240px;
+    background-color:#0b82bd;
+}
+
+ul{
+    padding:0px;
+    margin:0px;
+    border-bottom:1px solid #fff;
+}
+
+ul li{
+    font-size: 1.4rem;
+    list-style-type:none;
+    color:#fff;
+    padding:10px;
+    padding-left: 25%;
+    border-top:1px solid #fff;
+    cursor:pointer;
+}
+
+ul li div{
+    float:left;
+}
+
+/* class called link title */
+.linktitle{
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.linktitle:hover{
+    color: #0b82bd;
+    background-color:#fff;
+}
+
+
+/* Reponsive menu code */
