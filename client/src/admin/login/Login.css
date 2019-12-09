@@ -4,7 +4,10 @@
     filter: blur(4px); /* how i blurred the background */
     -webkit-filter: blur(4px); /* for multiple different support */
 }
-
+.login-title{
+    padding-top: 5%;
+    color: #fff;
+}
 /* classed called bg-text with it's styling */
 .bg-text {
     background-color: rgba(0,0,0, 0.8); /* opacity with background color */
@@ -40,7 +43,8 @@ input{
 }
 
 /* button styling */
-button{
+.login-button{
+    background-color: black;
     outline: 0; /* removes the blue thing around the button when u click it */
     border: 0; /* removes the default border around button */
     padding: 10px 30px; /* button padding makes it thicker */
