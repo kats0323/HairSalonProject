@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../../login/Login' //importing this from admin/login/Login.js
 import List from '../lists/List' //importing this from admin/pages/list/list this is the admin page to check customers
-import ProductPost from '../product-post/product' //importing this from admin/pages/list/list this is the admin page to check customers
+import Post from '../blogPost/post' //importing this from admin/pages/list/list this is the admin page to check customers
 
 import { BrowserRouter as Router , Switch , Route } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export default function admin() {
             <Switch>
               <Route path="/login" component={Login} />
               <Route path="/admin" component={List} />
-              <Route path="/product" component={ProductPost} />
+              <Route path="/post" component={Post} />
             </Switch>
         </Router>
       </div>
