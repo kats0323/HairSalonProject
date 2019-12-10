@@ -1,13 +1,14 @@
 .na {
     width:100%;
-    height: 50px;
+    height: 80px;
     background-color:black;
   
 }
 
 .ti{
-   margin: 0px;
+    margin: 0px;
     color: aliceblue;
+    padding:0;
 }
 
 

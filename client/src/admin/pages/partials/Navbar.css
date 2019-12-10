@@ -14,11 +14,10 @@ body{
     margin:0px;
 }
 
-h1{
+.admin-title{
     font-size: 2rem;
-    padding-top:10px;
-    padding-bottom:40px;
-    color: red;
+    padding:10px 0  15px 0;
+    color:#fff;
     text-align: center;
 }
 
@@ -49,15 +48,19 @@ ul li div{
 }
 
 /* class called link title */
-.linktitle{
+.linktitle li{
     line-height: 35px;
+    padding: 20px 0 20px 0; 
     padding-left: 10px;
 }
 
-.linktitle:hover{
+.linktitle li:hover{
     color: #0b82bd;
-    background-color:#fff;
+    background-color: #fff;
 }
 
-
+/* Link */
+.Link{
+    text-decoration: none;
+}
 /* Reponsive menu code */
