@@ -1,0 +1,10 @@
+.Carousel-photo{
+    background-size: cover;
+    width:90vw;
+    height: 80vh;
+}
+
+.Carousel-box{
+    padding-left: 5%;
+
+}
