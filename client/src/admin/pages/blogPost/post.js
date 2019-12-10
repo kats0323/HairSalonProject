@@ -1,3 +1,4 @@
+//This is phillip speaking this is all from ant Design i will try to comment on everything tommrow to let you know what it does.
 import React, { Component } from "react";
 import './post.css'
 import Navbar from '../partials/_navbar'
@@ -5,6 +6,8 @@ import { Upload, Icon, Modal } from 'antd';
 import { Input } from 'antd';
 const { TextArea } = Input;
 
+
+// this function is from ant Design they provide a function to upload data
 function getBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -59,7 +62,7 @@ export default class Post extends Component {
       <div className="clearfix main">
         <Navbar />
         <Upload
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76" //this an action performed which gets the picture of the girl
           listType="picture-card"
           fileList={fileList}
           onPreview={this.handlePreview}
