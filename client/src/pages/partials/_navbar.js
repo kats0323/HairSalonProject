@@ -10,6 +10,7 @@ function Navbar() {
         <div className='na'>
             <BrowserRouter>
                 <div className="nav_bar">
+                    <Link /> 
                     <Menu
                         id="test"
                         mode="horizontal"

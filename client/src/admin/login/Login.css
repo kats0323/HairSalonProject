@@ -4,7 +4,7 @@
     filter: blur(4px); /* how i blurred the background */
     -webkit-filter: blur(4px); /* for multiple different support */
 }
-.login-title{
+.login-title{ 
     padding-top: 5%;
     color: #fff;
 }

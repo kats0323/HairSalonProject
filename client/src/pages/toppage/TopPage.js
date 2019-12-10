@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import 'antd/dist/antd.css';
-import { Carousel } from "antd";
-import '../toppage/top.style.css';
+import 'antd/dist/antd.css'; 
+import './carousel.css'; 
+import './TopPage.css'; 
 
+import { Carousel } from 'antd';
 
 
 
@@ -10,17 +11,17 @@ class TopPage extends Component {
     render() {
         return (
             <Carousel autoplay>
-                <div>
-                    <h3>1</h3>
+                <div class="Carousel-box">
+                   <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro1.png'} alt="img1" /> 
                 </div>
-                <div>
-                    <h3>2</h3>
+                <div class="Carousel-box">
+                   <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro2.png'} alt="img2" /> 
                 </div>
-                <div>
-                    <h3>3</h3>
+                <div class="Carousel-box">
+                   <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro3.png'} alt="img3" /> 
                 </div>
-                <div>
-                    <h3>4</h3>
+                <div class="Carousel-box">
+                   <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro1.png'} alt="img4" /> 
                 </div>
             </Carousel>
         );
