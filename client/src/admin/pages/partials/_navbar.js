@@ -7,12 +7,12 @@ export default function Navbar() { //exporting this component into react app
         <div>
             <Router >
                <aside>
-                    <h1>XD</h1>
+                    <h1 class="admin-title">Admin Page</h1>
                     <ul>
-                        <Link to="/list" class="linktitle"><li>Test1</li></Link>  
-                        <Link to="/test2" class="linktitle"><li>Test2</li></Link>  
-                        <Link to="/test3" class="linktitle"><li>Test3</li></Link>  
-                        <Link to="/test4" class="linktitle"><li>Test4</li></Link>  
+                        <div class="linktitle"><Link to="List" class="Link"><li>Customer List</li></Link></div>  
+                        <div class="linktitle"><Link to="test1" class="Link"><li>test 1</li></Link></div>  
+                        <div class="linktitle"><Link to="test2" class="Link"><li>test 2</li></Link></div>  
+                        <div class="linktitle"><Link to="test3" class="Link"><li>test 3</li></Link></div>  
                     </ul>
                 </aside>
             </Router >
