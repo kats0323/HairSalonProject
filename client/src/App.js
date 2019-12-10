@@ -6,10 +6,10 @@ import Admin from "./admin/pages/partials/_admin"
 class App extends Component {
   render() {
     return (
-        <div>
-            <Overall />
-            <Admin />
-        </div>
+      <div>
+        <Overall />
+        <Admin />
+      </div>
     );
   };
 };

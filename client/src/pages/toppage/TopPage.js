@@ -9,7 +9,6 @@ import { Carousel } from 'antd';
 
 class TopPage extends Component {
     render() {
-        
         return (
             <Carousel autoplay>
                 <div class="Carousel-box">
@@ -27,6 +26,5 @@ class TopPage extends Component {
             </Carousel>
         );
     };
-};
-
+}
 export default TopPage;
