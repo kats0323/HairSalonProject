@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import 'antd/dist/antd.css'; 
-import './carousel.css'; 
-import { Carousel } from 'antd';
+import 'antd/dist/antd.css';
+import { Carousel } from "antd";
+import '../toppage/top.style.css';
+
 
 
 
 class TopPage extends Component {
     render() {
-        
         return (
             <Carousel autoplay>
                 <div>
@@ -25,6 +25,5 @@ class TopPage extends Component {
             </Carousel>
         );
     };
-};
-
+}
 export default TopPage;
