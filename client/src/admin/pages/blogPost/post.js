@@ -33,7 +33,7 @@ export default class Post extends Component {
         };
     }
 
-    // This is the Upload Functions
+    // This is the Upload Functions provided from ant D
         handleCancel = () => this.setState({ previewVisible: false });
 
         handlePreview = async file => {
@@ -69,16 +69,14 @@ export default class Post extends Component {
                 <h1>Post</h1>
                 <Input style={{height:"70px"}} placeholder="What's Happening" allowClear />
             </div>
-            <div class="blogfields">
                 <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" listType="picture-card" fileList={fileList} onPreview={this.handlePreview} onChange={this.handleChange} >
                     {/* hides the button when it there are 8 photo's or more otherwise display the upload button */}
                     {fileList.length >= 8 ? null : uploadButton}
                 </Upload>
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
-                <img style={{ width: '100%' }} src={previewImage} />
+                  <img style={{ width: '100%' }} src={previewImage} />
                 </Modal>
                 <input type="submit" class="blogpost-submit" />
-            </div>
         </div>
       </div>
     );
