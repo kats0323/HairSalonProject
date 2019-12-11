@@ -7,7 +7,9 @@ export default function Navbar() { //exporting this component into react app
         <div>
             <Router >
                <aside>
-                    <h1 class="admin-title">Admin Page</h1>
+                    <div class="title-box"> 
+                        <h1 class="admin-title">Admin Page</h1>
+                    </div>
                     <ul>
                         <div class="linktitle"><Link to="List" class="Link"><li>Customer List</li></Link></div>  
                         <div class="linktitle"><Link to="test1" class="Link"><li>test 1</li></Link></div>  
