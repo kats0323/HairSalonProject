@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+config/default.json
 # dependencies
 /node_modules
+
 /.pnp
 .pnp.js
 
@@ -18,6 +19,8 @@
 .env.test.local
 .env.production.local
 
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+default.json
