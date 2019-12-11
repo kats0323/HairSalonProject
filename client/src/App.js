@@ -10,6 +10,7 @@ class App extends Component {
       <div>
         <Overall />
         <Admin />
+        <Overall2 />
       </div>
     );
   };

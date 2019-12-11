@@ -4,7 +4,7 @@
     filter: blur(4px); /* how i blurred the background */
     -webkit-filter: blur(4px); /* for multiple different support */
 }
-.login-title{
+.login-title{ 
     padding-top: 5%;
     color: #fff;
 }
@@ -30,7 +30,7 @@ form{
 }
 
 /* input styling */
-input{
+.input{
     display: block; /* Displays an element as a block it will start on a new line because it takes up the whole width */
     border: 0; /* removes default border around the input field */
     outline: 0; /* when you click on the field it won't have the blue border around it highlighting it */
