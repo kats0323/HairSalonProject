@@ -17,7 +17,7 @@ app.use("/users", require("./routes/users"));
 const pricesRouter = require('./routes/prices');
 
 
-app.use('/', pricesRouter);
+app.use('/prices', pricesRouter);
 
 
 app.listen(PORT, () => {
