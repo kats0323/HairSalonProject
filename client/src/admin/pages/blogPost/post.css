@@ -7,3 +7,38 @@
 .example-input {
   padding-left:25%;
 }
+
+
+.blogpost-bg h1{
+  height: 65px;
+  padding-top: 5px;
+  padding-left: 1%;
+  background-color: rgba(238, 238, 238, 0.507);
+  color: #0b82bd;  /*text color white */
+  font-weight: bold; /* font-weight bold makes it thicker */
+  font-size: 2rem ; /* This changes the text size */
+}
+
+
+.blogfields{
+  text-align: center;
+  width: 60vw;
+  padding-left: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.blogpost-submit{
+  background-color: #0b82bd;
+  color: white;
+  float: right; /* moves the submit button to the right */
+  outline: 0; /* removes the blue thing around the button when u click it */
+  border: 0; /* removes the default border around button */
+  padding: 10px; /* button padding makes it thicker */
+  border-radius: 4px; /* border radius makes corner less spikey */
+  width: 100px; /* width of the button */
+  cursor: pointer; /* only works on pc, when you hover over it changes the mouse to a pointer */
+  font-size: 18px; /* this is for the font size */
+}
+

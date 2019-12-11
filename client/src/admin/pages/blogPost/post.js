@@ -4,7 +4,6 @@ import './post.css'
 import Navbar from '../partials/_navbar'
 import { Upload, Icon, Modal } from 'antd';
 import { Input } from 'antd';
-const { TextArea } = Input;
 
 
 // this function is from ant Design they provide a function to upload data
@@ -34,45 +33,53 @@ export default class Post extends Component {
         };
     }
 
+    // This is the Upload Functions
+        handleCancel = () => this.setState({ previewVisible: false });
 
-  handleCancel = () => this.setState({ previewVisible: false });
+        handlePreview = async file => {
+            if (!file.url && !file.preview) {
+            file.preview = await getBase64(file.originFileObj);
+            }
 
-  handlePreview = async file => {
-    if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj);
-    }
+            this.setState({
+            previewImage: file.url || file.preview,
+            previewVisible: true,
+            });
+        };
 
-    this.setState({
-      previewImage: file.url || file.preview,
-      previewVisible: true,
-    });
-  };
-
-  handleChange = ({ fileList }) => this.setState({ fileList });
+        handleChange = ({ fileList }) => this.setState({ fileList });
+    // 
 
   render() {
     const { previewVisible, previewImage, fileList } = this.state;
     const uploadButton = (
       <div>
         <Icon type="plus" />
-        <div className="ant-upload-text">Upload</div>
+        <div class="ant-upload-text">Upload</div>
       </div>
     );
     return (
-      <div className="clearfix main">
+      <div class="clearfix main">
         <Navbar />
-        <Upload
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76" //this an action performed which gets the picture of the girl
-          listType="picture-card"
-          fileList={fileList}
-          onPreview={this.handlePreview}
-          onChange={this.handleChange}
-        >
-          {fileList.length >= 8 ? null : uploadButton}
-        </Upload>
-        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
-          <img alt="example" style={{ width: '100%' }} src={previewImage} />
-        </Modal>
+        <div>
+            <div class="blogpost-bg">
+                <h1>Blog Post</h1>
+            </div>
+            <div class="blogfields">
+                <h1>Post</h1>
+                <Input style={{height:"70px"}} placeholder="What's Happening" allowClear />
+            </div>
+            <div class="blogfields">
+                <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" listType="picture-card" fileList={fileList} onPreview={this.handlePreview} onChange={this.handleChange} >
+                    {/* hides the button when it there are 8 photo's or more otherwise display the upload button */}
+                    {fileList.length >= 8 ? null : uploadButton}
+                </Upload>
+                <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+                <img style={{ width: '100%' }} src={previewImage} />
+                </Modal>
+                <input type="submit" class="blogpost-submit" />
+            </div>
+        </div>
       </div>
     );
   }
