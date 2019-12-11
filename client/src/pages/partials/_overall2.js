@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-
 import NavbarExpress from "../partials/_navbar_express"
 import Price from "../price/Price";
 import EditPrice from "../../admin/pages/edit/price/EditPrice";
@@ -9,7 +7,7 @@ import CreatePrice from "../../admin/pages/edit/price/CreatePrice";
 
 
 
-function overall2() {
+function Overall2() {
     return (
         <Router>
             <div className="container">
@@ -23,4 +21,4 @@ function overall2() {
     );
 }
 
-export default overall2;
+export default Overall2;
