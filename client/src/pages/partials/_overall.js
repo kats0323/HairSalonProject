@@ -3,6 +3,7 @@ import Navbar from './_navbar'
 import TopPage from "../toppage/TopPage";
 import About from "../about/About";
 import Contact from "../contact/Contact";
+import Price from "../price/Price";
 import PhotoGallery from "../photoGallery/PhotoGallery"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -22,6 +23,11 @@ export default function overall() {
           <Route path="/contact">
             <Navbar />
             <Contact />
+          </Route >
+          {/* Contact Page */}
+          <Route path="/price">
+            <Navbar />
+            <Price />
           </Route >
           {/* Photo Page */}
           <Route path="/photos">

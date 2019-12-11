@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const PriceFunction = props => (
     <tr>
         <td>{props.prices.course}</td>
         <td>{props.prices.price}</td>
+        <td>
+            <Link to={"/admin/prices/edit/" + props.prices._id}>edit</Link> | <button href="#" onClick={() => { props.deletePrice(props.prices._id) }}>delete</button>
+        </td>
     </tr>
 )
 
 
-export default class Price extends Component {
+export default class PriceList extends Component {
     constructor(props) {
         super(props);
 
@@ -45,8 +49,8 @@ export default class Price extends Component {
 
     render() {
         return (
-            <div style={{ paddingLeft: "350px" }}>
-                <h3>Prices List</h3>
+            <div style={{ paddingLeft: "200px" }}>
+                <h3>Prices LIst</h3>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>

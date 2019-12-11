@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const AboutFunction = props => (
     <tr>
         <td>{props.about.introduction}</td>
+        <td>
+            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> | <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
+        </td>
     </tr>
 )
 
 
-export default class About extends Component {
+export default class AboutList extends Component {
     constructor(props) {
         super(props);
 
