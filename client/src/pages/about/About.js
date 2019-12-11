@@ -4,7 +4,6 @@ import axios from 'axios';
 const AboutFunction = props => (
     <tr>
         <td>{props.about.introduction}</td>
-        <td>{props.about.image}</td>
     </tr>
 )
 

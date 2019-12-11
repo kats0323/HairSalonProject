@@ -7,12 +7,12 @@ export default class EditAbout extends Component {
         super(props)
 
         this.onChangeIntroduction = this.onChangeIntroduction.bind(this);
-        this.onChangeImage = this.onChangeImage.bind(this);
+
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             introduction: "",
-            image: ""
+
         }
     }
 
@@ -22,7 +22,7 @@ export default class EditAbout extends Component {
             .then(response => {
                 this.setState({
                     introduction: response.data.introduction,
-                    image: response.data.image
+
                 })
             })
             .catch(function (error) {
@@ -36,18 +36,14 @@ export default class EditAbout extends Component {
         })
     }
 
-    onChangeImage(e) {
-        this.setState({
-            image: e.target.value
-        })
-    }
+
 
     onSubmit(e) {
         e.preventDefault();
 
         const about = {
             introduction: this.state.introduction,
-            image: this.state.image
+
         }
 
         console.log(about);
@@ -57,7 +53,7 @@ export default class EditAbout extends Component {
 
         this.setState({
             introduction: "",
-            image: ""
+
         })
 
 
@@ -76,15 +72,7 @@ export default class EditAbout extends Component {
                             onChange={this.onChangeIntroduction}
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Image: </label>
-                        <input type="file"
-                            required
-                            className="form-control"
-                            value={this.state.image}
-                            onChange={this.onChangeImage}
-                        />
-                    </div>
+
                     <div className="form-group">
                         <input type="submit" value="Edit About" className="btn btn-primary" />
                     </div>

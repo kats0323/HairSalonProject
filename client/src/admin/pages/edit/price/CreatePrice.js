@@ -42,7 +42,7 @@ export default class CreatePrice extends Component {
             course: "",
             price: ""
         })
-
+        window.location = "/admin/prices"
 
     }
     render() {
