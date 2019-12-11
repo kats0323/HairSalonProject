@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import AllEditPagesNavbar from '../../admin/pages/partials/_all_edit_pages_navabar'
-import PriceList from "../../admin/pages/edit/price/PriceList";
-import EditPrice from "../../admin/pages/edit/price/EditPrice";
-import CreatePrice from "../../admin/pages/edit/price/CreatePrice";
-import AboutList from "../../admin/pages/edit/about/AboutList";
-import EditAbout from "../../admin/pages/edit/about/EditAbout";
-import CreateAbout from "../../admin/pages/edit/about/CreateAbout";
+import AllEditPagesNavbar from './_all_edit_pages_navabar'
+import PriceList from "../edit/price/PriceList";
+import EditPrice from "../edit/price/EditPrice";
+import CreatePrice from "../edit/price/CreatePrice";
+import AboutList from "../edit/about/AboutList";
+import EditAbout from "../edit/about/EditAbout";
+import CreateAbout from "../edit/about/CreateAbout";
 
 
 
-function overall2() {
+function overallAdmin() {
     return (
         <Router>
             <div className="container">
@@ -27,4 +27,4 @@ function overall2() {
     );
 }
 
-export default overall2;
+export default overallAdmin;

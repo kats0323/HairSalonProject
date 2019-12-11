@@ -15,9 +15,11 @@ app.get("/", (req, res) => res.send("API running"))
 app.use("/users", require("./routes/users"));
 
 const pricesRouter = require('./routes/prices');
+const aboutRouter = require('./routes/about');
 
 
 app.use('/prices', pricesRouter);
+app.use('/about', aboutRouter);
 
 
 app.listen(PORT, () => {

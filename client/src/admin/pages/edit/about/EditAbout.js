@@ -55,6 +55,7 @@ export default class EditAbout extends Component {
             introduction: "",
 
         })
+        window.location = "/admin/about"
 
 
     }
