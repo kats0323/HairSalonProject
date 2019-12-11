@@ -5,6 +5,7 @@ import axios from 'axios';
 const AboutFunction = props => (
     <tr>
         <td>{props.about.introduction}</td>
+        <td>{props.about.image}</td>
         <td>
             <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> | <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
         </td>
@@ -47,6 +48,7 @@ export default class AboutList extends Component {
     }
 
     render() {
+        console.log(this.aboutList())
         return (
             <div style={{ paddingLeft: "350px" }}>
                 <h1>About</h1>

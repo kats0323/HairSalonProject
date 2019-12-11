@@ -7,10 +7,12 @@ export default class EditAbout extends Component {
         super(props)
 
         this.onChangeIntroduction = this.onChangeIntroduction.bind(this);
+        this.onChangeImage = this.onChangeImage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            introduction: ""
+            introduction: "",
+            image: ""
         }
     }
 
@@ -19,7 +21,8 @@ export default class EditAbout extends Component {
         axios.get('http://localhost:5000/about/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    about: response.data.course
+                    introduction: response.data.introduction,
+                    image: response.data.image
                 })
             })
             .catch(function (error) {
@@ -32,11 +35,19 @@ export default class EditAbout extends Component {
             introduction: e.target.value
         })
     }
+
+    onChangeImage(e) {
+        this.setState({
+            image: e.target.value
+        })
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
         const about = {
-            introduction: this.state.introduction
+            introduction: this.state.introduction,
+            image: this.state.image
         }
 
         console.log(about);
@@ -45,7 +56,8 @@ export default class EditAbout extends Component {
             .then(res => console.log(res.data));
 
         this.setState({
-            introduction: ""
+            introduction: "",
+            image: ""
         })
 
 
@@ -62,6 +74,15 @@ export default class EditAbout extends Component {
                             className="form-control"
                             value={this.state.introduction}
                             onChange={this.onChangeIntroduction}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Image: </label>
+                        <input type="file"
+                            required
+                            className="form-control"
+                            value={this.state.image}
+                            onChange={this.onChangeImage}
                         />
                     </div>
                     <div className="form-group">
