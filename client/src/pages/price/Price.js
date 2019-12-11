@@ -1,13 +1,68 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-class Contact extends Component {
+const PriceFunction = props => (
+    <tr>
+        <td>{props.prices.course}</td>
+        <td>{props.prices.price}</td>
+        <td>
+            <Link to={"/edit/" + props.prices._id}>edit</Link> | <button href="#" onClick={() => { props.deletePrice(props.prices._id) }}>delete</button>
+        </td>
+    </tr>
+)
+
+
+export default class Price extends Component {
+    constructor(props) {
+        super(props);
+
+        this.deletePrice = this.deletePrice.bind(this)
+
+        this.state = { prices: [] };
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/prices/')
+            .then(response => {
+                this.setState({ prices: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    deletePrice(id) {
+        axios.delete('http://localhost:5000/prices/' + id)
+            .then(response => { console.log(response.data) });
+
+        this.setState({
+            prices: this.state.prices.filter(el => el._id !== id)
+        })
+    }
+
+    priceList() {
+        return this.state.prices.map(currentprice => {
+            return <PriceFunction prices={currentprice} deletePrice={this.deletePrice} key={currentprice._id} />;
+        })
+    }
+
     render() {
         return (
-
-            <h1>Price</h1>
-
-        );
-    };
-};
-
-export default Contact;
+            <div>
+                <h3>Prices</h3>
+                <table className="table">
+                    <thead className="thead-light">
+                        <tr>
+                            <th>Course</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.priceList()}
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+}
