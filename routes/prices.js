@@ -36,12 +36,12 @@ router.route('/:id').delete((req, res) => {
 
 router.route('/update/:id').post((req, res) => {
     Price.findById(req.params.id)
-        .then(exercise => {
-            exercise.course = req.body.course;
-            exercise.price = req.body.price;
+        .then(price => {
+            price.course = req.body.course;
+            price.price = req.body.price;
 
 
-            exercise.save()
+            price.save()
                 .then(() => res.json('Price updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
