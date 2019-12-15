@@ -11,10 +11,10 @@ export default class NavbarExpress extends Component {
                     <ul className="navbar-nav mr-auto">
 
                         <li className="navbar-item">
-                            <Link to="/prices" className="nav-link">Price</Link>
+                            <Link to="/admin/prices" className="nav-link">Price</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/prices/create" className="nav-link">Create  Price</Link>
+                            <Link to="/admin/prices/create" className="nav-link">Create  Price</Link>
                         </li>
 
                     </ul>
