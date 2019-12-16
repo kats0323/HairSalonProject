@@ -19,8 +19,7 @@ function Navbar() {
                             lineHeight: '64px',
                         }}
                     >
-
-                        <Menu.Item key="1" className="testing"> <Link to="/">Top</Link></Menu.Item>
+                        <Menu.Item key="1" className="testing"> <Link to="/"><img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{height:"50px"}} /> </Link></Menu.Item>
                         <Menu.Item key="1" className="testing"> <Link to="/about">About</Link></Menu.Item>
                         <Menu.Item key="1" className="testing"> <Link to="/contact">Contact</Link></Menu.Item>
                         <Menu.Item key="3" className="testing"><Link to="/price">Price</Link></Menu.Item>
