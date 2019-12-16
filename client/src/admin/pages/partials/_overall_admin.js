@@ -14,7 +14,8 @@ function overallAdmin() {
     return (
         <Router>
             <div className="container">
-                <AllEditPagesNavbar />
+                <Route path="/admin/"  component={AllEditPagesNavbar} />
+
 
                 <Route path="/admin/prices" exact component={PriceList} />
                 <Route path="/admin/prices/edit/:id" exact component={EditPrice} />
