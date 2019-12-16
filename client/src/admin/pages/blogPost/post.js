@@ -74,7 +74,7 @@ export default class Post extends Component {
                     {fileList.length >= 8 ? null : uploadButton}
                 </Upload>
                 <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
-                  <img style={{ width: '100%' }} src={previewImage} />
+                  <img style={{ width: '100%' }} src={previewImage} alt="previewimage" />
                 </Modal>
                 <input type="submit" class="blogpost-submit" />
         </div>

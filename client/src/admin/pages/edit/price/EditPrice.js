@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 
 
-export default class CreatePrice extends Component {
+export default class EditPrice extends Component {
     constructor(props) {
         super(props)
 
@@ -57,11 +57,11 @@ export default class CreatePrice extends Component {
             course: "",
             price: ""
         })
-        // clear price
+        window.location = '/admin/prices';
     }
     render() {
         return (
-            <div>
+            <div style={{ paddingLeft: "200px" }}>
                 <h3>Edit Price</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
