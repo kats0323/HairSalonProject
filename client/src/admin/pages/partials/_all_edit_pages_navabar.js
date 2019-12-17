@@ -42,9 +42,9 @@ export default function AllEditPagesNavbar() { //exporting this component into r
 
                         {/* Photos */}
                         <NavDropdown title="Photos" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Item href="/admin/photos">Photo Gralley</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            <NavDropdown.Item href="/admin/photos/create">Create Photo</NavDropdown.Item>
                         </NavDropdown>
                     </ul>
                 </aside>
