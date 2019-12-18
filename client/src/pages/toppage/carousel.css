@@ -2,7 +2,7 @@
     text-align: center;;
     height: 800px;
     line-height: 160px;
-    background: #fff;
+    background: linear-gradient(to right, #143d1c, #45ce5e);
     overflow: hidden;
   }
   

@@ -12,13 +12,13 @@ class TopPage extends Component {
         return (
             <Carousel autoplay>
                 <div class="Carousel-box">
-                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro1.png'} alt="img1" />
+                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair1.jpg'} alt="img1" />
                 </div>
                 <div class="Carousel-box">
-                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro2.png'} alt="img2" />
+                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair2.jpg'} alt="img2" />
                 </div>
                 <div class="Carousel-box">
-                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro3.png'} alt="img3" />
+                    <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair3.jpg'} alt="img3" />
                 </div>
                 <div class="Carousel-box">
                     <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro1.png'} alt="img4" />

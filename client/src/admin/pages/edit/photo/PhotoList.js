@@ -38,12 +38,10 @@ export default class PhotoList extends Component {
     render() {
         return (
             <div style={{ paddingLeft: "200px" }}>
-                <h3>Prices LIst</h3>
+                <h3>Photo Gallery</h3>
                 <table className="table">
                     <thead className="thead-light">
-                        <tr>
-                            <th>Photo</th>
-                        </tr>
+
                     </thead>
                     <tbody>
                         {this.photoList()}

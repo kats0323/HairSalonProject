@@ -1,0 +1,8 @@
+.background{
+    background: linear-gradient(to right, #a8ff78, #45ce5e);
+    height: 92.8vh;
+    color: white;
+}
+.ant-card{
+    background:none;
+}
