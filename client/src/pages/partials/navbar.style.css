@@ -1,13 +1,17 @@
 
 .ti{
     margin: 0px;
-    color: aliceblue;
     padding:0;
 }
 #test{
-    background: linear-gradient(to right, #143d1c, #45ce5e);
+    background: linear-gradient(to right, #45ce5e, #a8ff78);
+    
     
 }
 .testing{
-color: white;
+    float:right;
+}
+
+.ant-menu-horizontal{
+    border-bottom: 0 !important;
 }

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './price.css'
+import { Card, Col } from 'antd';
+
 
 const PriceFunction = props => (
-    <tr>
-        <td>{props.prices.course}</td>
-        <td>{props.prices.price}</td>
-    </tr>
+    <Col style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
+        <Card style={{border:"none", textAlign:"center"}}>
+            <h2>{props.prices.course}</h2>
+            <h4>{props.prices.price}</h4>
+        </Card>
+    </Col>
 )
 
 
@@ -44,20 +49,13 @@ export default class Price extends Component {
     }
 
     render() {
+        
         return (
-            <div style={{ paddingLeft: "350px" }}>
-                <h3>Prices List</h3>
-                <table className="table">
-                    <thead className="thead-light">
-                        <tr>
-                            <th>Course</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.priceList()}
-                    </tbody>
-                </table>
+            <div class="background">
+                <div style={{display:"flex", flexDirection:"row", justifyContent:"center", paddingTop:"1%"}}>
+                    <h3 style={{fontSize:"2rem", padding:"40px",borderStyle: "solid",borderWeight:"2px", width:"250px"}}>Prices List</h3>
+                </div>
+                {this.priceList()}
             </div>
         )
     }

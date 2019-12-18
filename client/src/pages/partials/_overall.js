@@ -7,7 +7,7 @@ import Price from "../price/Price";
 import PhotoGallery from "../photoGallery/PhotoGallery"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+ 
 
 export default function overall() {
   return (
@@ -15,7 +15,7 @@ export default function overall() {
       <Router>
         <Switch>
           {/* About Page */}
-          <Route path="/about">
+          <Route path="/about" >
             <Navbar />
             <About />
           </Route>
