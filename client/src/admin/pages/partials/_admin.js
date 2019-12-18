@@ -2,7 +2,7 @@ import React from 'react';
 import Login from '../../login/Login' //importing this from admin/login/Login.js
 import Dash from '../dashboard/Dashboard' //importing this from admin/pages/dashboard/Dashboard this is the admin page to check customers
 import Post from '../blogPost/post' //importing this from admin/pages/list/list this is the admin page to check customers
-import EditDashboard from "../dashboard/EditDashboard"
+import navbar from './_navbar'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ export default function admin() {
           <Route exact path="/admin" component={Dash} />
 
 
-          <Route exact path="/admin/alledit" component={EditDashboard} />
+          <Route exact path="/admin" component={navbar} />
 
 
         </Switch>
