@@ -1,12 +1,8 @@
 
-.ti{
-    margin: 0px;
-    padding:0;
-}
-#test{
-    background: linear-gradient(to right, #45ce5e, #a8ff78);
-    
-    
+#nav_bar_main{
+    height: 90px;
+    background: linear-gradient(to right,#218132, #1d802f,#1b752b,#1c832f,#209435,#1faa38,#198b2e);
+border-bottom: 2px solid silver;
 }
 .testing{
     float:right;
