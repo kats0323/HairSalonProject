@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './price.css'
+import '../../common.css'
 import { Card, Col } from 'antd';
 
 
 const PriceFunction = props => (
-    <Col style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
-        <Card style={{border:"none", textAlign:"center"}}>
-            <h2>{props.prices.course}</h2>
+    <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+        <Card style={{ border: "none", textAlign: "center" }}>
+            <h2 className="japanese">{props.prices.ja_course}</h2>
+            <h2 id="english">{props.prices.en_course}</h2>
+            <br />
             <h4>{props.prices.price}</h4>
+            <h5 className="japanese">{props.prices.ja_detail}</h5>
+            <h5 id="english">{props.prices.en_detail}</h5>
         </Card>
-    </Col>
+    </Col >
 )
 
 
@@ -49,11 +54,11 @@ export default class Price extends Component {
     }
 
     render() {
-        
+
         return (
             <div class="background">
-                <div style={{display:"flex", flexDirection:"row", justifyContent:"center", paddingTop:"1%"}}>
-                    <h3 style={{fontSize:"2rem", padding:"40px",borderStyle: "solid",borderWeight:"2px", width:"250px"}}>Prices List</h3>
+                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: "1%" }}>
+                    <h3 style={{ fontSize: "2rem", padding: "40px", borderStyle: "solid", borderWeight: "2px", width: "250px" }}>Prices List</h3>
                 </div>
                 {this.priceList()}
             </div>

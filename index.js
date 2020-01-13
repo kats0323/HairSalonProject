@@ -24,11 +24,13 @@ app.use("/users", require("./routes/users"));
 const pricesRouter = require('./routes/prices');
 const aboutRouter = require('./routes/about');
 const photoRouter = require('./routes/photo');
+const blogRouter = require('./routes/blogs');
 
 
 app.use('/prices', pricesRouter);
 app.use('/about', aboutRouter);
 app.use('/photos', photoRouter);
+app.use('/blogs', blogRouter);
 
 
 app.listen(PORT, () => {

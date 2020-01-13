@@ -21,9 +21,9 @@ export default function AllEditPagesNavbar() { //exporting this component into r
 
                         {/* Blog */}
                         <NavDropdown title="Blog" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Item href="/admin/blogs">Blog List</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            <NavDropdown.Item href="/admin/blogs/create"> Create Blog</NavDropdown.Item>
                         </NavDropdown>
 
                         {/* Price */}

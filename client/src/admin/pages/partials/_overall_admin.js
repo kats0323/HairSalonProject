@@ -9,6 +9,8 @@ import EditAbout from "../edit/about/EditAbout";
 import CreateAbout from "../edit/about/CreateAbout";
 import CreatePhoto from "../edit/photo/CreatePhoto"
 import PhotoList from "../edit/photo/PhotoList"
+import CreateBlog from "../edit/blog/CreateBlog"
+import BlogList from "../edit/blog/BlogList"
 
 
 function overallAdmin() {
@@ -26,6 +28,8 @@ function overallAdmin() {
                 <Route path="/admin/about/create" exact component={CreateAbout} />
                 <Route path="/admin/photos/create" exact component={CreatePhoto} />
                 <Route path="/admin/photos" exact component={PhotoList} />
+                <Route path="/admin/blogs/create" exact component={CreateBlog} />
+                <Route path="/admin/blogs" exact component={BlogList} />
             </div>
         </Router>
     );
