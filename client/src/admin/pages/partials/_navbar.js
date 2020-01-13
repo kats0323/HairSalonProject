@@ -1,8 +1,11 @@
 import React from 'react';
+import AllEditPagesNavbar from './_all_edit_pages_navabar'
 import '../partials/Navbar.css'
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link , Switch , Route} from "react-router-dom";
 
-export default function Navbar() { //exporting this component into react app
+
+
+function Navbar() { //exporting this component into react app
     return (
         <div>
             <Router >
@@ -17,8 +20,12 @@ export default function Navbar() { //exporting this component into react app
                         <div class="linktitle"><Link to="test3" class="Link"><li>test 3</li></Link></div>
                     </ul>
                 </aside>
+                <Switch> 
+                    <Route exact path="/admin/alledit" component={AllEditPagesNavbar}></Route>
+                </Switch>
             </Router >
         </div>
     );
 }
 
+export default Navbar;

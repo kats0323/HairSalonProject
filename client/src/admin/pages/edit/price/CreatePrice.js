@@ -74,7 +74,7 @@ export default class CreatePrice extends Component {
     }
     render() {
         return (
-            <div style={{ paddingLeft: "200px" }}>
+            <div style={{ paddingLeft: "300px" }}>
                 <h3>Create New Price</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
