@@ -1,16 +1,30 @@
 
 #nav_bar_main{
     height: 90px;
-    background: linear-gradient(to right, #45ce5e, #a8ff78);
+    text-align: center;
+    text-decoration: none;
+    /* background: linear-gradient(to right, #45ce5e, #a8ff78); */
 }
 .nav_bar_nest{
-    float:right;
-}
+    text-decoration: none;
 
-.ant-menu-horizontal{
-    border-bottom: 0 !important;
 }
 
 
+.ant-menu-submenu-selected {
+    border-bottom: 0px !important;
+}
+
+.ant-menu-item-active{
+    border-bottom: 0px !important;
+}
+.ant-menu-item-selected{
+    border-bottom: 0px !important;
+}
 
 
+
+.logo-center{
+    justify-content: center;
+    display: flex;
+}

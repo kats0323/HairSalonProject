@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { Row } from 'antd';
-import SimpleReactLightbox from "simple-react-lightbox"; // Import Simple React Lightbox
-import { SRLWrapper } from "simple-react-lightbox"; // Import SRLWrapper
-
+import { Row, Col } from 'antd';
 
 import axios from 'axios';
 import './gallery.css'
@@ -11,7 +8,7 @@ import './gallery.css'
 
 const PhotoFunction = props => (
     <tr>
-        <img src={props.photos.photo} style={{ width: "420px", margin: "20px", height: "300px" }} />
+        <img src={props.photos.photo} style={{ width: "400px", margin: "20px", height: "300px" }} />
     </tr>
 )
 
@@ -52,15 +49,11 @@ export default class PhotoGallery extends Component {
             <div>
                 <h1 class="title-gallery-center">PhotoGallery</h1>
                 <ColoredLine />
-                <div class="item-gallery-center">
                     <Row type="flex" justify="start">
-                          <SRLWrapper >
-                            <a href="link/to/the/full/width/image.jpg" data-attribute="SRL">
-                                <img src={this.photoList()} alt="Umbrella" />
-                            </a>
-                          </SRLWrapper>
+                        {this.photoList()}
+                         {this.photoList()}
+                          {this.photoList()}
                     </Row>
-                </div>
             </div>
         )
     }
