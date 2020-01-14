@@ -27,7 +27,7 @@ var upload = multer({
     }
 });
 
-// Photo model
+
 let Blog = require('../models/blog.model');
 
 router.post('/add', upload.single('photo'), (req, res, next) => {
@@ -54,6 +54,7 @@ router.post('/add', upload.single('photo'), (req, res, next) => {
     })
 })
 router.get("/", (req, res, next) => {
+    console.log("REQUEST TO SERVER")
     Blog.find()
         .then(blogs => res.json(blogs))
         .catch(err => res.status(400).json("Error: " + err));

@@ -7,8 +7,6 @@ import { Card, Col } from 'antd';
 
 
 const PriceFunction = props => (
-
-
     <div>
         {props.language == "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>

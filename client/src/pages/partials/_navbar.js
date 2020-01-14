@@ -3,11 +3,18 @@ import { BrowserRouter, Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 
 
 
 
-export default class Navbar extends Component {
+class Navbar extends Component {
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -25,10 +32,9 @@ export default class Navbar extends Component {
         })
     }
     render() {
+        const { location } = this.props
         return (
-
             <div className='na' >
-
                 <div className="nav_bar">
 
                     <Menu
@@ -45,21 +51,21 @@ export default class Navbar extends Component {
 
                         < Menu.Item key="1" className="nav_bar_nest"> <Link to="/about">About</Link></Menu.Item>
                         <Menu.Item key="1" className="nav_bar_nest"> <Link to="/contact">Contact</Link></Menu.Item>
-                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/price">Price</Link></Menu.Item>
+                        <Menu.Item key="3" className="nav_bar_nest"><Link to={location => ({ ...location, pathname: "/price" })}>Price</Link></Menu.Item>
                         <Menu.Item key="3" className="nav_bar_nest"><Link to="/photos">PhotoGallery</Link></Menu.Item>
-                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/">Blog</Link></Menu.Item>
+                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/blogs">Blog</Link></Menu.Item>
                     </Menu>
 
                 </div>
-
-
-                <Price language={this.state.language} />
-
-                {/* if router location is price show price component */}
-
+                {location.pathname === "/price" ? (
+                    <Price language={this.state.language} />
+                ) : (
+                        console.log("hello")
+                    )}
             </div >
 
         );
 
     }
 };
+export default withRouter(Navbar)
