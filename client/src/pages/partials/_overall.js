@@ -3,8 +3,8 @@ import Navbar from './_navbar'
 import TopPage from "../toppage/TopPage";
 import About from "../about/About";
 import Contact from "../contact/Contact";
-import Price from "../price/Price";
-import PhotoGallery from "../photoGallery/PhotoGallery"
+import PhotoGallery from "../photoGallery/PhotoGallery";
+import Blog from "../blog/Blog";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,17 +25,18 @@ export default function overall() {
             <Contact />
           </Route >
           {/* Price Page */}
-          <Route path="/price" render={props =>
-            <span>
-              <Navbar {...props} />
-              <Price {...props} />
-            </span>
-          }>
+          <Route path="/price" >
+            <Navbar />
           </Route >
           {/* Photo Page */}
           <Route path="/photos">
             <Navbar />
             <PhotoGallery />
+          </Route >
+          {/* Blog Page */}
+          <Route path="/blogs">
+            <Navbar />
+            <Blog />
           </Route >
           {/* Home Page */}
           <Route exact path="/">
