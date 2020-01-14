@@ -48,7 +48,7 @@ class Navbar extends Component {
                         {this.state.language === "Japanese" ? (
                             <Menu.Item key="1" className="english_button" style={{ color: "black" }} onClick={this.onChangeEnglish.bind(this)}>English</Menu.Item>
                         ) : (
-                                <Menu.Item key="1" className="japanese_button" style={{ color: "white" }} onClick={this.onChangeJapanese.bind(this)}>Japanese</Menu.Item>
+                                <Menu.Item key="1" className="japanese_button" style={{ color: "black" }} onClick={this.onChangeJapanese.bind(this)}>Japanese</Menu.Item>
                             )}
                         <Menu.Item key="5" > <Link to={{ pathname: "/" }}>Home</Link></Menu.Item>
                         <Menu.Item key="6" className="nav_bar_nest"> <Link to="/about">About</Link></Menu.Item>
