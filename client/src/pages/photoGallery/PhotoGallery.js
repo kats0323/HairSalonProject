@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+import { Row, Col } from 'antd';
+
 import axios from 'axios';
+import './gallery.css'
+
 
 const PhotoFunction = props => (
     <tr>
-        <img src={props.photos.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.photos.photo} style={{ width: "400px", margin: "20px", height: "300px" }} />
     </tr>
 )
 
@@ -36,17 +40,20 @@ export default class PhotoGallery extends Component {
     }
 
     render() {
-        return (
-            <div style={{ paddingLeft: "200px" }}>
-                <h3>Photo Gallery</h3>
-                <table className="table">
-                    <thead className="thead-light">
+        const ColoredLine = ({ color }) => (
+            <hr style={{ color: "gray",border:"2px dashed"}} /> 
+         );
 
-                    </thead>
-                    <tbody>
+       
+        return (
+            <div>
+                <h1 class="title-gallery-center">PhotoGallery</h1>
+                <ColoredLine />
+                    <Row type="flex" justify="start">
                         {this.photoList()}
-                    </tbody>
-                </table>
+                         {this.photoList()}
+                          {this.photoList()}
+                    </Row>
             </div>
         )
     }
