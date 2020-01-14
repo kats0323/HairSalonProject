@@ -4,7 +4,7 @@ export default function Dashboard() { //exporting this component into react app
     return (
         <div>
             <Navbar />
-            <h1 class="main">DashBoard </h1>
+            <h2 class="main">DashBoard</h2>
         </div>
     );
 }
