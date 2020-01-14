@@ -25,6 +25,7 @@ export default class Navbar extends Component {
         })
     }
     render() {
+        console.log(this.props.location.pathname, "yyyyyyyyyyy")
         return (
 
             <div className='na' >
@@ -51,9 +52,14 @@ export default class Navbar extends Component {
                     </Menu>
 
                 </div>
+                {/* <Price language={this.state.language} /> */}
 
+                {this.props.location.pathname === "/price" ? (
+                    <Price language={this.state.language} />
+                ) : (
+                        console.log("hello")
+                    )}
 
-                <Price language={this.state.language} />
 
                 {/* if router location is price show price component */}
 
