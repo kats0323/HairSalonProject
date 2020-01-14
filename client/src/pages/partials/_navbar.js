@@ -1,34 +1,65 @@
-import React from "react";
+import React, { Component } from 'react';
 import { BrowserRouter, Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
+import Price from "../price/Price";
 
 
 
-function Navbar() {
 
-    return (
-        <div className='na'>
+export default class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            language: "English"
+        }
+    }
+    onChangeJapanese() {
+        this.setState({
+            language: "Japanese"
+        })
+    }
+    onChangeEnglish() {
+        this.setState({
+            language: "English"
+        })
+    }
+    render() {
+        return (
 
-            <div className="nav_bar">
-                <Link />
-                <Menu
-                    id="nav_bar_main"
-                    mode="horizontal"
-                    defaultSelectedKeys={['2']}
-                >
-                    <Menu.Item key="1" > <Link to="/"><img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px" }} /> </Link></Menu.Item>
-                    {/* <Menu.Item key="1" className="japanese_button" onClick={() => document.getElementById("english").style.display = "none"}>Japanese</Menu.Item> */}
-                    < Menu.Item key="1" className="testing"> <Link to="/about">About</Link></Menu.Item>
-                    <Menu.Item key="1" className="testing"> <Link to="/contact">Contact</Link></Menu.Item>
-                    <Menu.Item key="3" className="testing"><Link to="/price">Price</Link></Menu.Item>
-                    <Menu.Item key="3" className="testing"><Link to="/photos">PhotoGallery</Link></Menu.Item>
-                </Menu>
-            </div>
+            <div className='na' >
 
-        </div >
-    );
+                <div className="nav_bar">
+
+                    <Menu
+                        id="nav_bar_main"
+                        mode="horizontal"
+                        defaultSelectedKeys={['2']}
+                    >
+                        <Menu.Item key="1" > <Link to={{ pathname: "/" }}><img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px" }} /> </Link></Menu.Item>
+                        {this.state.language === "Japanese" ? (
+                            <Menu.Item key="1" className="english_button" style={{ color: "black" }} onClick={this.onChangeEnglish.bind(this)}> English</Menu.Item>
+                        ) : (
+                                <Menu.Item key="1" className="japanese_button" style={{ color: "white" }} onClick={this.onChangeJapanese.bind(this)}>Japanese</Menu.Item>
+                            )}
+
+                        < Menu.Item key="1" className="nav_bar_nest"> <Link to="/about">About</Link></Menu.Item>
+                        <Menu.Item key="1" className="nav_bar_nest"> <Link to="/contact">Contact</Link></Menu.Item>
+                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/price">Price</Link></Menu.Item>
+                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/photos">PhotoGallery</Link></Menu.Item>
+                        <Menu.Item key="3" className="nav_bar_nest"><Link to="/">Blog</Link></Menu.Item>
+                    </Menu>
+
+                </div>
 
 
+                <Price language={this.state.language} />
+
+                {/* if router location is price show price component */}
+
+            </div >
+
+        );
+
+    }
 };
-export default Navbar;

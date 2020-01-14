@@ -5,17 +5,33 @@ import '../../common.css'
 import { Card, Col } from 'antd';
 
 
+
 const PriceFunction = props => (
-    <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <Card style={{ border: "none", textAlign: "center" }}>
-            <h2 className="japanese">{props.prices.ja_course}</h2>
-            <h2 id="english">{props.prices.en_course}</h2>
-            <br />
-            <h4>{props.prices.price}</h4>
-            <h5 className="japanese">{props.prices.ja_detail}</h5>
-            <h5 id="english">{props.prices.en_detail}</h5>
-        </Card>
-    </Col >
+
+
+    <div>
+        {props.language == "Japanese" ? (
+            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                <Card style={{ border: "none", textAlign: "center" }}>
+                    <h2>{props.prices.price}</h2>
+                    <h2 className="japanese">{props.prices.ja_course}</h2>
+                    <br />
+                    <h5 className="japanese">{props.prices.ja_detail}</h5>
+                    <h1>TESTING</h1>
+                </Card>
+            </Col >
+        ) : (
+                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                    <Card style={{ border: "none", textAlign: "center" }}>
+                        <h2>{props.prices.price}</h2>
+                        <h2 id="english">{props.prices.en_course}</h2>
+                        <br />
+                        <h5 id="english">{props.prices.en_detail}</h5>
+                        <h1>TESTING</h1>
+                    </Card>
+                </Col >
+            )}
+    </div>
 )
 
 
@@ -49,7 +65,7 @@ export default class Price extends Component {
 
     priceList() {
         return this.state.prices.map(currentprice => {
-            return <PriceFunction prices={currentprice} deletePrice={this.deletePrice} key={currentprice._id} />;
+            return <PriceFunction prices={currentprice} deletePrice={this.deletePrice} key={currentprice._id} language={this.props.language} />;
         })
     }
 
@@ -61,6 +77,7 @@ export default class Price extends Component {
                     <h3 style={{ fontSize: "2rem", padding: "40px", borderStyle: "solid", borderWeight: "2px", width: "250px" }}>Prices List</h3>
                 </div>
                 {this.priceList()}
+
             </div>
         )
     }

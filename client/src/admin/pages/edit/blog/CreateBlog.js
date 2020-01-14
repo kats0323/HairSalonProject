@@ -40,10 +40,6 @@ export default class CreateBlog extends Component {
             content: this.state.content,
             photo: this.state.photo
         }
-
-
-
-        // formData.append('photo', this.state.photo)
         axios.post("http://localhost:5000/blogs/add", blog).then(res => {
             console.log(res)
         })
