@@ -32,12 +32,19 @@ class Navbar extends Component {
         })
     }
     render() {
+        // hr style
+          const Line = ({ color }) => (
+            <hr style={{ color: "black",border:"0.7px solid", width:"60%",}} /> 
+         );
         const { location } = this.props
         return (
             <div className='na' >
                 <div className="nav_bar">
                     <div class="logo-center">
-                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "100px"}} />
+                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "80px"}} />
+                    </div>
+                    <div class="style-line">
+                        <Line />
                     </div>
 
                     <Menu

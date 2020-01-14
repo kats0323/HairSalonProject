@@ -33,7 +33,9 @@ class TopPage extends Component {
 
                 <div class="style-home">
                     <h2>Style</h2>
-                    <Line />
+                    <div class="style-line">
+                        <Line />
+                    </div>
                 </div>
             </div>
 
