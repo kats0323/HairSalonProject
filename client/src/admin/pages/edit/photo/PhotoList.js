@@ -9,7 +9,7 @@ const PhotoFunction = props => (
 )
 
 
-export default class PhotoGallery extends Component {
+export default class PhotoList extends Component {
     constructor(props) {
         super(props);
 

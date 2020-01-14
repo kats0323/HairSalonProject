@@ -3,11 +3,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const priceSchema = new Schema({
-    course: {
+    ja_course: {
+        type: String,
+    },
+    en_course: {
         type: String,
     },
     price: {
         type: String,
+    },
+    ja_detail: {
+        type: String
+    },
+    en_detail: {
+        type: String
     }
 
 });

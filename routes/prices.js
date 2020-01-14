@@ -8,13 +8,18 @@ router.route("/").get((req, res) => {
 })
 
 router.route("/add").post((req, res) => {
-    const course = req.body.course;
+    const ja_course = req.body.ja_course;
+    const en_course = req.body.en_course;
     const price = req.body.price;
-
+    const ja_detail = req.body.ja_detail;
+    const en_detail = req.body.en_detail;
 
     const newPrice = new Price({
-        course,
-        price
+        ja_course,
+        en_course,
+        price,
+        ja_detail,
+        en_detail
     })
 
     newPrice.save()
@@ -37,9 +42,11 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Price.findById(req.params.id)
         .then(price => {
-            price.course = req.body.course;
+            price.ja_course = req.body.ja_course;
+            price.en_course = req.body.en_course;
             price.price = req.body.price;
-
+            price.ja_detail = req.body.ja_detail;
+            price.en_detail = req.body.en_detail;
 
             price.save()
                 .then(() => res.json('Price updated!'))
