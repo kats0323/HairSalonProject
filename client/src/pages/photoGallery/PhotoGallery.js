@@ -1,25 +1,67 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
+import { Row } from 'antd';
+import SimpleReactLightbox from "simple-react-lightbox"; // Import Simple React Lightbox
+import { SRLWrapper } from "simple-react-lightbox"; // Import SRLWrapper
+
+
+import axios from 'axios';
 import './gallery.css'
 
 
+const PhotoFunction = props => (
+    <tr>
+        <img src={props.photos.photo} style={{ width: "420px", margin: "20px", height: "300px" }} />
+    </tr>
+)
 
-class PhotoGallery extends Component {
-      
-    
+
+export default class PhotoGallery extends Component {
+    constructor(props) {
+        super(props);
+
+
+        this.state = { photos: [] };
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/photos/')
+            .then(response => {
+                this.setState({ photos: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+
+
+    photoList() {
+        return this.state.photos.map(currentphoto => {
+            return <PhotoFunction photos={currentphoto} key={currentphoto._id} />;
+        })
+    }
+
     render() {
-         const ColoredLine = ({ color }) => (
-            <hr style={{ color: "gray",border:"2px dotted" }} /> 
+        const ColoredLine = ({ color }) => (
+            <hr style={{ color: "gray",border:"2px dashed"}} /> 
          );
+
        
         return (
             <div>
                 <h1 class="title-gallery-center">PhotoGallery</h1>
-                
-                    <ColoredLine />
-
+                <ColoredLine />
+                <div class="item-gallery-center">
+                    <Row type="flex" justify="start">
+                          <SRLWrapper >
+                            <a href="link/to/the/full/width/image.jpg" data-attribute="SRL">
+                                <img src={this.photoList()} alt="Umbrella" />
+                            </a>
+                          </SRLWrapper>
+                    </Row>
+                </div>
             </div>
-        );
-    };
-};
-
-export default PhotoGallery;
+        )
+    }
+}

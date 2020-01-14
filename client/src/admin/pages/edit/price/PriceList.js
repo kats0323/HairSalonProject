@@ -4,8 +4,11 @@ import axios from 'axios';
 
 const PriceFunction = props => (
     <tr>
-        <td>{props.prices.course}</td>
+        <td id="japanese">{props.prices.ja_course}</td>
+        <td id="english">{props.prices.en_course}</td>
         <td>{props.prices.price}</td>
+        <td id="japanese">{props.prices.ja_detail}</td>
+        <td id="english">{props.prices.en_detail}</td>
         <td>
             <Link to={"/admin/prices/edit/" + props.prices._id}>edit</Link> | <button href="#" onClick={() => { props.deletePrice(props.prices._id) }}>delete</button>
         </td>
@@ -54,8 +57,11 @@ export default class PriceList extends Component {
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
-                            <th>Course</th>
+                            <th>Japanese Course</th>
+                            <th>English Course</th>
                             <th>Price</th>
+                            <th>Japanese Detail</th>
+                            <th>English Course</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,17 +1,16 @@
 
-.ti{
-    margin: 0px;
-    padding:0;
-}
-#test{
+#nav_bar_main{
+    height: 90px;
     background: linear-gradient(to right, #45ce5e, #a8ff78);
-    
-    
 }
-.testing{
+.nav_bar_nest{
     float:right;
 }
 
 .ant-menu-horizontal{
     border-bottom: 0 !important;
 }
+
+
+
+
