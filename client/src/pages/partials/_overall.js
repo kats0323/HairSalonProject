@@ -24,15 +24,13 @@ export default function overall() {
             <Navbar />
             <Contact />
           </Route >
-          {/* Contact Page */}
+          {/* Price Page */}
           <Route path="/price" render={props =>
             <span>
-              <Navbar{...props} />
-              <Price{...props} />
+              <Navbar {...props} />
+              <Price {...props} />
             </span>
           }>
-            {/* <Navbar />
-            <Price /> */}
           </Route >
           {/* Photo Page */}
           <Route path="/photos">
