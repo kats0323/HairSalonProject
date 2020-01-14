@@ -3,10 +3,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const aboutSchema = new Schema({
-    introduction: {
+    en_introduction: {
         type: String
     },
-    image: {
+    ja_introduction: {
+        type: String
+    },
+    photo: {
         type: String
     }
 });

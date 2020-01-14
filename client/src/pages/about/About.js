@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
+
 const AboutFunction = props => (
-    <tr>
-        <td>{props.about.introduction}</td>
-    </tr>
+    <div>
+        {props.language == "Japanese" ? (
+            <div>
+                <h2>{props.about.ja_introduction}</h2>
+                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+            </div>
+        ) : (
+                <div>
+                    <h2>{props.about.en_introduction}</h2>
+                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                </div>
+            )}
+    </div>
 )
 
 
@@ -38,7 +50,7 @@ export default class About extends Component {
 
     aboutList() {
         return this.state.about.map(currentabout => {
-            return <AboutFunction about={currentabout} deleteAbout={this.deleteAbout} key={currentabout._id} />;
+            return <AboutFunction about={currentabout} deleteAbout={this.deleteAbout} key={currentabout._id} language={this.props.language} />;
         })
     }
 
