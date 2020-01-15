@@ -1,40 +1,31 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
-
 export default class EditAbout extends Component {
     constructor(props) {
         super(props)
-
         this.onChangeEnIntroduction = this.onChangeEnIntroduction.bind(this);
         this.onChangeJaIntroduction = this.onChangeJaIntroduction.bind(this);
         this.onPhotoChange = this.onPhotoChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
-
         this.state = {
             en_introduction: "",
             ja_introduction: "",
             photo: ""
         }
     }
-
     componentDidMount() {
-
         axios.get('/about/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     en_introduction: response.data.en_introduction,
                     ja_introduction: response.data.ja_introduction,
                     photo: response.data.photo
-
                 })
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
-
     onChangeEnIntroduction(e) {
         this.setState({
             en_introduction: e.target.value
@@ -49,13 +40,12 @@ export default class EditAbout extends Component {
     onPhotoChange(e) {
         console.log("PHOTOS", e.target.files[0])
         this.setState({
-            ja_introduction: "test"
+            photo: e.target.files[0].name
         })
-        console.log("photo state", this.state.ja_introduction)
+        console.log("TESTING", this.state.photo)
     }
     onSubmit(e) {
         e.preventDefault();
-
         const about = {
             en_introduction: this.state.en_introduction,
             ja_introduction: this.state.ja_introduction,
@@ -64,7 +54,6 @@ export default class EditAbout extends Component {
         console.log("TESTTTT ABOUT", about);
         axios.put('/about/update/' + this.props.match.params.id, about)
             .then(res => console.log(res.data));
-
         this.setState({
             en_introduction: "",
             ja_introduction: "",
@@ -99,7 +88,7 @@ export default class EditAbout extends Component {
                             />
                         </div>
                         <div className="form-group">
-                            <input type="file" name="photo" onClick={this.onPhotoChange} />
+                            <input type="file" name="photo" onChange={this.onPhotoChange} />
                         </div>
                         <div className="form-group">
                             <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
@@ -109,5 +98,4 @@ export default class EditAbout extends Component {
             </div >
         )
     }
-
 }

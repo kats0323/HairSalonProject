@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './_navbar'
 import TopPage from "../toppage/TopPage";
-import About from "../about/About";
 import Contact from "../contact/Contact";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import Blog from "../blog/Blog";

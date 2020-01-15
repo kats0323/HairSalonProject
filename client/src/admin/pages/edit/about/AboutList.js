@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const AboutFunction = props => (
     <tr>
         <h2>{props.about.en_introduction}</h2>
@@ -52,7 +53,9 @@ export default class AboutList extends Component {
     render() {
         console.log(this.aboutList())
         return (
-            <div style={{ paddingLeft: "350px" }}>
+
+            <div>
+
                 <h1>About</h1>
                 <br />
                 <h3>
