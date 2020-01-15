@@ -6,22 +6,27 @@ export default class EditAbout extends Component {
     constructor(props) {
         super(props)
 
-        this.onChangeIntroduction = this.onChangeIntroduction.bind(this);
-
+        this.onChangeEnIntroduction = this.onChangeEnIntroduction.bind(this);
+        this.onChangeJaIntroduction = this.onChangeJaIntroduction.bind(this);
+        this.onPhotoChange = this.onPhotoChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
-        this.state = {
-            introduction: "",
 
+        this.state = {
+            en_introduction: "",
+            ja_introduction: "",
+            photo: ""
         }
     }
 
     componentDidMount() {
 
-        axios.get('http://localhost:5000/about/' + this.props.match.params.id)
+        axios.get('/about/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    introduction: response.data.introduction,
+                    en_introduction: response.data.en_introduction,
+                    ja_introduction: response.data.ja_introduction,
+                    photo: response.data.photo
 
                 })
             })
@@ -30,55 +35,73 @@ export default class EditAbout extends Component {
             })
     }
 
-    onChangeIntroduction(e) {
+    onChangeEnIntroduction(e) {
         this.setState({
-            introduction: e.target.value
+            en_introduction: e.target.value
         })
     }
-
-
-
+    onChangeJaIntroduction(e) {
+        this.setState({
+            ja_introduction: e.target.value
+        })
+    }
+    onPhotoChange(e) {
+        this.setState({ photo: e.target.files[0] })
+    }
     onSubmit(e) {
         e.preventDefault();
 
         const about = {
-            introduction: this.state.introduction,
-
+            en_introduction: this.state.en_introduction,
+            ja_introduction: this.state.ja_introduction,
+            photo: this.state.photo
         }
-
-        console.log(about);
-
-        axios.post('http://localhost:5000/about/update' + this.props.match.params.id, about)
+        console.log(about, "test!!!!!!!!!!!!!!");
+        axios.post('/about/update/' + this.props.match.params.id, about)
             .then(res => console.log(res.data));
 
         this.setState({
-            introduction: "",
-
+            en_introduction: "",
+            ja_introduction: "",
+            photo: ""
         })
-        window.location = "/admin/about"
-
-
+        window.location = '/admin/about';
     }
     render() {
+        console.log(this.props.match.params.id)
         return (
-            <div style={{ paddingLeft: "200px" }}>
-                <h3>Edit About</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Introduction: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.introduction}
-                            onChange={this.onChangeIntroduction}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <input type="submit" value="Edit About" className="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
+            <div className="container" style={{ paddingLeft: "200px" }}>
+                <div className="row">
+                    <form onSubmit={this.onSubmit}  >
+                        <div className="form-group">
+                            <label>English Introduction: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="en_introduction"
+                                value={this.state.en_introduction}
+                                onChange={this.onChangeEnIntroduction}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Japanese Introduction: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="ja_introduction"
+                                value={this.state.ja_introduction}
+                                onChange={this.onChangeJaIntroduction}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="file" name="photo" onChange={this.onPhotoChange} />
+                        </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div >
         )
     }
 

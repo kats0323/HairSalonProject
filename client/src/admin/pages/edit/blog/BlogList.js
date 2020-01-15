@@ -25,7 +25,7 @@ export default class BlogList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/blogs/')
+        axios.get('/blogs/')
             .then(response => {
                 this.setState({ blogs: response.data })
             })
@@ -35,7 +35,7 @@ export default class BlogList extends Component {
     }
 
     deleteBlog(id) {
-        axios.delete('http://localhost:5000/blogs/' + id)
+        axios.delete('/blogs/' + id)
             .then(response => { console.log(response.data) });
 
         this.setState({

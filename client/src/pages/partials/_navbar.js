@@ -3,6 +3,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
+import About from "../about/About";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 
@@ -69,7 +70,12 @@ class Navbar extends Component {
                 {location.pathname === "/price" ? (
                     <Price language={this.state.language} />
                 ) : (
-                        console.log("hello")
+                        console.log("not price page")
+                    )}
+                {location.pathname === "/about" ? (
+                    <About language={this.state.language} />
+                ) : (
+                        console.log("not about page")
                     )}
             </div >
 

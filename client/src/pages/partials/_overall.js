@@ -17,7 +17,6 @@ export default function overall() {
           {/* About Page */}
           <Route path="/about" >
             <Navbar />
-            <About />
           </Route>
           {/* Contact Page */}
           <Route path="/contact">

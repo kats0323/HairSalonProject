@@ -59,7 +59,7 @@ export default class CreatePrice extends Component {
 
         console.log(price);
 
-        axios.post('http://localhost:5000/prices/add', price)
+        axios.post('/prices/add', price)
             .then(res => console.log(res.data));
 
         this.setState({

@@ -22,7 +22,7 @@ export default class PhotoGallery extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/photos/')
+        axios.get('/photos/')
             .then(response => {
                 this.setState({ photos: response.data })
             })
@@ -41,19 +41,19 @@ export default class PhotoGallery extends Component {
 
     render() {
         const ColoredLine = ({ color }) => (
-            <hr style={{ color: "gray",border:"2px dashed"}} /> 
-         );
+            <hr style={{ color: "gray", border: "2px dashed" }} />
+        );
 
-       
+
         return (
             <div>
                 <h1 class="title-gallery-center">PhotoGallery</h1>
                 <ColoredLine />
-                    <Row type="flex" justify="start">
-                        {this.photoList()}
-                         {this.photoList()}
-                          {this.photoList()}
-                    </Row>
+                <Row type="flex" justify="start">
+                    {this.photoList()}
+                    {this.photoList()}
+                    {this.photoList()}
+                </Row>
             </div>
         )
     }

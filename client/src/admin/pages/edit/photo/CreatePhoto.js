@@ -21,7 +21,7 @@ export default class CreatePhoto extends Component {
         e.preventDefault()
         const formData = new FormData()
         formData.append('photo', this.state.photo)
-        axios.post("http://localhost:5000/photos/add", formData, {
+        axios.post("/photos/add", formData, {
         }).then(res => {
             console.log(res)
         })
