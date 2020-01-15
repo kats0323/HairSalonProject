@@ -73,4 +73,12 @@ ul li div{
 .Link{
     text-decoration: none;
 }
+
+.admin_navbar{
+    height: 60px;
+}
+#basic-nav-dropdown{
+    font-size: 1.5rem;
+    padding-left: 25px;
+}
 /* Reponsive menu code */

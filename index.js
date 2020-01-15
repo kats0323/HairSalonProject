@@ -21,17 +21,18 @@ app.use('/public', express.static('public'));
 app.get("/", (req, res) => res.send("API running"))
 app.use("/users", require("./routes/users"));
 
-const pricesRouter = require('./routes/prices');
+const priceRouter = require('./routes/prices');
 const aboutRouter = require('./routes/about');
 const photoRouter = require('./routes/photo');
 const blogRouter = require('./routes/blogs');
+const contactRouter = require('./routes/contacts');
 
 
-app.use('/prices', pricesRouter);
+app.use('/prices', priceRouter);
 app.use('/about', aboutRouter);
 app.use('/photos', photoRouter);
 app.use('/blogs', blogRouter);
-
+app.use('/contacts', contactRouter);
 
 app.listen(PORT, () => {
     console.log(`Server started on PORT${PORT}`)

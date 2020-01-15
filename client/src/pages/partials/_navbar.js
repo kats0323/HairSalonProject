@@ -4,6 +4,7 @@ import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
 import About from "../about/About";
+import Contact from "../contact/Contact";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 
@@ -34,15 +35,15 @@ class Navbar extends Component {
     }
     render() {
         // hr style
-          const Line = ({ color }) => (
-            <hr style={{ color: "black",border:"0.7px solid", width:"60%",}} /> 
-         );
+        const Line = ({ color }) => (
+            <hr style={{ color: "black", border: "0.7px solid", width: "60%", }} />
+        );
         const { location } = this.props
         return (
             <div className='na' >
                 <div className="nav_bar">
                     <div class="logo-center">
-                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "80px"}} />
+                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "80px" }} />
                     </div>
                     <div class="style-line">
                         <Line />
@@ -60,14 +61,14 @@ class Navbar extends Component {
                             )}
                         <Menu.Item key="5" > <Link to={{ pathname: "/" }}>Home</Link></Menu.Item>
                         <Menu.Item key="6" className="nav_bar_nest"> <Link to="/about">About</Link></Menu.Item>
-                        <Menu.Item key="7" className="nav_bar_nest"> <Link to="/contact">Contact</Link></Menu.Item>
-                        <Menu.Item key="8" className="nav_bar_nest"><Link to={location => ({ ...location, pathname: "/price" })}>Price</Link></Menu.Item>
+                        <Menu.Item key="7" className="nav_bar_nest"> <Link to="/contacts">Contact</Link></Menu.Item>
+                        <Menu.Item key="8" className="nav_bar_nest"><Link to={location => ({ ...location, pathname: "/prices" })}>Price</Link></Menu.Item>
                         <Menu.Item key="9" className="nav_bar_nest"><Link to="/photos">PhotoGallery</Link></Menu.Item>
                         <Menu.Item key="10" className="nav_bar_nest"><Link to="/blogs">Blog</Link></Menu.Item>
                     </Menu>
 
                 </div>
-                {location.pathname === "/price" ? (
+                {location.pathname === "/prices" ? (
                     <Price language={this.state.language} />
                 ) : (
                         console.log("not price page")
@@ -76,6 +77,11 @@ class Navbar extends Component {
                     <About language={this.state.language} />
                 ) : (
                         console.log("not about page")
+                    )}
+                {location.pathname === "/contacts" ? (
+                    <Contact language={this.state.language} />
+                ) : (
+                        console.log("not price page")
                     )}
             </div >
 

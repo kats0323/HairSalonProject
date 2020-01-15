@@ -7,56 +7,61 @@ import EditAbout from "../edit/about/EditAbout";
 import CreateAbout from "../edit/about/CreateAbout";
 import CreatePhoto from "../edit/photo/CreatePhoto";
 import PhotoList from "../edit/photo/PhotoList";
+import CreateBlog from "../edit/blog/CreateBlog";
+import BlogList from "../edit/blog/BlogList";
+import CreateContact from "../edit/contact/CreateContact";
+import ContactList from "../edit/contact/ContactList";
 import '../partials/Navbar.css'
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
-import { NavDropdown } from 'react-bootstrap';
+import { NavDropdown, Navbar } from 'react-bootstrap';
 
 export default function AllEditPagesNavbar() { //exporting this component into react app
     return (
         <div>
             <Router >
                 <Switch>
-                    <aside>
-                        <div class="title-box">
-                            <h1 class="admin-title">Admin Page</h1>
-                        </div>
-                        <ul>
-                            {/* About */}
-                            <NavDropdown title="About" id="basic-nav-dropdown">
-                                <NavDropdown.Item><Link to="/admin/about">About List</Link></NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item>< Link to="/admin/about/create">Create About</Link></NavDropdown.Item>
-                            </NavDropdown>
 
-                            {/* Blog */}
-                            <NavDropdown title="Blog" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/admin/blogs">Blog List</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/admin/blogs/create"> Create Blog</NavDropdown.Item>
-                            </NavDropdown>
 
-                            {/* Price */}
-                            <NavDropdown title="Price" id="basic-nav-dropdown">
-                                <NavDropdown.Item><Link to="/admin/prices">Price List</Link></NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item><Link to="/admin/prices/create">Create Price</Link></NavDropdown.Item>
-                            </NavDropdown>
+                    <Navbar bg="dark" variant="dark" className="admin_navbar">
+                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} />
 
-                            {/* Contact */}
-                            <NavDropdown title="Contact" id="basic-nav-dropdown">
-                                <NavDropdown.Item><Link to="#action/3.3">Something</Link></NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item><Link to="#action/3.4">Separated link</Link></NavDropdown.Item>
-                            </NavDropdown>
+                        {/* About */}
+                        <NavDropdown title="About" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/admin/about">About List</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item>< Link to="/admin/about/create">Create About</Link></NavDropdown.Item>
+                        </NavDropdown>
 
-                            {/* Photos */}
-                            <NavDropdown title="Photos" id="basic-nav-dropdown">
-                                <NavDropdown.Item><Link to="/admin/photos">Photo Gralley</Link></NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item><Link to="/admin/photos/create">Create Photo</Link></NavDropdown.Item>
-                            </NavDropdown>
-                        </ul>
-                    </aside>
+                        {/* Blog */}
+                        <NavDropdown title="Blog" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/admin/blogs">Blog List</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item><Link to="/admin/blogs/create"> Create Blog</Link></NavDropdown.Item>
+                        </NavDropdown>
+
+                        {/* Price */}
+                        <NavDropdown title="Price" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/admin/prices">Price List</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item><Link to="/admin/prices/create">Create Price</Link></NavDropdown.Item>
+                        </NavDropdown>
+
+                        {/* Contact */}
+                        <NavDropdown title="Contact" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/admin/contacts">Contact List</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item><Link to="/admin/contacts/create">Create Contact</Link></NavDropdown.Item>
+                        </NavDropdown>
+
+                        {/* Photos */}
+                        <NavDropdown title="Photos" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/admin/photos">Photo Gralley</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item><Link to="/admin/photos/create">Create Photo</Link></NavDropdown.Item>
+                        </NavDropdown>
+
+                    </Navbar>
+
                 </Switch>
 
                 <Switch>
@@ -68,6 +73,10 @@ export default function AllEditPagesNavbar() { //exporting this component into r
                     <Route path="/admin/about/create" exact component={CreateAbout} />
                     <Route path="/admin/photos/create" exact component={CreatePhoto} />
                     <Route path="/admin/photos" exact component={PhotoList} />
+                    <Route path="/admin/blogs/create" exact component={CreateBlog} />
+                    <Route path="/admin/blogs" exact component={BlogList} />
+                    <Route path="/admin/contacts/create" exact component={CreateContact} />
+                    <Route path="/admin/contacts" exact component={ContactList} />
                 </Switch>
             </Router >
         </div>
