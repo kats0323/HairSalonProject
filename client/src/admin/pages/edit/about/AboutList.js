@@ -25,7 +25,7 @@ export default class AboutList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/about/')
+        axios.get('/about/')
             .then(response => {
                 this.setState({ about: response.data })
             })
@@ -35,7 +35,7 @@ export default class AboutList extends Component {
     }
 
     deleteAbout(id) {
-        axios.delete('http://localhost:5000/about/' + id)
+        axios.delete('/about/' + id)
             .then(response => { console.log(response.data) });
 
         this.setState({

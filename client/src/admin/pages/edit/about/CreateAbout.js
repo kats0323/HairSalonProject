@@ -9,7 +9,7 @@ export default class CreateAbout extends Component {
         this.onChangeEnIntroduction = this.onChangeEnIntroduction.bind(this);
         this.onChangeJaIntroduction = this.onChangeJaIntroduction.bind(this);
         this.onPhotoChange = this.onPhotoChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+
 
         this.state = {
             en_introduction: "",
@@ -30,23 +30,12 @@ export default class CreateAbout extends Component {
     onPhotoChange(e) {
         this.setState({ photo: e.target.files[0] })
     }
-    onSubmit(e) {
-        e.preventDefault()
-        const about = {
-            en_introduction: this.state.en_introduction,
-            ja_introduction: this.state.ja_introduction,
-            photo: this.state.photo
-        }
-        axios.post("http://localhost:5000/about/add", about).then(res => {
-            window.location = "/admin/about"
-        })
 
-    }
     render() {
         return (
             <div className="container" style={{ paddingLeft: "200px" }}>
                 <div className="row">
-                    <form action="http://localhost:5000/about/add" method="POST" enctype="multipart/form-data" >
+                    <form action="/about/add" method="POST" enctype="multipart/form-data" >
                         <div className="form-group">
                             <label>English Introduction: </label>
                             <input type="text"

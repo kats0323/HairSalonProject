@@ -84,14 +84,14 @@ router.route('/:id').delete((req, res) => {
 //         .catch(err => res.status(400).json('Error: ' + err));
 // });
 
-router.post('/update/:id', upload.single('photo'), (req, res, next) => {
+router.put('/update/:id', upload.single('photo'), (req, res, next) => {
+    console.log("------PUT REQUEST-------")
     About.findById(req.params.id)
         .then(about => {
             url = req.protocol + '://' + req.get('host')
             en_introduction = req.body.en_introduction;
             ja_introduction = req.body.ja_introduction;
             photo = url + '/public/' + req.file.filename;
-
 
             about.save()
                 .then(() => res.json('About updated!'))

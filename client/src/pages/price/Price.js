@@ -43,7 +43,7 @@ export default class Price extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/prices/')
+        axios.get('/prices/')
             .then(response => {
                 this.setState({ prices: response.data })
             })
@@ -53,7 +53,7 @@ export default class Price extends Component {
     }
 
     deletePrice(id) {
-        axios.delete('http://localhost:5000/prices/' + id)
+        axios.delete('/prices/' + id)
             .then(response => { console.log(response.data) });
 
         this.setState({

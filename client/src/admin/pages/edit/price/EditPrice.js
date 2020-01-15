@@ -18,7 +18,7 @@ export default class EditPrice extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:5000/prices/' + this.props.match.params.id)
+        axios.get('/prices/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     course: response.data.course,
@@ -50,7 +50,7 @@ export default class EditPrice extends Component {
 
         console.log(price);
 
-        axios.post('http://localhost:5000/prices/update/' + this.props.match.params.id, price)
+        axios.post('/prices/update/' + this.props.match.params.id, price)
             .then(res => console.log(res.data));
 
         this.setState({

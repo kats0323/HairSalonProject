@@ -11,6 +11,7 @@ export default class EditAbout extends Component {
         this.onPhotoChange = this.onPhotoChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+
         this.state = {
             en_introduction: "",
             ja_introduction: "",
@@ -20,7 +21,7 @@ export default class EditAbout extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:5000/about/' + this.props.match.params.id)
+        axios.get('/about/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     en_introduction: response.data.en_introduction,
@@ -47,32 +48,31 @@ export default class EditAbout extends Component {
     onPhotoChange(e) {
         this.setState({ photo: e.target.files[0] })
     }
-
-
     onSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
+
         const about = {
             en_introduction: this.state.en_introduction,
             ja_introduction: this.state.ja_introduction,
             photo: this.state.photo
         }
-        axios.post("http://localhost:5000/about/update" + this.props.match.params.id, about).then(res => {
-            this.setState({
-                en_introduction: "",
-                ja_introduction: "",
-                photo: ""
+        console.log(about, "test!!!!!!!!!!!!!!");
+        axios.post('/about/update/' + this.props.match.params.id, about)
+            .then(res => console.log(res.data));
 
-            })
-            window.location = "/admin/about"
+        this.setState({
+            en_introduction: "",
+            ja_introduction: "",
+            photo: ""
         })
-
+        window.location = '/admin/about';
     }
-
     render() {
+        console.log(this.props.match.params.id)
         return (
             <div className="container" style={{ paddingLeft: "200px" }}>
                 <div className="row">
-                    <form action="http://localhost:5000/about/update" method="POST" enctype="multipart/form-data" >
+                    <form onSubmit={this.onSubmit}  >
                         <div className="form-group">
                             <label>English Introduction: </label>
                             <input type="text"
@@ -97,11 +97,11 @@ export default class EditAbout extends Component {
                             <input type="file" name="photo" onChange={this.onPhotoChange} />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
+                            <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
                         </div>
                     </form>
                 </div>
-            </div>
+            </div >
         )
     }
 
