@@ -9,6 +9,8 @@ import CreatePhoto from "../edit/photo/CreatePhoto";
 import PhotoList from "../edit/photo/PhotoList";
 import CreateBlog from "../edit/blog/CreateBlog";
 import BlogList from "../edit/blog/BlogList";
+import CreateContact from "../edit/contact/CreateContact";
+import ContactList from "../edit/contact/ContactList";
 import '../partials/Navbar.css'
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 import { NavDropdown, Navbar } from 'react-bootstrap';
@@ -46,9 +48,9 @@ export default function AllEditPagesNavbar() { //exporting this component into r
 
                         {/* Contact */}
                         <NavDropdown title="Contact" id="basic-nav-dropdown">
-                            <NavDropdown.Item><Link to="#action/3.3">Something</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/admin/contacts">Contact List</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item><Link to="#action/3.4">Separated link</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/admin/contacts/create">Create Contact</Link></NavDropdown.Item>
                         </NavDropdown>
 
                         {/* Photos */}
@@ -73,6 +75,8 @@ export default function AllEditPagesNavbar() { //exporting this component into r
                     <Route path="/admin/photos" exact component={PhotoList} />
                     <Route path="/admin/blogs/create" exact component={CreateBlog} />
                     <Route path="/admin/blogs" exact component={BlogList} />
+                    <Route path="/admin/contacts/create" exact component={CreateContact} />
+                    <Route path="/admin/contacts" exact component={ContactList} />
                 </Switch>
             </Router >
         </div>

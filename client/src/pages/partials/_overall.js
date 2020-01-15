@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './_navbar'
 import TopPage from "../toppage/TopPage";
-import Contact from "../contact/Contact";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import Blog from "../blog/Blog";
 
@@ -18,12 +17,11 @@ export default function overall() {
             <Navbar />
           </Route>
           {/* Contact Page */}
-          <Route path="/contact">
+          <Route path="/contacts">
             <Navbar />
-            <Contact />
           </Route >
           {/* Price Page */}
-          <Route path="/price" >
+          <Route path="/prices" >
             <Navbar />
           </Route >
           {/* Photo Page */}
