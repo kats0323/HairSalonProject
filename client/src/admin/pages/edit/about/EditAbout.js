@@ -44,9 +44,14 @@ export default class EditAbout extends Component {
         this.setState({
             ja_introduction: e.target.value
         })
+        console.log(this.state.ja_introduction)
     }
     onPhotoChange(e) {
-        this.setState({ photo: e.target.files[0] })
+        console.log("PHOTOS", e.target.files[0])
+        this.setState({
+            ja_introduction: "test"
+        })
+        console.log("photo state", this.state.ja_introduction)
     }
     onSubmit(e) {
         e.preventDefault();
@@ -56,8 +61,8 @@ export default class EditAbout extends Component {
             ja_introduction: this.state.ja_introduction,
             photo: this.state.photo
         }
-        console.log(about, "test!!!!!!!!!!!!!!");
-        axios.post('/about/update/' + this.props.match.params.id, about)
+        console.log("TESTTTT ABOUT", about);
+        axios.put('/about/update/' + this.props.match.params.id, about)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -65,14 +70,14 @@ export default class EditAbout extends Component {
             ja_introduction: "",
             photo: ""
         })
-        window.location = '/admin/about';
+        // window.location = '/admin/about';
     }
     render() {
         console.log(this.props.match.params.id)
         return (
             <div className="container" style={{ paddingLeft: "200px" }}>
                 <div className="row">
-                    <form onSubmit={this.onSubmit}  >
+                    <form onSubmit={this.onSubmit} enctype="multipart/form-data">
                         <div className="form-group">
                             <label>English Introduction: </label>
                             <input type="text"
@@ -94,7 +99,7 @@ export default class EditAbout extends Component {
                             />
                         </div>
                         <div className="form-group">
-                            <input type="file" name="photo" onChange={this.onPhotoChange} />
+                            <input type="file" name="photo" onClick={this.onPhotoChange} />
                         </div>
                         <div className="form-group">
                             <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
