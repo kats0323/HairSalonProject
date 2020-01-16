@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+
+.Carousel-box{
+    display: flex !important;
+    justify-content: center;
+}
+.Carousel-photo{
+    background-size: cover;
+    width:100vw;
+    height: 100vh;
+}
+
+.style-home{
+    padding-top: 200px;
+    text-align: center;
+    
+}
+
+.style-line{
+    display: flex !important;
+    justify-content: center;
+}
+
+.style-showcase{
+    width: 200px;
+    height: 300px;
+}
+
+.ant-row{
+    padding-top: 40px;
+    display: flex !important;
+    justify-content: space-between;
+    padding-left: 480px;
+    padding-right: 480px;
+
+}
+
+.button-top {
+    padding-top:40px;
+}
+.ant-btn {
+    height: 100px;
+    width: 300px;
+}
+.salon-top{
+    padding-top: 40px;
+}
+.salon-bottom{
+    padding-bottom: 140px;
+}
+.salon-info {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 50px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1440px) {
+    .Carousel-photo{
+        background-size: cover;
+        width:60vw;
+        height: 100vh;
+    }
+}

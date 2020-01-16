@@ -1,0 +1,40 @@
+[debug] [2020-01-15T00:27:42.579Z] ----------------------------------------------------------------------
+[debug] [2020-01-15T00:27:42.609Z] Command:       /home/phillip/.nvm/versions/node/v12.2.0/bin/node /home/phillip/.nvm/versions/node/v12.2.0/bin/firebase serve
+[debug] [2020-01-15T00:27:42.611Z] CLI Version:   7.12.1
+[debug] [2020-01-15T00:27:42.612Z] Platform:      linux
+[debug] [2020-01-15T00:27:42.613Z] Node Version:  v12.2.0
+[debug] [2020-01-15T00:27:42.617Z] Time:          Wed Jan 15 2020 11:27:42 GMT+1100 (Australian Eastern Daylight Time)
+[debug] [2020-01-15T00:27:42.618Z] ----------------------------------------------------------------------
+[debug] [2020-01-15T00:27:42.618Z] 
+[debug] [2020-01-15T00:27:42.720Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-15T00:27:42.720Z] > authorizing via signed-in user
+[debug] [2020-01-15T00:27:42.720Z] [iam] checking project hairsalon-23336 for permissions ["firebase.projects.get"]
+[debug] [2020-01-15T00:27:42.723Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hairsalon-23336:testIamPermissions  
+
+[debug] [2020-01-15T00:27:44.304Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-15T00:27:44.306Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hairsalon-23336  
+ 
+[debug] [2020-01-15T00:27:45.121Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/phillip/Desktop/finalproject/HairSalonProject'...
+[info] 
+[debug] [2020-01-15T00:27:45.125Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hairsalon-23336/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "10" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-15T00:27:46.247Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/home/phillip/Desktop/finalproject/HairSalonProject/functions" for Cloud Functions...
+[debug] [2020-01-15T00:27:46.392Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-15T00:27:46.392Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-15T00:27:46.392Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-15T00:27:46.393Z] [worker-~diagnostic~-bd41d824-8bbb-4e9d-8079-249501e4f2d0]: Assigning socketPath: /tmp/fire_emu_8955.sock
+[debug] [2020-01-15T00:27:46.393Z] [worker-~diagnostic~-bd41d824-8bbb-4e9d-8079-249501e4f2d0]: BUSY
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: client/build
+[info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2020-01-15T00:27:46.657Z] [runtime-status] [8955] Functions runtime initialized. {"cwd":"/home/phillip/Desktop/finalproject/HairSalonProject/functions","node_version":"12.2.0"}
+[debug] [2020-01-15T00:27:46.657Z] [runtime-status] [8955] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed as a dependency. To fix this, run "npm install --save firebase-admin" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-01-15T00:27:46.680Z] [worker-~diagnostic~-bd41d824-8bbb-4e9d-8079-249501e4f2d0]: exited
+[debug] [2020-01-15T00:27:46.681Z] [worker-~diagnostic~-bd41d824-8bbb-4e9d-8079-249501e4f2d0]: FINISHED
