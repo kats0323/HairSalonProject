@@ -31,7 +31,7 @@ body{
     height:65px;
 }
 
-aside{
+/* aside{
     height: 100%;
     width: 250px;
     position: fixed;
@@ -40,33 +40,33 @@ aside{
     left: 0;
     background-color: rgba(245, 245, 245, 5);
     overflow-x: hidden;
-}
+} */
 
-ul{
+/* ul{
     padding:0px;
     margin:0px;
-}
+} */
 
-ul li{
+/* ul li{
     font-size: 1.4rem;
     color:rgb(14, 128, 194);
     cursor:pointer;
-}
+} */
 
-ul li div{
+/* ul li div{
     float:left;
-}
+} */
 
 /* class called link title */
-.linktitle li{
+/* .linktitle li{
     line-height: 35px;
     padding: 20px 0 20px 0; 
     padding-left: 60px;
-}
+} */
 
 .linktitle li:hover{
-    color: #0b82bd; 
-    background-color: #fff;
+    /* color: #0b82bd;  */
+    background-color: rgba(100, 100, 100, 0.3);
 }
 
 /* Link */
@@ -74,3 +74,37 @@ ul li div{
     text-decoration: none;
 }
 /* Reponsive menu code */
+
+#mydrawer{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: hsl(210, 9%, 9%);
+    left: -200px;
+    transition: all 500ms linear;
+}
+
+#mydrawer.active{
+    left: 0px;
+}
+
+#mydrawer ul li{
+    color:rgba(230, 230, 230, 0.9);
+   list-style: none;
+   padding: 15px 10px;
+   border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+#mydrawer .toggle-btn{
+    position: absolute;
+    left:230px;
+    top: 10px;
+}
+
+#mydrawer .toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin:5px 0px;
+    background: #151719;
+}
