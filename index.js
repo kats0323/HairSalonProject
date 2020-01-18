@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use('/public', express.static('public'));
 app.get("/", (req, res) => res.send("API running"))
 app.use("/users", require("./routes/users"));
+app.use("/auth", require("./routes/auth"));
 
 const priceRouter = require('./routes/prices');
 const aboutRouter = require('./routes/about');
