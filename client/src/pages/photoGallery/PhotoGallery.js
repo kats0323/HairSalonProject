@@ -47,10 +47,17 @@ export default class PhotoGallery extends Component {
         popup_wrapper.style.display = "block"
     }
 
+    popupCloseXbuuton() {
+        let popup_wrapper = document.querySelector(".popup-wrapper");
+        popup_wrapper.style.display = "none"
+    }
+
     popupClose() {
         let popup_wrapper = document.querySelector(".popup-wrapper");
         popup_wrapper.style.display = "none"
     }
+
+
     photoList() {
         return this.state.photos.map(currentphoto => {
             return <PhotoFunction photos={currentphoto} key={currentphoto._id} popup_open={this.popup_open} />;
@@ -72,9 +79,9 @@ export default class PhotoGallery extends Component {
                         <Row type="flex" justify="start" >
                             {this.photoList()}
                         </Row>
-                        <div class="popup-wrapper">
+                        <div class="popup-wrapper" onClick={this.popupClose}>
                             <div class="popup">
-                                <div class="popup-close" onClick={this.popupClose}>X</div>
+                                <div class="popup-close" onClick={this.popupCloseXbuuton}>X</div>
                                 <div class="popup-content"  ></div>
                             </div>
                         </div>
