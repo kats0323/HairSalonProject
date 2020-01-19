@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "./admin_price.css"
 
 const PhotoFunction = props => (
     <tr>
-        <img src={props.photos.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.photos.photo} id="image_class" style={{ width: "500px", margin: "20px", height: "300px", cursor: "pointer" }}
+            onClick={
+                console.log("helllo")
+            }
+        />
     </tr>
 )
+
+
 
 
 export default class PhotoList extends Component {
