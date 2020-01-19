@@ -66,7 +66,10 @@ export default class PhotoGallery extends Component {
 
     render() {
         const ColoredLine = ({ color }) => (
-            <hr style={{ color: "gray", border: "2px dashed" }} />
+            <div className="line-style">
+                <hr style={{ color: "green", border: "1px solid", width:"61%" }} />
+            </div>
+
         );
 
 
@@ -87,6 +90,8 @@ export default class PhotoGallery extends Component {
                         </div>
                     </div>
                 </div >
+                <ColoredLine />
+
             </div>
         )
     }
