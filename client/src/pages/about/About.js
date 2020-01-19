@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Row, Col } from 'antd';
+import './About.css'
+import Footer from '../partials/_footer'
 
 
 const AboutFunction = props => (
     <div>
         {props.language == "Japanese" ? (
             <div>
-                <h2>{props.about.ja_introduction}</h2>
+                <p>{props.about.ja_introduction}</p>
                 <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
             </div>
         ) : (
                 <div>
-                    <h2>{props.about.en_introduction}</h2>
+                    <p>{props.about.en_introduction}</p>
                     <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
                 </div>
             )}
@@ -55,16 +57,28 @@ export default class About extends Component {
     }
 
     render() {
-
+        const Line = ({ color }) => (
+            <div class="style-line">
+               <hr style={{ color: "green",border:"0.8px solid", width:"100%",}} /> 
+           </div>
+        );
         return (
-            <div style={{ paddingLeft: "350px" }}>
-                <h1>About</h1>
-                <br />
-                <h3>
-                    {this.aboutList()}
-                </h3>
-
+            <div>
+                <div className="aboutPad">
+                    <Row>
+                        <Col>
+                        <h1 style={{textAlign:"center"}}>About</h1>
+                        <Line />
+                        <h3>
+                            {this.aboutList()}
+                        </h3>
+                        </Col>
+                    </Row>
+                    <Line />
+                </div>
+                <Footer />
             </div>
+
         )
     }
 }
