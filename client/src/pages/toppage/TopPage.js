@@ -61,7 +61,8 @@ class TopPage extends Component {
                     <Line />
                     <div class="salon-info">
                         <h1>Salon Information</h1>
-                        
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-square"></i>
                     </div>
                     <Line />
                 <div class="salon-bottom" />
