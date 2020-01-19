@@ -6,7 +6,8 @@ const PriceFunction = props => (
     <tr>
         <td id="japanese">{props.prices.ja_course}</td>
         <td id="english">{props.prices.en_course}</td>
-        <td>{props.prices.price}</td>
+        <td>{props.prices.ja_price}</td>
+        <td>{props.prices.en_price}</td>
         <td id="japanese">{props.prices.ja_detail}</td>
         <td id="english">{props.prices.en_detail}</td>
         <td>
@@ -52,14 +53,15 @@ export default class PriceList extends Component {
 
     render() {
         return (
-            <div style={{ paddingLeft: "200px" }}>
+            <div >
                 <h3>Prices LIst</h3>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
                             <th>Japanese Course</th>
                             <th>English Course</th>
-                            <th>Price</th>
+                            <th>Japanese Price</th>
+                            <th>English Price</th>
                             <th>Japanese Detail</th>
                             <th>English Course</th>
                         </tr>
