@@ -1,0 +1,21 @@
+.blogPad{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.blogFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.ant-btn-primary{
+    background-color:green !important;
+    border-color: none;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.btnPad{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
