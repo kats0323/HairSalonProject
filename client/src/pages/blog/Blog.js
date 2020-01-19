@@ -4,14 +4,13 @@ import axios from 'axios';
 import './blog.css'
 import { Button, Icon } from 'antd';
 
-const ButtonGroup = Button.Group;
 
 const BlogFunction = props => (
     <tr>
         <h2>{props.blogs.title}</h2>
         <h4>{props.blogs.content}</h4>
         <br />
-        <img src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.blogs.photo} style={{ width: "95%", margin: "20px", height: "300px" }} />
     </tr >
 )
 
@@ -56,17 +55,14 @@ export default class Blog extends Component {
                 </div>
                 
                 <div className="btnPad">
-                <ButtonGroup>
-                <Button type="primary">
-                    <Icon type="left" />
-                </Button>
-                <Button type="primary">
-                    <Icon type="right" />
-                </Button>
-                </ButtonGroup>
+                    <Button type="primary">
+                        <Icon type="left" />
+                    </Button>
+                    <Button type="primary">
+                        <Icon type="right" />
+                    </Button>
                 </div>
                 <Line />
-
             </div>
         )
     }
