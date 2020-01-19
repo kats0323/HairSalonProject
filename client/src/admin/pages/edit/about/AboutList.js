@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 const AboutFunction = props => (
     <tr>
         <h2>{props.about.en_introduction}</h2>

@@ -1,7 +1,12 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { setAlert } from "../actions/alert";
+import { register } from "../actions/auth";
+import PropTypes from 'prop-types'
+
 import "./Register.css"
-export const Register = () => {
+export const Register = ({ setAlert, register, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -14,10 +19,13 @@ export const Register = () => {
         e.preventDefault(formData);
         console.log()
         if (password !== password2) {
-            console.log("password do not match")
+            setAlert("password do not match", "danger")
         } else {
-            console.log("SUCCESS")
+            register({ email, password })
         }
+    }
+    if (isAuthenticated) {
+        return <Redirect to="/admin" />
     }
     return (
         <Fragment>
@@ -28,9 +36,9 @@ export const Register = () => {
                     <h1 className="register-title">Register</h1>
                     <form onSubmit={e => onSubmit(e)}>
                         <input className="input" type="text" placeholder="Email" name="email"
-                            value={email} onChange={e => onChange(e)} required /> {/* Text field input */}
-                        <input className="input" type="password" placeholder="Password" name="password" minLength="6" value={password} onChange={e => onChange(e)} required />{/* Password field hides the password */}
-                        <input className="input" type="password" placeholder="Password2" name="password2" minLength="6" value={password2} onChange={e => onChange(e)} required />{/* Password2 field hides the password */}
+                            value={email} onChange={e => onChange(e)} /> {/* Text field input */}
+                        <input className="input" type="password" placeholder="Password" name="password" value={password} onChange={e => onChange(e)} required />{/* Password field hides the password */}
+                        <input className="input" type="password" placeholder="Password2" name="password2" value={password2} onChange={e => onChange(e)} />{/* Password2 field hides the password */}
                         <button type="submit" id="register-button" className="login-button">Register</button>{/* this is the login button */}
                     </form>
                     <br />
@@ -40,5 +48,14 @@ export const Register = () => {
         </Fragment>
     )
 }
+Register.propTypes = {
+    setAlert: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool,
+}
 
-export default Register;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { setAlert, register })(Register);

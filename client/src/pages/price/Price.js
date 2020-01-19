@@ -69,12 +69,10 @@ export default class Price extends Component {
 
         return (
             <div class="background">
-                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: "1%" }}>
-                    <h3 style={{ fontSize: "2rem", padding: "40px", borderStyle: "solid", borderWeight: "2px", width: "250px" }}>Prices List</h3>
-                </div>
+                <h1 style={{ textAlign: "center", paddingTop: "20px" }}>Menu</h1>
                 {this.priceList()}
 
-            </div>
+            </div >
         )
     }
 }
