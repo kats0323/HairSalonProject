@@ -12,14 +12,13 @@
 }
 .popup{
     text-align: center;
-    width: 70%;
-    margin: 300px;
+    width: 100%;
     margin: 10 auto;
-    padding: 20px;
+    padding-top: 8%;
     padding-right: 0;
     background-color: rgba(0, 0, 0,0.7);
     position: relative;
-    height: 700px;
+    height: 100vw;
 }
 .popup-content img{
     padding-top: 40px;
