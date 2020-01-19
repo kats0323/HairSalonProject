@@ -10,7 +10,7 @@ const PhotoFunction = props => (
 
     <tr>
 
-        <img src={props.photos.photo} style={{ width: "400px", margin: "20px", height: "300px", cursor: "pointer" }} class="photos_pg"
+        <img src={props.photos.photo} style={{ width: "200px", margin: "20px", height: "150px", cursor: "pointer" }} class="photos_pg"
             onClick={
                 props.popup_open
             } />
@@ -79,9 +79,12 @@ export default class PhotoGallery extends Component {
                     <div>
                         <h1 class="title-gallery-center">PhotoGallery</h1>
                         <ColoredLine />
+                        <div class="imagePad">
                         <Row type="flex" justify="start" >
                             {this.photoList()}
-                        </Row>
+                        </Row> 
+                        </div>
+            
                         <div class="popup-wrapper" onClick={this.popupClose}>
                             <div class="popup">
                                 <div class="popup-close" onClick={this.popupCloseXbuuton}>X</div>
