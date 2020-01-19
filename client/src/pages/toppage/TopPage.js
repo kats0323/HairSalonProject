@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import 'antd/dist/antd.css';
 import './carousel.css';
 import './TopPage.css';
-
+import { BrowserRouter, Link } from "react-router-dom";
 import { Carousel } from 'antd';
+import { Row, Col } from 'antd';
+import { Button } from 'antd';
+
 
 
 
@@ -12,7 +15,9 @@ class TopPage extends Component {
         
         //  this is the hr line 
          const Line = ({ color }) => (
-            <hr style={{ color: "gray",border:"0.5px solid", width:"80%",}} /> 
+             <div class="style-line">
+                <hr style={{ color: "black",border:"0.8px solid", width:"61%",}} /> 
+            </div>
          );
         return (
             <div>
@@ -32,11 +37,36 @@ class TopPage extends Component {
                 </Carousel>
 
                 <div class="style-home">
-                    <h2>Style</h2>
-                    <div class="style-line">
-                        <Line />
-                    </div>
+                    <h1>Style</h1>
+                        <Row>
+                            <Col>
+                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
+                            </Col>
+                            <Col>
+                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
+                            </Col>
+                            <Col>
+                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
+                            </Col>
+                            <Col>
+                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
+                            </Col>
+                        </Row>
+                        <div class="button-top">
+                           <Link to="/photos"> <Button>View More style</Button> </Link>
+                        </div>
                 </div>
+                 
+                <div class="salon-top" />
+                    <Line />
+                    <div class="salon-info">
+                        <h1>Salon Information</h1>
+                        
+                    </div>
+                    <Line />
+                <div class="salon-bottom" />
+                
+
             </div>
 
         );

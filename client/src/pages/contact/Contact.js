@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './contact.css'
+import Footer from '../partials/_footer'
 
 const ContactFunction = props => (
 
@@ -106,11 +108,22 @@ export default class Contact extends Component {
     }
 
     render() {
+        const Line = ({ color }) => (
+            <div class="style-line">
+               <hr style={{ color: "green",border:"0.8px solid", width:"61%",}} /> 
+           </div>
+        );
         return (
-            <div className="container">
-                <h1>Contact</h1>
-                <br />
-                {this.contactList()}
+            <div>
+                <Line />
+                <div className="contactPad">
+                    <h1>Contact</h1>
+                    <br />
+                    {this.contactList()}
+                </div>
+                <Line />
+
+                <Footer />
             </div>
         )
     }
