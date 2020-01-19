@@ -13,12 +13,11 @@
 .popup{
     text-align: center;
     width: 100%;
-    margin: 10 auto;
     padding-top: 8%;
     padding-right: 0;
     background-color: rgba(0, 0, 0,0.7);
     position: relative;
-    height: 100vw;
+    height: 100vh;
 }
 .popup-content img{
     padding-top: 40px;
@@ -31,4 +30,29 @@
     right: 8px;
     cursor: pointer;
     color: white;
+}
+
+@media only screen and (max-width: 769px) {
+    .popup-content img{
+        padding-top: 40px;
+        width: 500px;
+        height: 500px;
+    }
+    .popup{
+        width: 100%;
+        padding-top: 30%;
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .popup-content img{
+        width: 300px;
+        height: 300px;
+    }
+    .popup{
+        width: 100%;
+        padding-top: 50%;
+        height: 100vh;
+    }
 }
