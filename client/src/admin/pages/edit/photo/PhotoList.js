@@ -5,7 +5,7 @@ import "./admin_price.css"
 
 const PhotoFunction = props => (
     <tr>
-        <img src={props.photos.photo} id="image_class" style={{ width: "500px", margin: "20px", height: "300px", cursor: "pointer" }}
+        <img src={props.photos.photo} alt="pg" id="image_class" style={{ width: "500px", margin: "20px", height: "300px", cursor: "pointer" }}
             onClick={
                 console.log("helllo")
             }
