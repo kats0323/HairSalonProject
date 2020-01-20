@@ -56,14 +56,14 @@ const ContactFunction = props => (
         <h4>suburb</h4>
         {props.contacts.suburb}
         <br />
-        <h4></h4>
+        <h4>State</h4>
         {props.contacts.state}
         <br />
         <h4>state</h4>
         {props.contacts.post_code}
         <br />
         <h4>google</h4>
-        <iframe src={props.contacts.google}></iframe>
+        <iframe src={props.contacts.google} title="google"></iframe>
         <br />
         {props.contacts.google}
         <br />
@@ -80,7 +80,7 @@ const ContactFunction = props => (
         {props.contacts.shop_extra_info_ja}
         <br />
         <h4>shop_photo1</h4>
-        <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shop_photo" />
 
         <Link to={"/admin/contacts/edit/" + props.contacts._id}>edit</Link> | <button href="#" onClick={() => { props.deleteContact(props.contacts._id) }}>delete</button>
     </div>

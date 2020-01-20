@@ -25,6 +25,7 @@ export default class CreatePhoto extends Component {
         }).then(res => {
             console.log(res)
         })
+        window.location = '/admin/photos/create';
     }
     render() {
         return (
