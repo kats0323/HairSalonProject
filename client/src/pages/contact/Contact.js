@@ -21,11 +21,32 @@ const ContactFunction = props => (
                 <h4>instagram</h4>
                 {props.contacts.instagram}
                 <br />
-                <h4>opening_hors_ja</h4>
-                {props.contacts.opening_hors_ja}
+                <h4>opening_hors_mon</h4>
+                {props.contacts.opening_hors_mon}
+                <br />
+                <h4>opening_hors_tue</h4>
+                {props.contacts.opening_hors_tue}
+                <br />
+                <h4>opening_hors_wed</h4>
+                {props.contacts.opening_hors_wed}
+                <br />
+                <h4>opening_hors_thu</h4>
+                {props.contacts.opening_hors_thu}
+                <br />
+                <h4>opening_hors_fri</h4>
+                {props.contacts.opening_hors_fri}
+                <br />
+                <h4>opening_hors_sat</h4>
+                {props.contacts.opening_hors_sat}
+                <br />
+                <h4>opening_hors_sun</h4>
+                {props.contacts.opening_hors_sun}
                 <br />
                 <h4>contact_info_ja</h4>
                 {props.contacts.contact_info_ja}
+                <br />
+                <h4>contact_extra_info_ja</h4>
+                {props.contacts.contact_extra_info_ja}
                 <h4>google</h4>
                 <iframe src={props.contacts.google}></iframe>
                 <br />
@@ -40,6 +61,9 @@ const ContactFunction = props => (
                 <br />
                 <h4>shop_info_ja</h4>
                 {props.contacts.shop_info_ja}
+                <br />
+                <h4>shop_extra_info_ja</h4>
+                {props.contacts.shop_extra_info_ja}
                 <br />
             </div>
         ) : (
@@ -56,11 +80,33 @@ const ContactFunction = props => (
                     <h4>instagram</h4>
                     {props.contacts.instagram}
                     <br />
-                    <h4>opening_hors_en</h4>
-                    {props.contacts.opening_hors_en}
+                    <h4>opening_hors_mon</h4>
+                    {props.contacts.opening_hors_mon}
+                    <br />
+                    <h4>opening_hors_tue</h4>
+                    {props.contacts.opening_hors_tue}
+                    <br />
+                    <h4>opening_hors_wed</h4>
+                    {props.contacts.opening_hors_wed}
+                    <br />
+                    <h4>opening_hors_thu</h4>
+                    {props.contacts.opening_hors_thu}
+                    <br />
+                    <h4>opening_hors_fri</h4>
+                    {props.contacts.opening_hors_fri}
+                    <br />
+                    <h4>opening_hors_sat</h4>
+                    {props.contacts.opening_hors_sat}
+                    <br />
+                    <h4>opening_hors_sun</h4>
+                    {props.contacts.opening_hors_sun}
                     <br />
                     <h4>contact_info_en</h4>
                     {props.contacts.contact_info_en}
+                    <br />
+                    <h4>contact_extra_info_en</h4>
+                    {props.contacts.contact_extra_info_en}
+                    <br />
                     <h4>google</h4>
                     <iframe src={props.contacts.google}></iframe>
                     <br />
@@ -75,6 +121,9 @@ const ContactFunction = props => (
                     <br />
                     <h4>shop_info_en</h4>
                     {props.contacts.shop_info_en}
+                    <br />
+                    <h4>shop_extra_info_en</h4>
+                    {props.contacts.shop_extra_info_en}
                     <br />
                 </div>
             )}
@@ -110,8 +159,8 @@ export default class Contact extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.8px solid", width:"61%",}} /> 
-           </div>
+                <hr style={{ color: "green", border: "0.8px solid", width: "61%", }} />
+            </div>
         );
         return (
             <div>
