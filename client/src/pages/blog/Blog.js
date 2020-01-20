@@ -41,28 +41,31 @@ export default class Blog extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.4px solid", width:"100%",}} /> 
+               <hr style={{ color: "green",border:"0.4px solid", width:"60%",}} /> 
            </div>
         );
         return (
-            <div className="blogPad">
-                <Line />
-                <div className="blogFlex">
-                    <h1>Blog</h1>
+            <div>
+                <Line />    
+                <div style={{paddingLeft:"25%", paddingRight:"25%", paddingBottom:"6vh" ,paddingTop:"4vh"}}>
+                    <div className="blogPad" style={{border:"1px solid", width:"100%", color:"green", paddingBottom:"2%"}}>
+                        <div className="blogFlex">
+                            <h1>Blog</h1>
+                        </div>
+                        <div className="blogFlex">
+                            {this.blogList()}
+                        </div>
+                        
+                        <div className="btnPad">
+                            <Button type="primary">
+                                <Icon type="left" />
+                            </Button>
+                            <Button type="primary">
+                                <Icon type="right" />
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <div className="blogFlex">
-                    {this.blogList()}
-                </div>
-                
-                <div className="btnPad">
-                    <Button type="primary">
-                        <Icon type="left" />
-                    </Button>
-                    <Button type="primary">
-                        <Icon type="right" />
-                    </Button>
-                </div>
-                <Line />
             </div>
         )
     }
