@@ -155,26 +155,26 @@ export default class Price extends Component {
     }
 
     cutList() {
-        return this.state.prices.slice(0, 9).map(cutprice => {
+        return this.state.prices.slice(0, 8).map(cutprice => {
 
             return <CutPriceFunction cut={cutprice} deletePrice={this.deletePrice} key={cutprice._id} language={this.props.language} />;
         })
     }
 
     colourList() {
-        return this.state.prices.slice(10, 21).map(colourprice => {
+        return this.state.prices.slice(9, 19).map(colourprice => {
             return <ColorPriceFunction colour={colourprice} deletePrice={this.deletePrice} key={colourprice._id} language={this.props.language} />;
         })
     }
 
     permList() {
-        return this.state.prices.slice(22, 26).map(permprice => {
+        return this.state.prices.slice(20, 24).map(permprice => {
             return <PermPriceFunction perm={permprice} deletePrice={this.deletePrice} key={permprice._id} language={this.props.language} />;
         })
     }
 
     otherList() {
-        return this.state.prices.slice(27, 31).map(otherprice => {
+        return this.state.prices.slice(25, 29).map(otherprice => {
             return <OtherPriceFunction other={otherprice} deletePrice={this.deletePrice} key={otherprice._id} language={this.props.language} />;
         })
     }
