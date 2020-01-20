@@ -11,8 +11,9 @@ const AboutFunction = props => (
         <br />
         <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
         <td>
-            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> | <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
+            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> |    <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
         </td>
+
     </tr >
 )
 

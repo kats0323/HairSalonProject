@@ -6,6 +6,7 @@ import Footer from '../partials/_footer'
 
 
 const AboutFunction = props => (
+
     <div>
         {props.language === "Japanese" ? (
             <div>
