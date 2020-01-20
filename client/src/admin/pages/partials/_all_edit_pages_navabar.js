@@ -23,7 +23,7 @@ export default function AllEditPagesNavbar() { //exporting this component into r
 
 
                     <Navbar bg="dark" variant="dark" className="admin_navbar">
-                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} />
+                        {/* <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /> */}
 
                         {/* About */}
                         <NavDropdown title="About" id="basic-nav-dropdown">

@@ -8,14 +8,14 @@ const AboutFunction = props => (
         {props.language == "Japanese" ? (
             <div>
                 <h2>{props.about.ja_introduction}</h2>
-                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                <img className='about-img-card' src={props.about.photo}  />
             </div>
         ) : (
                 <div>
                     <h2>{props.about.en_introduction}</h2>
-                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                    <img  className='about-img-card' src={props.about.photo} />
                 </div>
-            )}
+        )}
     </div>
 )
 
