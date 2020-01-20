@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types'
+
 
 const BlogFunction = props => (
     <tr>
@@ -15,9 +18,10 @@ const BlogFunction = props => (
 )
 
 
-export default class BlogList extends Component {
+class BlogList extends Component {
     constructor(props) {
         super(props);
+
 
         this.deleteBlog = this.deleteBlog.bind(this)
 
@@ -25,13 +29,20 @@ export default class BlogList extends Component {
     }
 
     componentDidMount() {
-        axios.get('/blogs/')
-            .then(response => {
-                this.setState({ blogs: response.data })
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        console.log("in blog---", this.props.isAuthenticated)
+        if (!this.props.isAuthenticated) {
+            console.log("UN AUTHORISED")
+            return <Redirect to="/admin" />
+        }
+        else {
+            axios.get('/blogs/')
+                .then(response => {
+                    this.setState({ blogs: response.data })
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
     }
 
     deleteBlog(id) {
@@ -59,3 +70,12 @@ export default class BlogList extends Component {
         )
     }
 }
+
+BlogList.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps)(BlogList);

@@ -5,6 +5,7 @@ let express = require('express'),
     router = express.Router();
 
 const DIR = './public/';
+const auth = require("../middleware/auth")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
