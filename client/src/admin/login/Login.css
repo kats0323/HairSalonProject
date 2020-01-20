@@ -54,6 +54,9 @@ form{
     font-size: 18px; /* this is for the font size */
 } 
 
+
+
+
 /* media query for i phone 5 */
 @media only screen and (max-width: 320px) {  /* I phone 5 people i've got you covered everyone else your already covered ;) */
     .bg-text{

@@ -110,7 +110,7 @@ export default class Contact extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.8px solid", width:"61%",}} /> 
+               <hr style={{ color: "green",border:"0.4px solid", width:"61%",}} /> 
            </div>
         );
         return (

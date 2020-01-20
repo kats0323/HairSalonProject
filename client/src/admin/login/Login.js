@@ -40,7 +40,7 @@ export const Login = ({ login, isAuthenticated }) => {
                         <button type="submit" id="login-button" className="login-button" value="Login">Login</button>{/* this is the login button */}
                     </form>
                     <br />
-                    <Link to="/register">Register</Link>
+                    <Link to="/register"  className="register-button">Register</Link>
                 </div>
             </div >
         </Fragment>

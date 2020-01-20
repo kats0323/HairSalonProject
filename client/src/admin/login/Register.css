@@ -1,8 +1,8 @@
 /* class called outerbox and it's styling */
 .outerbox_register{
     background-image: linear-gradient(#e95612, rgb(255, 5, 213)); /* Gradient */
-    filter: blur(4px); /* how i blurred the background */
-    -webkit-filter: blur(4px); /* for multiple different support */
+    filter: blur(2px); /* how i blurred the background */
+    -webkit-filter: blur(2px); /* for multiple different support */
 }
 .register-title{ 
     padding-top: 5%;
@@ -18,7 +18,7 @@
     left: 50%;  /* left padding */
     transform: translate(-50%, -63%);  /* Postioning this middle the number on the left is horizontal the right is vertical*/
     width: 350px;  /* The width of the box */
-    height: 400px;  /* The height of the box */
+    height: 430px;  /* The height of the box */
     text-align: center;  /* makes the text align is center to center the text */
     border-radius: 4px; /* makes the background of the from round no one likes spikey corners :D */ 
 }
@@ -44,16 +44,38 @@ form{
 
 /* button styling */
 .register-button{
+    color: white;
     background-color: black;
     outline: 0; /* removes the blue thing around the button when u click it */
     border: 0; /* removes the default border around button */
-    padding: 10px 30px; /* button padding makes it thicker */
+    padding: 14px 91px; /* button padding makes it thicker */
     border-radius: 4px; /* border radius makes corner less spikey */
     width: 250px; /* width of the button */
     cursor: pointer; /* only works on pc, when you hover over it changes the mouse to a pointer */
     font-size: 18px; /* this is for the font size */
+    font-weight: 200;
 } 
+.register-button:hover{
+    color: white;
+    text-decoration: none !important;
+}
 
+.log-btn{
+    color: white;
+    background-color: black;
+    outline: 0; /* removes the blue thing around the button when u click it */
+    border: 0; /* removes the default border around button */
+    padding: 14px 105px; /* button padding makes it thicker */
+    border-radius: 4px; /* border radius makes corner less spikey */
+    width: 250px; /* width of the button */
+    cursor: pointer; /* only works on pc, when you hover over it changes the mouse to a pointer */
+    font-size: 18px; /* this is for the font size */
+    font-weight: 200;
+} 
+.log-btn:hover{
+    color: white;
+    text-decoration: none !important;
+} 
 /* media query for i phone 5 */
 @media only screen and (max-width: 320px) {  /* I phone 5 people i've got you covered everyone else your already covered ;) */
     .bg-text{

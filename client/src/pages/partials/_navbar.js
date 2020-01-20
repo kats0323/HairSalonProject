@@ -36,7 +36,7 @@ class Navbar extends Component {
     render() {
         // hr style
         const Line = ({ color }) => (
-            <hr style={{ color: "black", border: "0.7px solid", width: "60%", }} />
+            <hr style={{ color: "green", border: "0.7px solid", width: "60%", }} />
         );
         const { location } = this.props
         return (

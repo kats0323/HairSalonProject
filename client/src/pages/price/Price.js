@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './price.css'
 import '../../common.css'
-import { Card, Col } from 'antd';
+import { Card, Col, Row } from 'antd';
 
 
 
 const CutPriceFunction = props => (
     <div className="price_background">
         {props.language === "Japanese" ? (
-            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+            <Col>
+                <Card style={{ border: "none" }}>
                     <h2>{props.cut.price}</h2>
                     <h2 className="japanese">{props.cut.ja_course}</h2>
                     <br />
@@ -18,14 +18,12 @@ const CutPriceFunction = props => (
                 </Card>
             </Col >
         ) : (
-                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                    <Card style={{ border: "none" }}>
                         <h2>{props.cut.price}</h2>
                         <h2 id="english">{props.cut.en_course}</h2>
                         <br />
                         <h5 id="english">{props.cut.en_detail}</h5>
                     </Card>
-                </Col >
             )}
     </div>
 )
@@ -33,8 +31,8 @@ const CutPriceFunction = props => (
 const ColorPriceFunction = props => (
     <div className="price_background">
         {props.language === "Japanese" ? (
-            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+            <Col>
+                <Card style={{ border: "none" }}>
                     <h2>{props.colour.price}</h2>
                     <h2 className="japanese">{props.colour.ja_course}</h2>
                     <br />
@@ -42,8 +40,8 @@ const ColorPriceFunction = props => (
                 </Card>
             </Col >
         ) : (
-                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                <Col>
+                    <Card style={{ border: "none"}}>
                         <h2>{props.colour.price}</h2>
                         <h2 id="english">{props.colour.en_course}</h2>
                         <br />
@@ -57,8 +55,8 @@ const ColorPriceFunction = props => (
 const PermPriceFunction = props => (
     <div className="price_background">
         {props.language === "Japanese" ? (
-            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+            <Col>
+                <Card style={{ border: "none"}}>
                     <h2>{props.perm.price}</h2>
                     <h2 className="japanese">{props.perm.ja_course}</h2>
                     <br />
@@ -66,8 +64,8 @@ const PermPriceFunction = props => (
                 </Card>
             </Col >
         ) : (
-                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                <Col>
+                    <Card style={{ border: "none"}}>
                         <h2>{props.perm.price}</h2>
                         <h2 id="english">{props.perm.en_course}</h2>
                         <br />
@@ -81,8 +79,8 @@ const PermPriceFunction = props => (
 const OtherPriceFunction = props => (
     <div className="price_background">
         {props.language === "Japanese" ? (
-            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+            <Col >
+                <Card style={{ border: "none" }}>
                     <h2>{props.other.price}</h2>
                     <h2 className="japanese">{props.other.ja_course}</h2>
                     <br />
@@ -90,8 +88,8 @@ const OtherPriceFunction = props => (
                 </Card>
             </Col >
         ) : (
-                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
-                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                <Col >
+                    <Card style={{ border: "none" }}>
                         <h2>{props.other.price}</h2>
                         <h2 id="english">{props.other.en_course}</h2>
                         <br />
@@ -157,18 +155,28 @@ export default class Price extends Component {
     }
 
     render() {
+        const Line = ({ color }) => (
+             <div class="style-line">
+                <hr style={{ color: "green",border:"0.4px solid", width:"60%",}} /> 
+            </div>
+         );
 
         return (
             <div class="background">
-                <h1 style={{ textAlign: "center", paddingTop: "20px", paddingBottom: "20px" }}>Menu</h1>
-                <h1 style={{ color: "red", textAlign: "center" }}>CUT</h1>
-                {this.cutList()}
-                <h1 style={{ color: "red", textAlign: "center" }}>COLOUR</h1>
-                {this.colourList()}
-                <h1 style={{ color: "red", textAlign: "center" }}>PERM</h1>
-                {this.permList()}
-                <h1 style={{ color: "red", textAlign: "center" }}>OTHER</h1>
-                {this.otherList()}
+                <Line />
+                    <h1 style={{ textAlign: "center", paddingTop: "20px", paddingBottom: "20px" }}>Menu</h1>
+                <div class="pricePad"> 
+                    <h1 style={{ color: "green" }}>CUT</h1>
+                    <Row  type="flex" justify="start">
+                        <Col span={3}>{this.cutList()}</Col>
+                    </Row>
+                    <h1 style={{ color: "green"}}>COLOUR</h1>
+                    {this.colourList()}
+                    <h1 style={{ color: "green"}}>PERM</h1>
+                    {this.permList()}
+                    <h1 style={{ color: "green" }}>OTHER</h1>
+                    {this.otherList()}
+                </div>
             </div >
         )
     }
