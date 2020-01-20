@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const BlogFunction = props => (
@@ -9,7 +8,7 @@ const BlogFunction = props => (
         <img src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="blogphoto" />
 
         <td>
-            <Link to={"/admin/blogs/edit/" + props.blogs._id}>edit</Link> | <button href="#" onClick={() => { props.deleteBlog(props.blogs._id) }}>delete</button>
+            <button href="#" onClick={() => { props.deleteBlog(props.blogs._id) }}>delete</button>
         </td>
     </tr >
 )

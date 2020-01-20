@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
