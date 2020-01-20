@@ -7,15 +7,15 @@ import Footer from '../partials/_footer'
 
 const AboutFunction = props => (
     <div>
-        {props.language == "Japanese" ? (
+        {props.language === "Japanese" ? (
             <div>
                 <p>{props.about.ja_introduction}</p>
-                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
             </div>
         ) : (
                 <div>
                     <p>{props.about.en_introduction}</p>
-                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
                 </div>
             )}
     </div>
@@ -59,20 +59,20 @@ export default class About extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.4px solid", width:"100%",}} /> 
-           </div>
+                <hr style={{ color: "green", border: "0.4px solid", width: "100%", }} />
+            </div>
         );
         return (
             <div>
-            
+
                 <div className="aboutPad">
-                 <Line />
+                    <Line />
                     <Row>
                         <Col>
-                        <h1 style={{textAlign:"center"}}>About</h1>
+                            <h1 style={{ textAlign: "center" }}>About</h1>
                             <h3>
-                            {this.aboutList()}
-                        </h3>
+                                {this.aboutList()}
+                            </h3>
                         </Col>
                     </Row>
                     <Line />

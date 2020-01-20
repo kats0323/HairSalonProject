@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './contact.css'
 import Footer from '../partials/_footer'
@@ -7,7 +6,7 @@ import Footer from '../partials/_footer'
 const ContactFunction = props => (
 
     <div>
-        {props.language == "Japanese" ? (
+        {props.language === "Japanese" ? (
             <div>
                 <h4>phone_number</h4>
                 0{props.contacts.phone_number}
@@ -48,7 +47,7 @@ const ContactFunction = props => (
                 <h4>contact_extra_info_ja</h4>
                 {props.contacts.contact_extra_info_ja}
                 <h4>google</h4>
-                <iframe src={props.contacts.google}></iframe>
+                <iframe src={props.contacts.google} title="google"></iframe>
                 <br />
                 <h4>Address</h4>
                 {props.contacts.street}{props.contacts.suburb}{props.contacts.state}
@@ -57,7 +56,7 @@ const ContactFunction = props => (
                 {props.contacts.post_code}
                 <br />
                 <h4>shop_photo1</h4>
-                <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shopphoto" />
                 <br />
                 <h4>shop_info_ja</h4>
                 {props.contacts.shop_info_ja}
@@ -108,7 +107,7 @@ const ContactFunction = props => (
                     {props.contacts.contact_extra_info_en}
                     <br />
                     <h4>google</h4>
-                    <iframe src={props.contacts.google}></iframe>
+                    <iframe src={props.contacts.google} title="google"></iframe>
                     <br />
                     <h4>Address</h4>
                     {props.contacts.street}{props.contacts.suburb}{props.contacts.state}
@@ -117,7 +116,7 @@ const ContactFunction = props => (
                     {props.contacts.post_code}
                     <br />
                     <h4>shop_photo1</h4>
-                    <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} />
+                    <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shopphoto" />
                     <br />
                     <h4>shop_info_en</h4>
                     {props.contacts.shop_info_en}
@@ -159,8 +158,8 @@ export default class Contact extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.4px solid", width:"61%",}} /> 
-           </div>
+                <hr style={{ color: "green", border: "0.4px solid", width: "61%", }} />
+            </div>
         );
         return (
             <div>
