@@ -53,6 +53,11 @@
     text-align: center;
 }
 
+.info-icons{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
 @media only screen and (min-width: 1440px) {
     .Carousel-photo{
         background-size: cover;

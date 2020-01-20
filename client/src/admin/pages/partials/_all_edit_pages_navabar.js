@@ -30,7 +30,7 @@ const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
 
                     <Navbar bg="dark" variant="dark" className="admin_navbar">
-                        <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} />
+                        <Link to="/"><img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /></Link>
 
                         {/* About */}
                         <NavDropdown title="About" id="basic-nav-dropdown">

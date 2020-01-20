@@ -26,6 +26,11 @@
     border-bottom: 0px !important;
 }
 
+.ant-menu-item a{
+    color:darkgreen !important;
+}
+
+
 
 
 .logo-center{

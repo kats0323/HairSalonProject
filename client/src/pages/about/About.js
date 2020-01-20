@@ -59,17 +59,18 @@ export default class About extends Component {
     render() {
         const Line = ({ color }) => (
             <div class="style-line">
-               <hr style={{ color: "green",border:"0.8px solid", width:"100%",}} /> 
+               <hr style={{ color: "green",border:"0.4px solid", width:"100%",}} /> 
            </div>
         );
         return (
             <div>
+            
                 <div className="aboutPad">
+                 <Line />
                     <Row>
                         <Col>
                         <h1 style={{textAlign:"center"}}>About</h1>
-                        <Line />
-                        <h3>
+                            <h3>
                             {this.aboutList()}
                         </h3>
                         </Col>

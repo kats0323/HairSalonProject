@@ -42,7 +42,7 @@ export const Register = ({ setAlert, register, isAuthenticated }) => {
                         <button type="submit" id="register-button" className="login-button">Register</button>{/* this is the login button */}
                     </form>
                     <br />
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className="log-btn">Login</Link>
                 </div>
             </div >
         </Fragment>

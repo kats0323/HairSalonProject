@@ -89,7 +89,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>Japanese Course: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.ja_course}
                             onChange={this.onChangeJaCourse}
@@ -98,7 +98,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>English Course: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.en_course}
                             onChange={this.onChangeEnCourse}
@@ -107,7 +107,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>Japanese Price: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.ja_price}
                             onChange={this.onChangeJaPrice}
@@ -116,7 +116,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>English Price: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.en_price}
                             onChange={this.onChangeEnPrice}
@@ -125,7 +125,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>Japanese Detail: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.ja_detail}
                             onChange={this.onChangeJaDetail}
@@ -134,7 +134,7 @@ export default class CreatePrice extends Component {
                     <div className="form-group">
                         <label>English Detail: </label>
                         <input type="text"
-                            required
+
                             className="form-control"
                             value={this.state.en_detail}
                             onChange={this.onChangeEnDetail}

@@ -20,10 +20,31 @@ const contactSchema = new Schema({
     contact_info_ja: {
         type: String
     },
-    opening_hors_en: {
+    contact_extra_info_en: {
         type: String
     },
-    opening_hors_ja: {
+    contact_extra_info_ja: {
+        type: String
+    },
+    opening_hors_mon: {
+        type: String
+    },
+    opening_hors_tue: {
+        type: String
+    },
+    opening_hors_wed: {
+        type: String
+    },
+    opening_hors_thu: {
+        type: String
+    },
+    opening_hors_fri: {
+        type: String
+    },
+    opening_hors_sat: {
+        type: String
+    },
+    opening_hors_sun: {
         type: String
     },
     street: {
@@ -51,6 +72,12 @@ const contactSchema = new Schema({
         type: String
     },
     shop_info_ja: {
+        type: String
+    },
+    shop_extra_info_en: {
+        type: String
+    },
+    shop_extra_info_ja: {
         type: String
     }
 
