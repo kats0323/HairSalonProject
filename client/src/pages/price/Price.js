@@ -11,7 +11,7 @@ const CutPriceFunction = props => (
         {props.language === "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                 <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                    <h2>{props.cut.price}</h2>
+                    <h2>{props.cut.ja_price}</h2>
                     <h2 className="japanese">{props.cut.ja_course}</h2>
                     <br />
                     <h5 className="japanese">{props.cut.ja_detail}</h5>
@@ -20,7 +20,7 @@ const CutPriceFunction = props => (
         ) : (
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                     <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                        <h2>{props.cut.price}</h2>
+                        <h2>{props.cut.en_price}</h2>
                         <h2 id="english">{props.cut.en_course}</h2>
                         <br />
                         <h5 id="english">{props.cut.en_detail}</h5>
@@ -35,7 +35,7 @@ const ColorPriceFunction = props => (
         {props.language === "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                 <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                    <h2>{props.colour.price}</h2>
+                    <h2>{props.colour.ja_price}</h2>
                     <h2 className="japanese">{props.colour.ja_course}</h2>
                     <br />
                     <h5 className="japanese">{props.colour.ja_detail}</h5>
@@ -44,7 +44,7 @@ const ColorPriceFunction = props => (
         ) : (
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                     <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                        <h2>{props.colour.price}</h2>
+                        <h2>{props.colour.en_price}</h2>
                         <h2 id="english">{props.colour.en_course}</h2>
                         <br />
                         <h5 id="english">{props.colour.en_detail}</h5>
@@ -59,7 +59,7 @@ const PermPriceFunction = props => (
         {props.language === "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                 <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                    <h2>{props.perm.price}</h2>
+                    <h2>{props.perm.ja_price}</h2>
                     <h2 className="japanese">{props.perm.ja_course}</h2>
                     <br />
                     <h5 className="japanese">{props.perm.ja_detail}</h5>
@@ -68,7 +68,7 @@ const PermPriceFunction = props => (
         ) : (
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                     <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                        <h2>{props.perm.price}</h2>
+                        <h2>{props.perm.en_price}</h2>
                         <h2 id="english">{props.perm.en_course}</h2>
                         <br />
                         <h5 id="english">{props.perm.en_detail}</h5>
@@ -83,7 +83,7 @@ const OtherPriceFunction = props => (
         {props.language === "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                 <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                    <h2>{props.other.price}</h2>
+                    <h2>{props.other.ja_price}</h2>
                     <h2 className="japanese">{props.other.ja_course}</h2>
                     <br />
                     <h5 className="japanese">{props.other.ja_detail}</h5>
@@ -92,7 +92,7 @@ const OtherPriceFunction = props => (
         ) : (
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                     <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                        <h2>{props.other.price}</h2>
+                        <h2>{props.other.en_price}</h2>
                         <h2 id="english">{props.other.en_course}</h2>
                         <br />
                         <h5 id="english">{props.other.en_detail}</h5>
