@@ -18,7 +18,7 @@ export default class PhotoList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/photos/')
+        axios.get('/photos/')
             .then(response => {
                 this.setState({ photos: response.data })
             })

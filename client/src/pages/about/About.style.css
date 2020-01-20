@@ -1,0 +1,11 @@
+.about-title{
+    font-family: cursive;
+}
+.style-about{
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+

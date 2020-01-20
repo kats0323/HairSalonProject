@@ -9,7 +9,6 @@ export default class CreateBlog extends Component {
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeContent = this.onChangeContent.bind(this);
         this.onPhotoChange = this.onPhotoChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             title: '',
@@ -33,22 +32,12 @@ export default class CreateBlog extends Component {
     onPhotoChange(e) {
         this.setState({ photo: e.target.files[0] })
     }
-    onSubmit(e) {
-        e.preventDefault()
-        const blog = {
-            title: this.state.title,
-            content: this.state.content,
-            photo: this.state.photo
-        }
-        axios.post("http://localhost:5000/blogs/add", blog).then(res => {
-            console.log(res)
-        })
-    }
+
     render() {
         return (
             <div className="container" style={{ paddingLeft: "200px" }}>
                 <div className="row">
-                    <form action="http://localhost:5000/blogs/add" method="POST" enctype="multipart/form-data" >
+                    <form action="/blogs/add" method="POST" enctype="multipart/form-data" >
                         <div className="form-group">
                             <label>Title: </label>
                             <input type="text"

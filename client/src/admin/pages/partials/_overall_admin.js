@@ -7,10 +7,12 @@ import CreatePrice from "../edit/price/CreatePrice";
 import AboutList from "../edit/about/AboutList";
 import EditAbout from "../edit/about/EditAbout";
 import CreateAbout from "../edit/about/CreateAbout";
-import CreatePhoto from "../edit/photo/CreatePhoto"
-import PhotoList from "../edit/photo/PhotoList"
-import CreateBlog from "../edit/blog/CreateBlog"
-import BlogList from "../edit/blog/BlogList"
+import CreatePhoto from "../edit/photo/CreatePhoto";
+import PhotoList from "../edit/photo/PhotoList";
+import CreateBlog from "../edit/blog/CreateBlog";
+import BlogList from "../edit/blog/BlogList";
+import CreateContact from "../edit/contact/CreateContact";
+import ContactList from "../edit/contact/ContactList";
 
 
 function overallAdmin() {
@@ -29,6 +31,8 @@ function overallAdmin() {
                 <Route path="/admin/photos" exact component={PhotoList} />
                 <Route path="/admin/blogs/create" exact component={CreateBlog} />
                 <Route path="/admin/blogs" exact component={BlogList} />
+                <Route path="/admin/contacts/create" exact component={CreateContact} />
+                <Route path="/admin/contacts" exact component={ContactList} />
             </Switch>
         </Router>
     );

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { Row, Col } from 'antd';
-
 import axios from 'axios';
 import './gallery.css'
 
@@ -16,13 +14,11 @@ const PhotoFunction = props => (
 export default class PhotoGallery extends Component {
     constructor(props) {
         super(props);
-
-
         this.state = { photos: [] };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/photos/')
+        axios.get('/photos/')
             .then(response => {
                 this.setState({ photos: response.data })
             })
@@ -41,19 +37,21 @@ export default class PhotoGallery extends Component {
 
     render() {
         const ColoredLine = ({ color }) => (
-            <hr style={{ color: "gray",border:"2px dashed"}} /> 
-         );
+            <hr style={{ color: "gray", border: "2px dashed" }} />
+        );
 
-       
+
         return (
             <div>
                 <h1 class="title-gallery-center">PhotoGallery</h1>
                 <ColoredLine />
+                <div class="card-box">
                     <Row type="flex" justify="start">
                         {this.photoList()}
-                         {this.photoList()}
-                          {this.photoList()}
+                        {this.photoList()}
+                        {this.photoList()}
                     </Row>
+                </div>
             </div>
         )
     }

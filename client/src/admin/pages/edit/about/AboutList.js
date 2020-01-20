@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const AboutFunction = props => (
     <tr>
-        <td>{props.about.introduction}</td>
+        <h2>{props.about.en_introduction}</h2>
+        <h4>{props.about.ja_introduction}</h4>
+        <br />
+        <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
         <td>
             <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> | <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
         </td>
-    </tr>
+    </tr >
 )
 
 
@@ -22,7 +26,7 @@ export default class AboutList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/about/')
+        axios.get('/about/')
             .then(response => {
                 this.setState({ about: response.data })
             })
@@ -32,7 +36,7 @@ export default class AboutList extends Component {
     }
 
     deleteAbout(id) {
-        axios.delete('http://localhost:5000/about/' + id)
+        axios.delete('/about/' + id)
             .then(response => { console.log(response.data) });
 
         this.setState({
@@ -49,7 +53,9 @@ export default class AboutList extends Component {
     render() {
         console.log(this.aboutList())
         return (
-            <div style={{ paddingLeft: "350px" }}>
+
+            <div>
+
                 <h1>About</h1>
                 <br />
                 <h3>
