@@ -12,13 +12,13 @@ import { Button } from 'antd';
 
 class TopPage extends Component {
     render() {
-        
+
         //  this is the hr line 
-         const Line = ({ color }) => (
-             <div class="style-line">
-                <hr style={{ color: "black",border:"0.8px solid", width:"61%",}} /> 
+        const Line = ({ color }) => (
+            <div class="style-line">
+                <hr style={{ color: "black", border: "0.8px solid", width: "61%", }} />
             </div>
-         );
+        );
         return (
             <div>
                 <Carousel autoplay>
@@ -32,41 +32,41 @@ class TopPage extends Component {
                         <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair3.jpg'} alt="img3" />
                     </div>
                     <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/Caro1.png'} alt="img4" />
+                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair4.jpg'} alt="img4" />
                     </div>
                 </Carousel>
 
                 <div class="style-home">
                     <h1>Style</h1>
-                        <Row>
-                            <Col>
+                    <Row>
+                        <Col>
                             <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                            </Col>
-                            <Col>
+                        </Col>
+                        <Col>
                             <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                            </Col>
-                            <Col>
+                        </Col>
+                        <Col>
                             <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                            </Col>
-                            <Col>
+                        </Col>
+                        <Col>
                             <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                            </Col>
-                        </Row>
-                        <div class="button-top">
-                           <Link to="/photos"> <Button>View More style</Button> </Link>
-                        </div>
-                </div>
-                 
-                <div class="salon-top" />
-                    <Line />
-                    <div class="salon-info">
-                        <h1>Salon Information</h1>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-facebook-square"></i>
+                        </Col>
+                    </Row>
+                    <div class="button-top">
+                        <Link to="/photos"> <Button>View More style</Button> </Link>
                     </div>
-                    <Line />
+                </div>
+
+                <div class="salon-top" />
+                <Line />
+                <div class="salon-info">
+                    <h1>Salon Information</h1>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+                <Line />
                 <div class="salon-bottom" />
-                
+
 
             </div>
 

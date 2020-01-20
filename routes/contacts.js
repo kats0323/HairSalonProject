@@ -38,8 +38,15 @@ router.post('/add', upload.single('photo'), (req, res, next) => {
     const instagram = req.body.instagram;
     const contact_info_en = req.body.contact_info_en;
     const contact_info_ja = req.body.contact_info_ja;
-    const opening_hors_en = req.body.opening_hors_en;
-    const opening_hors_ja = req.body.opening_hors_ja;
+    const contact_extra_info_en = req.body.contact_extra_info_en;
+    const contact_extra_info_ja = req.body.contact_extra_info_ja;
+    const opening_hors_mon = req.body.opening_hors_mon;
+    const opening_hors_tue = req.body.opening_hors_tue;
+    const opening_hors_wed = req.body.opening_hors_wed;
+    const opening_hors_thu = req.body.opening_hors_thu;
+    const opening_hors_fri = req.body.opening_hors_fri;
+    const opening_hors_sat = req.body.opening_hors_sat;
+    const opening_hors_sun = req.body.opening_hors_sun;
     const street = req.body.street;
     const suburb = req.body.suburb;
     const state = req.body.state;
@@ -47,6 +54,8 @@ router.post('/add', upload.single('photo'), (req, res, next) => {
     const post_code = req.body.post_code;
     const shop_info_en = req.body.shop_info_en;
     const shop_info_ja = req.body.shop_info_ja;
+    const shop_extra_info_en = req.body.shop_extra_info_en;
+    const shop_extra_info_ja = req.body.shop_extra_info_ja;
     const shop_photo1 = url + '/public/' + req.file.filename;
     // const shop_photo2 = url + '/public/' + req.file.filename;
     const newContact = new Contact({
@@ -56,8 +65,15 @@ router.post('/add', upload.single('photo'), (req, res, next) => {
         instagram,
         contact_info_en,
         contact_info_ja,
-        opening_hors_en,
-        opening_hors_ja,
+        contact_extra_info_en,
+        contact_extra_info_ja,
+        opening_hors_mon,
+        opening_hors_tue,
+        opening_hors_wed,
+        opening_hors_thu,
+        opening_hors_fri,
+        opening_hors_sat,
+        opening_hors_sun,
         street,
         suburb,
         state,
@@ -66,7 +82,9 @@ router.post('/add', upload.single('photo'), (req, res, next) => {
         shop_photo1,
         // shop_photo2,
         shop_info_en,
-        shop_info_ja
+        shop_info_ja,
+        shop_extra_info_en,
+        shop_extra_info_ja,
 
     });
     newContact.save().then(result => {

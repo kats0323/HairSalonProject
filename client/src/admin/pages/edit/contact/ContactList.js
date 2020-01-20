@@ -23,11 +23,32 @@ const ContactFunction = props => (
         <h4>contact_info_ja</h4>
         {props.contacts.contact_info_ja}
         <br />
-        <h4>opening_hors_en</h4>
-        {props.contacts.opening_hors_en}
+        <h4>contact_extra_info_en</h4>
+        {props.contacts.contact_extra_info_en}
         <br />
-        <h4>opening_hors_ja</h4>
-        {props.contacts.opening_hors_ja}
+        <h4>contact_extra_info_ja</h4>
+        {props.contacts.contact_extra_info_ja}
+        <br />
+        <h4>opening_hors_mon</h4>
+        {props.contacts.opening_hors_mon}
+        <br />
+        <h4>opening_hors_tue</h4>
+        {props.contacts.opening_hors_tue}
+        <br />
+        <h4>opening_hors_wed</h4>
+        {props.contacts.opening_hors_wed}
+        <br />
+        <h4>opening_hors_thu</h4>
+        {props.contacts.opening_hors_thu}
+        <br />
+        <h4>opening_hors_fri</h4>
+        {props.contacts.opening_hors_fri}
+        <br />
+        <h4>opening_hors_sat</h4>
+        {props.contacts.opening_hors_sat}
+        <br />
+        <h4>opening_hors_sun</h4>
+        {props.contacts.opening_hors_sun}
         <br />
         <h4>street</h4>
         {props.contacts.street}
@@ -51,6 +72,12 @@ const ContactFunction = props => (
         <br />
         <h4>shop_info_ja</h4>
         {props.contacts.shop_info_ja}
+        <br />
+        <h4>shop_extra_info_en</h4>
+        {props.contacts.shop_extra_info_en}
+        <br />
+        <h4>shop_extra_info_ja</h4>
+        {props.contacts.shop_extra_info_ja}
         <br />
         <h4>shop_photo1</h4>
         <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} />
