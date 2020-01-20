@@ -60,6 +60,7 @@ class TopPage extends Component {
                 </div>
 
                 <div class="salon-top" />
+
                 <Line />
                 <div class="salon-info">
                     <h1>Salon Information</h1>
@@ -69,8 +70,10 @@ class TopPage extends Component {
                         <a href="https://www.instagram.com/mihostyle.sydney/" > <img src={Instagram} style={{ width: "3%", paddingLeft: "10px" }} alt="insta" /> </a>
                     </div>
                 </div>
-                <Line />
                 <div class="salon-bottom" />
+                <Line />
+                <Line />
+
 
 
             </div>

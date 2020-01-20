@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './blog.css'
 import { Button, Icon } from 'antd';
@@ -10,7 +10,7 @@ const BlogFunction = props => (
         <h2>{props.blogs.title}</h2>
         <h4>{props.blogs.content}</h4>
         <br />
-        <img src={props.blogs.photo} style={{ width: "95%", margin: "20px", height: "300px" }} />
+        <img src={props.blogs.photo} style={{ width: "95%", margin: "20px", height: "300px" }} alt="blogPicture" />
     </tr >
 )
 
