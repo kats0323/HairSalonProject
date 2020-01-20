@@ -6,13 +6,21 @@ export default class EditPrice extends Component {
     constructor(props) {
         super(props)
 
-        this.onChangeCourse = this.onChangeCourse.bind(this);
-        this.onChangePrice = this.onChangePrice.bind(this);
+        this.onChangeJaCourse = this.onChangeJaCourse.bind(this);
+        this.onChangeEnCourse = this.onChangeEnCourse.bind(this);
+        this.onChangeJaPrice = this.onChangeJaPrice.bind(this);
+        this.onChangeEnPrice = this.onChangeEnPrice.bind(this);
+        this.onChangeJaDetail = this.onChangeJaDetail.bind(this);
+        this.onChangeEnDetail = this.onChangeEnDetail.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            course: "",
-            price: ""
+            ja_course: "",
+            en_course: "",
+            ja_price: "",
+            en_price: "",
+            ja_detail: "",
+            en_detail: ""
         }
     }
 
@@ -21,8 +29,12 @@ export default class EditPrice extends Component {
         axios.get('/prices/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    course: response.data.course,
-                    price: response.data.price
+                    ja_course: response.data.ja_course,
+                    en_course: response.data.en_course,
+                    ja_price: response.data.ja_price,
+                    en_price: response.data.en_price,
+                    ja_detail: response.data.ja_detail,
+                    en_detail: response.data.en_detail,
                 })
             })
             .catch(function (error) {
@@ -30,22 +42,46 @@ export default class EditPrice extends Component {
             })
     }
 
-    onChangeCourse(e) {
+    onChangeJaCourse(e) {
         this.setState({
-            course: e.target.value
+            ja_course: e.target.value
         })
     }
-    onChangePrice(e) {
+    onChangeEnCourse(e) {
         this.setState({
-            price: e.target.value
+            en_course: e.target.value
+        })
+    }
+    onChangeJaPrice(e) {
+        this.setState({
+            ja_price: e.target.value
+        })
+    }
+    onChangeEnPrice(e) {
+        this.setState({
+            en_price: e.target.value
+        })
+    }
+    onChangeJaDetail(e) {
+        this.setState({
+            ja_detail: e.target.value
+        })
+    }
+    onChangeEnDetail(e) {
+        this.setState({
+            en_detail: e.target.value
         })
     }
     onSubmit(e) {
         e.preventDefault();
 
         const price = {
-            course: this.state.course,
-            price: this.state.price
+            ja_course: this.state.ja_course,
+            en_course: this.state.en_course,
+            ja_price: this.state.ja_price,
+            en_price: this.state.en_price,
+            ja_detail: this.state.ja_detail,
+            en_detail: this.state.en_detail,
         }
 
         console.log(price);
@@ -54,32 +90,73 @@ export default class EditPrice extends Component {
             .then(res => console.log(res.data));
 
         this.setState({
-            course: "",
-            price: ""
+            ja_course: "",
+            en_course: "",
+            ja_price: "",
+            en_price: "",
+            ja_detail: "",
+            en_detail: ""
         })
-        window.location = '/admin/prices';
+        window.location = "/admin/prices"
+
     }
     render() {
         return (
-            <div style={{ paddingLeft: "200px" }}>
+            <div>
                 <h3>Edit Price</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Course: </label>
+                        <label>Japanese Course: </label>
                         <input type="text"
                             required
                             className="form-control"
-                            value={this.state.course}
-                            onChange={this.onChangeCourse}
+                            value={this.state.ja_course}
+                            onChange={this.onChangeJaCourse}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Price: </label>
+                        <label>English Course: </label>
                         <input type="text"
                             required
                             className="form-control"
-                            value={this.state.price}
-                            onChange={this.onChangePrice}
+                            value={this.state.en_course}
+                            onChange={this.onChangeEnCourse}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Japanese Price: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.ja_price}
+                            onChange={this.onChangeJaPrice}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>English Price: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.en_price}
+                            onChange={this.onChangeEnPrice}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Japanese Detail: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.ja_detail}
+                            onChange={this.onChangeJaDetail}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>English Detail: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.en_detail}
+                            onChange={this.onChangeEnDetail}
                         />
                     </div>
                     <div className="form-group">

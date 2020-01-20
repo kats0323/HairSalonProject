@@ -6,24 +6,96 @@ import { Card, Col } from 'antd';
 
 
 
-const PriceFunction = props => (
+const CutPriceFunction = props => (
     <div className="price_background">
-        {props.language == "Japanese" ? (
+        {props.language === "Japanese" ? (
             <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                 <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                    <h2>{props.prices.price}</h2>
-                    <h2 className="japanese">{props.prices.ja_course}</h2>
+                    <h2>{props.cut.price}</h2>
+                    <h2 className="japanese">{props.cut.ja_course}</h2>
                     <br />
-                    <h5 className="japanese">{props.prices.ja_detail}</h5>
+                    <h5 className="japanese">{props.cut.ja_detail}</h5>
                 </Card>
             </Col >
         ) : (
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
                     <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
-                        <h2>{props.prices.price}</h2>
-                        <h2 id="english">{props.prices.en_course}</h2>
+                        <h2>{props.cut.price}</h2>
+                        <h2 id="english">{props.cut.en_course}</h2>
                         <br />
-                        <h5 id="english">{props.prices.en_detail}</h5>
+                        <h5 id="english">{props.cut.en_detail}</h5>
+                    </Card>
+                </Col >
+            )}
+    </div>
+)
+
+const ColorPriceFunction = props => (
+    <div className="price_background">
+        {props.language === "Japanese" ? (
+            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                    <h2>{props.colour.price}</h2>
+                    <h2 className="japanese">{props.colour.ja_course}</h2>
+                    <br />
+                    <h5 className="japanese">{props.colour.ja_detail}</h5>
+                </Card>
+            </Col >
+        ) : (
+                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                        <h2>{props.colour.price}</h2>
+                        <h2 id="english">{props.colour.en_course}</h2>
+                        <br />
+                        <h5 id="english">{props.colour.en_detail}</h5>
+                    </Card>
+                </Col >
+            )}
+    </div>
+)
+
+const PermPriceFunction = props => (
+    <div className="price_background">
+        {props.language === "Japanese" ? (
+            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                    <h2>{props.perm.price}</h2>
+                    <h2 className="japanese">{props.perm.ja_course}</h2>
+                    <br />
+                    <h5 className="japanese">{props.perm.ja_detail}</h5>
+                </Card>
+            </Col >
+        ) : (
+                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                        <h2>{props.perm.price}</h2>
+                        <h2 id="english">{props.perm.en_course}</h2>
+                        <br />
+                        <h5 id="english">{props.perm.en_detail}</h5>
+                    </Card>
+                </Col >
+            )}
+    </div>
+)
+
+const OtherPriceFunction = props => (
+    <div className="price_background">
+        {props.language === "Japanese" ? (
+            <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                    <h2>{props.other.price}</h2>
+                    <h2 className="japanese">{props.other.ja_course}</h2>
+                    <br />
+                    <h5 className="japanese">{props.other.ja_detail}</h5>
+                </Card>
+            </Col >
+        ) : (
+                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "center", color: "green" }}>
+                    <Card style={{ border: "none", textAlign: "center", width: "600px" }}>
+                        <h2>{props.other.price}</h2>
+                        <h2 id="english">{props.other.en_course}</h2>
+                        <br />
+                        <h5 id="english">{props.other.en_detail}</h5>
                     </Card>
                 </Col >
             )}
@@ -59,9 +131,28 @@ export default class Price extends Component {
         })
     }
 
-    priceList() {
-        return this.state.prices.map(currentprice => {
-            return <PriceFunction prices={currentprice} deletePrice={this.deletePrice} key={currentprice._id} language={this.props.language} />;
+    cutList() {
+        return this.state.prices.slice(0, 9).map(cutprice => {
+
+            return <CutPriceFunction cut={cutprice} deletePrice={this.deletePrice} key={cutprice._id} language={this.props.language} />;
+        })
+    }
+
+    colourList() {
+        return this.state.prices.slice(10, 21).map(colourprice => {
+            return <ColorPriceFunction colour={colourprice} deletePrice={this.deletePrice} key={colourprice._id} language={this.props.language} />;
+        })
+    }
+
+    permList() {
+        return this.state.prices.slice(22, 26).map(permprice => {
+            return <PermPriceFunction perm={permprice} deletePrice={this.deletePrice} key={permprice._id} language={this.props.language} />;
+        })
+    }
+
+    otherList() {
+        return this.state.prices.slice(27, 31).map(otherprice => {
+            return <OtherPriceFunction other={otherprice} deletePrice={this.deletePrice} key={otherprice._id} language={this.props.language} />;
         })
     }
 
@@ -69,12 +160,16 @@ export default class Price extends Component {
 
         return (
             <div class="background">
-                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: "1%" }}>
-                    <h3 style={{ fontSize: "2rem", padding: "40px", borderStyle: "solid", borderWeight: "2px", width: "250px" }}>Prices List</h3>
-                </div>
-                {this.priceList()}
-
-            </div>
+                <h1 style={{ textAlign: "center", paddingTop: "20px", paddingBottom: "20px" }}>Menu</h1>
+                <h1 style={{ color: "red", textAlign: "center" }}>CUT</h1>
+                {this.cutList()}
+                <h1 style={{ color: "red", textAlign: "center" }}>COLOUR</h1>
+                {this.colourList()}
+                <h1 style={{ color: "red", textAlign: "center" }}>PERM</h1>
+                {this.permList()}
+                <h1 style={{ color: "red", textAlign: "center" }}>OTHER</h1>
+                {this.otherList()}
+            </div >
         )
     }
 }

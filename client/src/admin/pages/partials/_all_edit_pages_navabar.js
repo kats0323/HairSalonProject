@@ -12,10 +12,17 @@ import BlogList from "../edit/blog/BlogList";
 import CreateContact from "../edit/contact/CreateContact";
 import ContactList from "../edit/contact/ContactList";
 import '../partials/Navbar.css'
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Link, Route, Redirect } from "react-router-dom";
 import { NavDropdown, Navbar } from 'react-bootstrap';
+import { connect } from "react-redux";
+import PropTypes from "prop-types"
+import { logout } from "../../actions/auth";
 
-export default function AllEditPagesNavbar() { //exporting this component into react app
+const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => { //exporting this component into react app
+
+    if (!isAuthenticated) {
+        return <Redirect to="/login" />
+    }
     return (
         <div>
             <Router >
@@ -60,6 +67,12 @@ export default function AllEditPagesNavbar() { //exporting this component into r
                             <NavDropdown.Item><Link to="/admin/photos/create">Create Photo</Link></NavDropdown.Item>
                         </NavDropdown>
 
+                        {!loading && { isAuthenticated } ? (
+                            <Link to="#!" onClick={logout}>Logout</Link>
+                        ) : (
+                                null
+                            )}
+
                     </Navbar>
 
                 </Switch>
@@ -83,3 +96,13 @@ export default function AllEditPagesNavbar() { //exporting this component into r
     );
 }
 
+AllEditPagesNavbar.propTypes = {
+    logout: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(mapStateToProps, { logout })(AllEditPagesNavbar);

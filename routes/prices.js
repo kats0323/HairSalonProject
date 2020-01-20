@@ -10,14 +10,16 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
     const ja_course = req.body.ja_course;
     const en_course = req.body.en_course;
-    const price = req.body.price;
+    const ja_price = req.body.ja_price;
+    const en_price = req.body.en_price;
     const ja_detail = req.body.ja_detail;
     const en_detail = req.body.en_detail;
 
     const newPrice = new Price({
         ja_course,
         en_course,
-        price,
+        ja_price,
+        en_price,
         ja_detail,
         en_detail
     })
@@ -44,7 +46,8 @@ router.route('/update/:id').post((req, res) => {
         .then(price => {
             price.ja_course = req.body.ja_course;
             price.en_course = req.body.en_course;
-            price.price = req.body.price;
+            price.ja_price = req.body.ja_price;
+            price.en_price = req.body.en_price;
             price.ja_detail = req.body.ja_detail;
             price.en_detail = req.body.en_detail;
 
