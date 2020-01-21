@@ -6,12 +6,13 @@ import { Button, Icon } from 'antd';
 
 
 const BlogFunction = props => (
-    <tr>
-        <h3>{props.blogs.title}</h3>
-        <p>{props.blogs.content}</p>
-        <br />
-        <img src={props.blogs.photo} alt="blogPicture" />
-    </tr >
+    <div className="blogStyle">
+        <div className="blogCol">
+            <h3>{props.blogs.title}</h3>
+            <p>{props.blogs.content}</p>
+            <img src={props.blogs.photo} alt="blogPicture" />   
+        </div>
+    </div >
 )
 
 
@@ -28,7 +29,9 @@ export default class Blog extends Component {
     componentDidMount() {
         axios.get('/blogs/')
             .then(response => {
-                this.setState({ blogs: response.data })
+                let latestBlogs = response.data.reverse()
+                console.log("Latest Blogs", latestBlogs);
+                this.setState({ blogs: latestBlogs })
             })
             .catch((error) => {
                 console.log(error);
@@ -38,7 +41,10 @@ export default class Blog extends Component {
 
     blogList() {
         if (this.state.blogs.length > 0) {
-             var currentblog = this.state.blogs.slice(this.state.index,this.state.end).reverse()
+            let {index, end, blogs} = this.state
+            console.log("Index", index)
+            console.log("end", end)
+            const currentblog = blogs.slice(index,end)
             console.log("first blog", currentblog)
             return currentblog.map(currentblog => {
                 return <BlogFunction blogs={currentblog} key={currentblog._id}
@@ -68,6 +74,7 @@ export default class Blog extends Component {
             { 0 < this.state.index ? (
                 <Button type="primary" onClick={this.onClickDecrement}>
                     <Icon type="left" />
+                    Previous
                 </Button>
             ):null} 
         </div>
@@ -77,6 +84,7 @@ export default class Blog extends Component {
             {console.log(`The value of end is  = `+ this.state.end + `value of blog is = ` + this.state.blogs.length)}
             {this.state.end < this.state.blogs.length ? (
                 <Button type="primary" onClick={this.onClickIncrement}>
+                    Next
                     <Icon type="right" />
                 </Button>
             ):null} 
@@ -92,20 +100,21 @@ export default class Blog extends Component {
         );
         return (
             <div>
-                <div style={{paddingLeft:"25%", paddingRight:"25%", paddingBottom:"6vh" ,paddingTop:"4vh"}}>
-                    <div className="blogPad" style={{borderBottom:"1px solid",borderTop:"1px solid",width:"100%", color:"green", paddingBottom:"2%"}}>
+                <Line />
+                <div style={{paddingLeft:"25%", paddingRight:"25%", paddingBottom:"6vh"}}>
+                    <div className="blogPad" style={{width:"100%", paddingBottom:"2%"}}>
                         <div className="blogFlex">
                             {this.blogList()}
                         </div>
                     </div>
+                </div>
+                <Line />
                     <div style={{paddingTop:"20px"}}>
                         <div className="btnPad">
                             {this.Lbutton()}
                             {this.Rbutton()}
                         </div>
                     </div>
-                </div>
-                <Line />
             </div>
         )
     }

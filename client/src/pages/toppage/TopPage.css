@@ -62,13 +62,7 @@
 .slick-list{
     height: 600px;
 }
-@media only screen and (min-width: 1440px) {
-    .Carousel-photo{
-        background-size: cover;
-        width:60vw;
-        height: 100vh;
-    }
-}
+
 
 
 

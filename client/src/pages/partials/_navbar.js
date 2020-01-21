@@ -46,7 +46,7 @@ class Navbar extends Component {
             <div className='na' >
                 <div className="nav_bar">
                     <div className="logo-center">
-                        <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} /> </Link>
+                        <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "8vh" }} /> </Link>
                     </div>
                     <div className="style-line">
                         <Line />
