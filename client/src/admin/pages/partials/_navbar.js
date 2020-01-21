@@ -3,7 +3,7 @@ import AllEditPagesNavbar from './_all_edit_pages_navabar'
 import '../partials/Navbar.css'
 import { BrowserRouter as Router, Link , Switch , Route} from "react-router-dom";
 
-function 
+
 
 function Navbar() { 
     return (

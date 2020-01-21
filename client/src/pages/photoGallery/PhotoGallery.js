@@ -6,7 +6,7 @@ import './gallery.css'
 
 const PhotoFunction = props => (
     <tr>
-        <img src={props.photos.photo} style={{ width: "400px", margin: "20px", height: "300px" }} />
+        <img className='cards' src={props.photos.photo} />
     </tr>
 )
 
@@ -48,8 +48,8 @@ export default class PhotoGallery extends Component {
                 <div class="card-box">
                     <Row type="flex" justify="start">
                         {this.photoList()}
-                        {this.photoList()}
-                        {this.photoList()}
+                        {/* {this.photoList()}
+                        {this.photoList()} */}
                     </Row>
                 </div>
             </div>
