@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
+// import axios from 'axios';
 
-export default class CreateBlog extends Component {
+class CreateBlog extends Component {
 
     constructor(props) {
         super(props);
@@ -34,39 +36,56 @@ export default class CreateBlog extends Component {
     }
 
     render() {
-        return (
-            <div className="container" style={{ paddingLeft: "200px" }}>
-                <div className="row">
-                    <form action="/blogs/add" method="POST" enctype="multipart/form-data" >
-                        <div className="form-group">
-                            <label>Title: </label>
-                            <input type="text"
-                                required
-                                className="form-control"
-                                name="title"
-                                value={this.state.title}
-                                onChange={this.onChangeTitle}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Content: </label>
-                            <input type="text"
-                                required
-                                className="form-control"
-                                name="content"
-                                value={this.state.content}
-                                onChange={this.onChangeContent}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input type="file" name="photo" onChange={this.onPhotoChange} />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
-                        </div>
-                    </form>
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="container" style={{ paddingLeft: "200px" }}>
+                    <div className="row">
+                        <form action="/blogs/add" method="POST" enctype="multipart/form-data" >
+                            <div className="form-group">
+                                <label>Title: </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    name="title"
+                                    value={this.state.title}
+                                    onChange={this.onChangeTitle}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>Content: </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    name="content"
+                                    value={this.state.content}
+                                    onChange={this.onChangeContent}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input type="file" name="photo" onChange={this.onPhotoChange} />
+                            </div>
+                            <div className="form-group">
+                                <button className="btn btn-primary" type="submit">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )
+        }
     }
 }
+
+CreateBlog.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(CreateBlog);

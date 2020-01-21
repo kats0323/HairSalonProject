@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
-export default class EditAbout extends Component {
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
+
+class EditAbout extends Component {
     constructor(props) {
         super(props)
         this.onChangeEnIntroduction = this.onChangeEnIntroduction.bind(this);
@@ -62,40 +65,56 @@ export default class EditAbout extends Component {
         // window.location = '/admin/about';
     }
     render() {
-        console.log(this.props.match.params.id)
-        return (
-            <div className="container" style={{ paddingLeft: "200px" }}>
-                <div className="row">
-                    <form onSubmit={this.onSubmit} enctype="multipart/form-data">
-                        <div className="form-group">
-                            <label>English Introduction: </label>
-                            <input type="text"
-                                required
-                                className="form-control"
-                                name="en_introduction"
-                                value={this.state.en_introduction}
-                                onChange={this.onChangeEnIntroduction}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Japanese Introduction: </label>
-                            <input type="text"
-                                required
-                                className="form-control"
-                                name="ja_introduction"
-                                value={this.state.ja_introduction}
-                                onChange={this.onChangeJaIntroduction}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input type="file" name="photo" onChange={this.onPhotoChange} />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
-                        </div>
-                    </form>
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
                 </div>
-            </div >
-        )
+            )
+        } else {
+            return (
+                <div className="container" style={{ paddingLeft: "200px" }}>
+                    <div className="row">
+                        <form onSubmit={this.onSubmit} enctype="multipart/form-data">
+                            <div className="form-group">
+                                <label>English Introduction: </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    name="en_introduction"
+                                    value={this.state.en_introduction}
+                                    onChange={this.onChangeEnIntroduction}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>Japanese Introduction: </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    name="ja_introduction"
+                                    value={this.state.ja_introduction}
+                                    onChange={this.onChangeJaIntroduction}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input type="file" name="photo" onChange={this.onPhotoChange} />
+                            </div>
+                            <div className="form-group">
+                                <button className="btn btn-primary" type="submit" onSubmit={this.onSubmit}>Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div >
+            )
+        }
     }
 }
+
+EditAbout.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(EditAbout);

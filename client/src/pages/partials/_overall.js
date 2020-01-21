@@ -23,6 +23,7 @@ export default function overall() {
           {/* Price Page */}
           <Route path="/prices" >
             <Navbar />
+            <Footer />
           </Route >
           {/* Photo Page */}
           <Route path="/photos">

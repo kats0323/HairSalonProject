@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 const ContactFunction = props => (
 
@@ -56,14 +58,14 @@ const ContactFunction = props => (
         <h4>suburb</h4>
         {props.contacts.suburb}
         <br />
-        <h4></h4>
+        <h4>State</h4>
         {props.contacts.state}
         <br />
         <h4>state</h4>
         {props.contacts.post_code}
         <br />
         <h4>google</h4>
-        <iframe src={props.contacts.google}></iframe>
+        <iframe src={props.contacts.google} title="google"></iframe>
         <br />
         {props.contacts.google}
         <br />
@@ -80,7 +82,7 @@ const ContactFunction = props => (
         {props.contacts.shop_extra_info_ja}
         <br />
         <h4>shop_photo1</h4>
-        <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shop_photo" />
 
         <Link to={"/admin/contacts/edit/" + props.contacts._id}>edit</Link> | <button href="#" onClick={() => { props.deleteContact(props.contacts._id) }}>delete</button>
     </div>
@@ -88,7 +90,7 @@ const ContactFunction = props => (
 )
 
 
-export default class ContactList extends Component {
+class ContactList extends Component {
     constructor(props) {
         super(props);
 
@@ -123,12 +125,29 @@ export default class ContactList extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <h1>Contact</h1>
-                <br />
-                {this.contactList()}
-            </div>
-        )
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h1>Contact</h1>
+                    <br />
+                    {this.contactList()}
+                </div>
+            )
+        }
     }
 }
+
+ContactList.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(ContactList);

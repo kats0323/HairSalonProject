@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 const BlogFunction = props => (
     <tr>
         <td>{props.blogs.title}</td>
         <td>{props.blogs.content}</td>
-        <img src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+        <img src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="blogphoto" />
+
         <td>
-            <Link to={"/admin/blogs/edit/" + props.blogs._id}>edit</Link> | <button href="#" onClick={() => { props.deleteBlog(props.blogs._id) }}>delete</button>
+            <button href="#" onClick={() => { props.deleteBlog(props.blogs._id) }}>delete</button>
         </td>
     </tr >
 )
@@ -41,9 +42,7 @@ class BlogList extends Component {
         })
     }
     render() {
-        console.log("in blog---", this.props.isAuthenticated)
         if (!this.props.isAuthenticated) {
-            console.log("UN AUTHORISED")
             return (
                 <div>
                     <h1> NOT AUTHORISED</h1>
