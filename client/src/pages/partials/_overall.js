@@ -4,6 +4,9 @@ import Footer from './_footer'
 import TopPage from "../toppage/TopPage";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import Blog from "../blog/Blog";
+import Cut from "../price/Cut";
+import Perm from "../price/Perm";
+import Color from "../price/Color";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -25,6 +28,25 @@ export default function overall() {
             <Navbar />
             <Footer />
           </Route >
+
+          {/* Cut Page */}
+          <Route path="/services/cut" >
+            <Navbar />
+            <Footer />
+          </Route >
+
+          {/* Perm Page */}
+          <Route path="/services/perm" >
+            <Navbar />
+            <Footer />
+          </Route >
+
+          {/* Color Page */}
+          <Route path="/services/color" >
+            <Navbar />
+            <Footer />
+          </Route >
+
           {/* Photo Page */}
           <Route path="/photos">
             <Navbar />
@@ -36,7 +58,6 @@ export default function overall() {
             <Navbar />
             <Blog />
             <Footer />
-
           </Route >
           {/* Home Page */}
           <Route exact path="/">
