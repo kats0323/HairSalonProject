@@ -27,20 +27,3 @@
     color: green;
 }
 
-
-@media only screen and (max-width: 412px) {
-    .pricePad{
-        padding-left: 0%;
-    }
-
-    .priceList h2{
-        font-size: 1rem;
-    }
-    .priceList h3{
-        font-size: 1rem;
-    }
-    .priceList h4{
-        font-size: 1rem;
-    }
-
-}

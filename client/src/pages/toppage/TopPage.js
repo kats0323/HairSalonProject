@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import 'antd/dist/antd.css';
 import './carousel.css';
 import './TopPage.css';
-import Facebook from './facebook-square-brands.svg';
-import Instagram from './instagram-brands.svg';
 import { Link } from "react-router-dom";
 import { Carousel } from 'antd';
 import { Row, Col, Icon } from 'antd';

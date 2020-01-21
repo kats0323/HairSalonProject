@@ -161,25 +161,25 @@ export default class Price extends Component {
                     <Sline />
                 <div class="pricePad">
                         <Row type="flex" justify="center">
-                        <Col span={10} order={1}>
+                        <Col lg={10} order={1}>
                             <div className="priceList">
                                     <h2>CUT</h2>
                                     {this.cutList()}
                                 </div>
                         </Col>
-                        <Col span={10} order={2}>
+                        <Col lg={10} order={2}>
                                 <div className="priceList">
                                     <h2>COLOUR</h2>
                                     {this.colourList()}
                                 </div>
                         </Col>
-                        <Col span={10} order={3}>
+                        <Col lg={10} order={3}>
                             <div className="priceList">
-                                    <h2>PERM</h2>
-                                    {this.permList()}
+                                        <h2>PERM</h2>
+                                        {this.permList()}
                                 </div>
                         </Col>
-                        <Col span={10} order={4}>
+                        <Col lg={10} order={4}>
                             <div className="priceList">
                                     <h2>Other</h2>
                                     {this.otherList()}
