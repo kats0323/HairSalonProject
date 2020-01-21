@@ -53,15 +53,38 @@ export default class About extends Component {
     }
 
     render() {
-
+        const Line = ({ color }) => (
+            <div class="style-line">
+                <hr style={{ color: "green", border: "0.4px solid", width: "100%", }} />
+            </div>
+        );
         return (
+<<<<<<< HEAD
             <div className='style-about'>
                 <h1 className='about-title'>About</h1>
                 <br />
                 <h3>
                     {this.aboutList()}
                 </h3>
+=======
+            <div>
+
+                <div className="aboutPad">
+                    <Line />
+                    <Row>
+                        <Col>
+                            <h1 style={{ textAlign: "center" }}>About</h1>
+                            <h3>
+                                {this.aboutList()}
+                            </h3>
+                        </Col>
+                    </Row>
+                    <Line />
+                </div>
+                <Footer />
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
             </div>
+
         )
     }
 }

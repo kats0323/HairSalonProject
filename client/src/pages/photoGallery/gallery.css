@@ -1,6 +1,9 @@
 
+.line-style{
+    display: flex;
+    justify-content: center;
+}
 .title-gallery-center{
-    padding-top: 2%;
     text-align: center;
     font-family: cursive;
 }

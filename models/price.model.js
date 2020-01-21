@@ -9,7 +9,10 @@ const priceSchema = new Schema({
     en_course: {
         type: String,
     },
-    price: {
+    ja_price: {
+        type: String,
+    },
+    en_price: {
         type: String,
     },
     ja_detail: {

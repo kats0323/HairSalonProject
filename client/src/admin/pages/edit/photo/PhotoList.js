@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "./admin_price.css"
 
 const PhotoFunction = props => (
-    <tr>
-        <img src={props.photos.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
-    </tr>
+    <div>
+        <img src={props.photos.photo} alt="pg" id="image_class" style={{ width: "500px", margin: "20px", height: "300px", cursor: "pointer" }} />
+        <button href="#" onClick={() => { props.deletePhoto(props.photos._id) }}>delete</button>
+    </div>
 )
+
+
 
 
 export default class PhotoList extends Component {
     constructor(props) {
         super(props);
 
-
+        this.deletePhoto = this.deletePhoto.bind(this)
         this.state = { photos: [] };
     }
 
@@ -27,11 +31,20 @@ export default class PhotoList extends Component {
             })
     }
 
+    deletePhoto(id) {
+        axios.delete('/photos/' + id)
+            .then(response => { console.log(response.data) });
+
+        this.setState({
+            photos: this.state.photos.filter(el => el._id !== id)
+        })
+    }
+
 
 
     photoList() {
         return this.state.photos.map(currentphoto => {
-            return <PhotoFunction photos={currentphoto} key={currentphoto._id} />;
+            return <PhotoFunction photos={currentphoto} key={currentphoto._id} deletePhoto={this.deletePhoto} />;
         })
     }
 

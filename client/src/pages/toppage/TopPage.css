@@ -11,13 +11,52 @@
 }
 
 .style-home{
-    padding-top: 20px;
+    padding-top: 5%;
     text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+
 }
 
 .style-line{
     display: flex !important;
     justify-content: center;
+}
+
+.style-showcase{
+    width: 200px;
+    height: 300px;
+}
+
+.ant-row{
+    padding-top: 40px;
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.button-top {
+    padding-top:40px;
+}
+.ant-btn {
+    height: 100px;
+    width: 300px;
+}
+.salon-top{
+    padding-top: 40px;
+}
+
+.salon-info {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.info-icons{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.info-icons a{
+    color: green;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -27,3 +66,6 @@
         height: 100vh;
     }
 }
+
+
+

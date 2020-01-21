@@ -67,8 +67,14 @@ router.put('/update/:id', upload.single('photo'), (req, res) => {
     const url = req.protocol + '://' + req.get('host')
     const en_introduction = req.body.en_introduction;
     const ja_introduction = req.body.ja_introduction;
+<<<<<<< HEAD
     const photo = url + '/public/' + req.body.photo;
     let { id } = req.params
+=======
+    // const photo = url + '/public/' + '29b22d78-cdc6-4cc9-94a8-516a904b7d98' + '-' + req.body.photo;
+    const photo = url + '/public/' + req.body.photo;
+    const { id } = req.params
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
     About.findById(id)
         .then(about => {
             about.en_introduction = en_introduction

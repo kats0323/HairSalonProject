@@ -26,6 +26,17 @@
     border-bottom: 0px !important;
 }
 
+.ant-menu-item a{
+    color:darkgreen !important;
+}
+
+
+.nav_bar_nest{
+    
+    color: white !important;
+}
+
+
 
 .logo-center{
     padding-top: 24px;

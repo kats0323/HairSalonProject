@@ -5,6 +5,7 @@ import './gallery.css'
 
 
 const PhotoFunction = props => (
+
     <tr>
         <img className='cards' src={props.photos.photo} />
     </tr>
@@ -27,24 +28,68 @@ export default class PhotoGallery extends Component {
             })
     }
 
+    popup_open(e) {
+        let popupContent = document.querySelector(".popup-content");
+        let popup_wrapper = document.querySelector(".popup-wrapper");
+        let photoData = e.target.src
+        console.log(photoData)
+        popupContent.innerHTML = '<img src=' + photoData + ' >'
+        popup_wrapper.style.display = "block"
+    }
+
+    popupCloseXbuuton() {
+        let popup_wrapper = document.querySelector(".popup-wrapper");
+        popup_wrapper.style.display = "none"
+    }
+
+    popupClose() {
+        let popup_wrapper = document.querySelector(".popup-wrapper");
+        popup_wrapper.style.display = "none"
+    }
 
 
     photoList() {
         return this.state.photos.map(currentphoto => {
-            return <PhotoFunction photos={currentphoto} key={currentphoto._id} />;
+            return <PhotoFunction photos={currentphoto} key={currentphoto._id} popup_open={this.popup_open} />;
         })
     }
 
     render() {
         const ColoredLine = ({ color }) => (
+<<<<<<< HEAD
             <hr style={{ color: "gray", border: "2px dashed" }} />
+=======
+            <div className="line-style">
+                <hr style={{ color: "green", border: "0.4px solid", width:"60%" }} />
+            </div>
+
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         );
 
 
         return (
-            <div>
-                <h1 class="title-gallery-center">PhotoGallery</h1>
+            <div id="popup" >
+                <div id="popup_background">
+                    <div>
+                        <ColoredLine />
+
+                        <h1 class="title-gallery-center">PhotoGallery</h1>
+                        <div class="imagePad">
+                        <Row type="flex" justify="start" >
+                            {this.photoList()}
+                        </Row> 
+                        </div>
+            
+                        <div class="popup-wrapper" onClick={this.popupClose}>
+                            <div class="popup">
+                                <div class="popup-close" onClick={this.popupCloseXbuuton}>X</div>
+                                <div class="popup-content"  ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div >
                 <ColoredLine />
+<<<<<<< HEAD
                 <div class="card-box">
                     <Row type="flex" justify="start">
                         {this.photoList()}
@@ -52,6 +97,9 @@ export default class PhotoGallery extends Component {
                         {this.photoList()} */}
                     </Row>
                 </div>
+=======
+
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
             </div>
         )
     }

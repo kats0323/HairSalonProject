@@ -3,15 +3,27 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
 const AboutFunction = props => (
     <tr>
         <h2>{props.about.en_introduction}</h2>
         <h4>{props.about.ja_introduction}</h4>
         <br />
+<<<<<<< HEAD
         <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} />
+=======
+        <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         <td>
-            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> | <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
+            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> |    <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
         </td>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
     </tr >
 )
 

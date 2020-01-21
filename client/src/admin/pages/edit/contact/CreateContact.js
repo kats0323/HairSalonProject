@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+// import axios from 'axios';
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
 
 export default class CreateContact extends Component {
 
@@ -12,8 +16,20 @@ export default class CreateContact extends Component {
         this.onChangeInstagram = this.onChangeInstagram.bind(this);
         this.onChangeContactInfoEn = this.onChangeContactInfoEn.bind(this);
         this.onChangeContactInfoJa = this.onChangeContactInfoJa.bind(this);
+<<<<<<< HEAD
         this.onChangeOpeningHorsEn = this.onChangeOpeningHorsEn.bind(this);
         this.onChangeOpeningHorsJa = this.onChangeOpeningHorsJa.bind(this);
+=======
+        this.onChangeContactExtraInfoEn = this.onChangeContactExtraInfoEn.bind(this);
+        this.onChangeContactExtraInfoJa = this.onChangeContactExtraInfoJa.bind(this);
+        this.onChangeOpeningHorsMon = this.onChangeOpeningHorsMon.bind(this);
+        this.onChangeOpeningHorsTue = this.onChangeOpeningHorsTue.bind(this);
+        this.onChangeOpeningHorsWed = this.onChangeOpeningHorsWed.bind(this);
+        this.onChangeOpeningHorsThu = this.onChangeOpeningHorsThu.bind(this);
+        this.onChangeOpeningHorsFri = this.onChangeOpeningHorsFri.bind(this);
+        this.onChangeOpeningHorsSat = this.onChangeOpeningHorsSat.bind(this);
+        this.onChangeOpeningHorsSun = this.onChangeOpeningHorsSun.bind(this);
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         this.onChangeStreet = this.onChangeStreet.bind(this);
         this.onChangeSuburb = this.onChangeSuburb.bind(this);
         this.onChangeState = this.onChangeState.bind(this);
@@ -23,6 +39,11 @@ export default class CreateContact extends Component {
         // this.onChangeShopPhoto2 = this.onChangeShopPhoto2.bind(this);
         this.onChangeShopInfoEn = this.onChangeShopInfoEn.bind(this);
         this.onChangeShopInfoJa = this.onChangeShopInfoJa.bind(this);
+<<<<<<< HEAD
+=======
+        this.onChangeShopExtraInfoEn = this.onChangeShopExtraInfoEn.bind(this);
+        this.onChangeShopExtraInfoJa = this.onChangeShopExtraInfoJa.bind(this);
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
 
 
 
@@ -33,8 +54,20 @@ export default class CreateContact extends Component {
             instagram: "",
             contact_info_en: "",
             contact_info_ja: "",
+<<<<<<< HEAD
             opening_hors_en: "",
             opening_hors_ja: "",
+=======
+            contact_extra_info_en: "",
+            contact_extra_info_ja: "",
+            opening_hors_mon: "",
+            opening_hors_tue: "",
+            opening_hors_wed: "",
+            opening_hors_thu: "",
+            opening_hors_fri: "",
+            opening_hors_sat: "",
+            opening_hors_sun: "",
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
             street: "",
             suburb: "",
             state: "",
@@ -43,7 +76,13 @@ export default class CreateContact extends Component {
             shop_photo1: "",
             // shop_photo2: "",
             shop_info_en: "",
+<<<<<<< HEAD
             shop_info_ja: ""
+=======
+            shop_info_ja: "",
+            shop_extra_info_en: "",
+            shop_extra_info_ja: ""
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         }
     }
 
@@ -82,9 +121,59 @@ export default class CreateContact extends Component {
             contact_info_ja: e.target.value
         })
     }
+<<<<<<< HEAD
     onChangeOpeningHorsEn(e) {
         this.setState({
             opening_hors_en: e.target.value
+=======
+    onChangeContactExtraInfoEn(e) {
+        this.setState({
+            contact_extra_info_en: e.target.value
+        })
+    }
+
+    onChangeContactExtraInfoJa(e) {
+        this.setState({
+            contact_extra_info_ja: e.target.value
+        })
+    }
+    onChangeOpeningHorsMon(e) {
+        this.setState({
+            opening_hors_mon: e.target.value
+        })
+    }
+
+    onChangeOpeningHorsTue(e) {
+        this.setState({
+            opening_hors_tue: e.target.value
+        })
+    }
+    onChangeOpeningHorsWed(e) {
+        this.setState({
+            opening_hors_wed: e.target.value
+        })
+    }
+
+    onChangeOpeningHorsThu(e) {
+        this.setState({
+            opening_hors_thu: e.target.value
+        })
+    }
+    onChangeOpeningHorsFri(e) {
+        this.setState({
+            opening_hors_fri: e.target.value
+        })
+    }
+
+    onChangeOpeningHorsSat(e) {
+        this.setState({
+            opening_hors_sat: e.target.value
+        })
+    }
+    onChangeOpeningHorsSun(e) {
+        this.setState({
+            opening_hors_sun: e.target.value
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         })
     }
 
@@ -142,6 +231,20 @@ export default class CreateContact extends Component {
         })
     }
 
+<<<<<<< HEAD
+=======
+    onChangeShopExtraInfoJa(e) {
+        this.setState({
+            shop_extra_info_ja: e.target.value
+        })
+    }
+    onChangeShopExtraInfoEn(e) {
+        this.setState({
+            shop_extra_info_en: e.target.value
+        })
+    }
+
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
     render() {
         return (
             <div className="container" >
@@ -208,6 +311,7 @@ export default class CreateContact extends Component {
                             />
                         </div>
                         <div className="form-group">
+<<<<<<< HEAD
                             <label>Opening Hours English: </label>
                             <input type="text"
                                 required
@@ -225,6 +329,95 @@ export default class CreateContact extends Component {
                                 name="opening_hors_ja"
                                 value={this.state.opening_hors_ja}
                                 onChange={this.onChangeOpeningHorsJa}
+=======
+                            <label>Contact Extra Info English: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="contact_extra_info_en"
+                                value={this.state.contact_extra_info_en}
+                                onChange={this.onChangeContactExtraInfoEn}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Extra Info Japanese: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="contact_extra_info_ja"
+                                value={this.state.contact_extra_info_ja}
+                                onChange={this.onChangeContactExtraInfoJa}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Monday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_mon"
+                                value={this.state.opening_hors_mon}
+                                onChange={this.onChangeOpeningHorsMon}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Tueday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_tue"
+                                value={this.state.opening_hors_tue}
+                                onChange={this.onChangeOpeningHorsTue}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours English　Wednesday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_wed"
+                                value={this.state.opening_hors_wed}
+                                onChange={this.onChangeOpeningHorsWed}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Thursday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_thu"
+                                value={this.state.opening_hors_thu}
+                                onChange={this.onChangeOpeningHorsThu}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Friday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_fri"
+                                value={this.state.opening_hors_fri}
+                                onChange={this.onChangeOpeningHorsFri}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Saturday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_sat"
+                                value={this.state.opening_hors_sat}
+                                onChange={this.onChangeOpeningHorsSat}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Sunday: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="opening_hors_sun"
+                                value={this.state.opening_hors_sun}
+                                onChange={this.onChangeOpeningHorsSun}
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
                             />
                         </div>
                         <div className="form-group">
@@ -298,6 +491,29 @@ export default class CreateContact extends Component {
                             />
                         </div>
                         <div className="form-group">
+<<<<<<< HEAD
+=======
+                            <label>Shop Extra Info English: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="shop_extra_info_en"
+                                value={this.state.shop_extra_info_en}
+                                onChange={this.onChangeShopExtraInfoEn}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Shop Extra Info Japanese: </label>
+                            <input type="text"
+
+                                className="form-control"
+                                name="shop_extra_info_ja"
+                                value={this.state.shop_extra_info_ja}
+                                onChange={this.onChangeShopExtraInfoJa}
+                            />
+                        </div>
+                        <div className="form-group">
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
                             <input type="file" name="photo" onChange={this.onChangeShopPhoto1} />
                         </div>
                         {/* <div className="form-group">

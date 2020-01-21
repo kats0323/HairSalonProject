@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
 import Login from '../../login/Login' //importing this from admin/login/Login.js
 import EditDash from '../dashboard/EditDashboard' //importing this from admin/pages/dashboard/EditDashboard this is the admin page to check customers
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// redux
+import { Provider } from "react-redux";
+import store from "../../store"
+import { loadUser } from "../../actions/auth"
+import setAuthToken from "../../utils/setAuthToken"
 
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
-
-
-export default function admin() {
+const Admin = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
-    <div>
+    <Provider store={store}>
       <Router>
+<<<<<<< HEAD
         <Switch>
           <Route path="/login" component={Login} />
 
@@ -22,8 +32,22 @@ export default function admin() {
 
 
         </Switch>
+=======
+        <Fragment>
+          <Alert />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+
+            {/* This is the main admin page or the first place they will visit when they log in */}
+            <Route exact path="/admin" component={EditDash} />
+          </Switch>
+        </Fragment>
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
       </Router>
-    </div>
+    </Provider>
   );
 };
+
+export default Admin;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
@@ -45,7 +45,7 @@ class Navbar extends Component {
                     <div class="logo-center">
                         <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "80px" }} />
                     </div>
-                    <div class="style-line">
+                    <div className="style-line">
                         <Line />
                     </div>
 
@@ -55,11 +55,11 @@ class Navbar extends Component {
                         defaultSelectedKeys={['2']}
                     >
                         {this.state.language === "Japanese" ? (
-                            <Menu.Item key="1" className="english_button" style={{ color: "black" }} onClick={this.onChangeEnglish.bind(this)}>English</Menu.Item>
+                            <Menu.Item key="1" className="english_button" style={{ color: "darkgreen" }} onClick={this.onChangeEnglish.bind(this)}>English</Menu.Item>
                         ) : (
-                                <Menu.Item key="1" className="japanese_button" style={{ color: "black" }} onClick={this.onChangeJapanese.bind(this)}>Japanese</Menu.Item>
+                                <Menu.Item key="1" className="japanese_button" style={{ color: "darkgreen" }} onClick={this.onChangeJapanese.bind(this)}>Japanese</Menu.Item>
                             )}
-                        <Menu.Item key="5" > <Link to={{ pathname: "/" }}>Home</Link></Menu.Item>
+                        <Menu.Item key="5" className="nav_bar_nest"> <Link to={{ pathname: "/" }}>Home</Link></Menu.Item>
                         <Menu.Item key="6" className="nav_bar_nest"> <Link to="/about">About</Link></Menu.Item>
                         <Menu.Item key="7" className="nav_bar_nest"> <Link to="/contacts">Contact</Link></Menu.Item>
                         <Menu.Item key="8" className="nav_bar_nest"><Link to={location => ({ ...location, pathname: "/prices" })}>Price</Link></Menu.Item>

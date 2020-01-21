@@ -15,7 +15,11 @@ import '../partials/Navbar.css'
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 import { NavDropdown, Navbar } from 'react-bootstrap';
 
-export default function AllEditPagesNavbar() { //exporting this component into react app
+const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => { //exporting this component into react app
+
+    if (!isAuthenticated) {
+        return <Redirect to="/login" />
+    }
     return (
         <div>
             <Router >
@@ -23,7 +27,11 @@ export default function AllEditPagesNavbar() { //exporting this component into r
 
 
                     <Navbar bg="dark" variant="dark" className="admin_navbar">
+<<<<<<< HEAD
                         {/* <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /> */}
+=======
+                        <Link to="/"><img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /></Link>
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
 
                         {/* About */}
                         <NavDropdown title="About" id="basic-nav-dropdown">
@@ -83,3 +91,13 @@ export default function AllEditPagesNavbar() { //exporting this component into r
     );
 }
 
+AllEditPagesNavbar.propTypes = {
+    logout: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(mapStateToProps, { logout })(AllEditPagesNavbar);

@@ -6,8 +6,12 @@ export default function EditDashboard() { //exporting this component into react 
     return (
         <div>
             <AllEditPagesNavbar />
+<<<<<<< HEAD
                         <h1 className='welcome-title'>　〜　Wecome come Back Miho 〜　</h1>
             <Timer/>
+=======
+            <h1 class="main"> Admin Page </h1>
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
         </div>
     );
 }

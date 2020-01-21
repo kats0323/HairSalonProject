@@ -1,5 +1,5 @@
 /* class called outerbox and it's styling */
-.outerbox{
+.outerbox_login{
     background-image: linear-gradient(#12c2e9, #05FFA3); /* Gradient */
     filter: blur(4px); /* how i blurred the background */
     -webkit-filter: blur(4px); /* for multiple different support */
@@ -18,7 +18,7 @@
     left: 50%;  /* left padding */
     transform: translate(-50%, -63%);  /* Postioning this middle the number on the left is horizontal the right is vertical*/
     width: 350px;  /* The width of the box */
-    height: 350px;  /* The height of the box */
+    height: 400px;  /* The height of the box */
     text-align: center;  /* makes the text align is center to center the text */
     border-radius: 4px; /* makes the background of the from round no one likes spikey corners :D */ 
 }
@@ -53,6 +53,9 @@ form{
     cursor: pointer; /* only works on pc, when you hover over it changes the mouse to a pointer */
     font-size: 18px; /* this is for the font size */
 } 
+
+
+
 
 /* media query for i phone 5 */
 @media only screen and (max-width: 320px) {  /* I phone 5 people i've got you covered everyone else your already covered ;) */

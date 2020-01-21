@@ -1,3 +1,82 @@
 #basic-nav-dropdown{
     font-size: 1.5rem;
 }
+<<<<<<< HEAD
+=======
+
+.main{
+    margin-left:300px;
+}
+
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding:0px;
+    margin:0px;
+}
+
+.admin-title{
+    font-size: 1.4rem;
+    color:#fff;
+    text-align: center;
+}
+
+.title-box {
+    padding-top:5%;
+    background-color:rgb(14, 128, 194) ;
+    height:65px;
+}
+
+aside{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(245, 245, 245, 5);
+    overflow-x: hidden;
+}
+
+ul{
+    padding:0px;
+    margin:0px;
+}
+
+ul li{
+    font-size: 1.4rem;
+    color:rgb(14, 128, 194);
+    cursor:pointer;
+}
+
+ul li div{
+    float:left;
+}
+
+/* class called link title */
+.linktitle li{
+    line-height: 35px;
+    padding: 20px 0 20px 0; 
+    padding-left: 60px;
+}
+
+.linktitle li:hover{
+    color: #0b82bd; 
+    background-color: #fff;
+}
+
+/* Link */
+.Link{
+    text-decoration: none;
+}
+
+.admin_navbar{
+    height: 60px;
+}
+#basic-nav-dropdown{
+    font-size: 1.5rem;
+    padding-left: 25px;
+}
+/* Reponsive menu code */
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3

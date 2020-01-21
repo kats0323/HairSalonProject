@@ -52,6 +52,15 @@ const contactSchema = new Schema({
     },
     shop_info_ja: {
         type: String
+<<<<<<< HEAD
+=======
+    },
+    shop_extra_info_en: {
+        type: String
+    },
+    shop_extra_info_ja: {
+        type: String
+>>>>>>> 4f018f763f74f5103e55cd412764678ef170b3e3
     }
 
 })

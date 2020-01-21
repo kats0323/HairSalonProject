@@ -59,22 +59,65 @@ export default class Price extends Component {
         })
     }
 
-    priceList() {
-        return this.state.prices.map(currentprice => {
-            return <PriceFunction prices={currentprice} deletePrice={this.deletePrice} key={currentprice._id} language={this.props.language} />;
+    cutList() {
+        return this.state.prices.slice(0, 8).map(cutprice => {
+
+            return <CutPriceFunction cut={cutprice} deletePrice={this.deletePrice} key={cutprice._id} language={this.props.language} />;
+        })
+    }
+
+    colourList() {
+        return this.state.prices.slice(9, 19).map(colourprice => {
+            return <ColorPriceFunction colour={colourprice} deletePrice={this.deletePrice} key={colourprice._id} language={this.props.language} />;
+        })
+    }
+
+    permList() {
+        return this.state.prices.slice(20, 24).map(permprice => {
+            return <PermPriceFunction perm={permprice} deletePrice={this.deletePrice} key={permprice._id} language={this.props.language} />;
+        })
+    }
+
+    otherList() {
+        return this.state.prices.slice(25, 29).map(otherprice => {
+            return <OtherPriceFunction other={otherprice} deletePrice={this.deletePrice} key={otherprice._id} language={this.props.language} />;
         })
     }
 
     render() {
-
         return (
-            <div class="background">
-                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", paddingTop: "1%" }}>
-                    <h3 style={{ fontSize: "2rem", padding: "40px", borderStyle: "solid", borderWeight: "2px", width: "250px" }}>Prices List</h3>
+            <div class="price_background">
+                    <Sline />
+                <div class="pricePad">
+                        <Row type="flex" justify="center">
+                        <Col span={10} order={1}>
+                            <div className="priceList">
+                                    <h2>CUT</h2>
+                                    {this.cutList()}
+                                </div>
+                        </Col>
+                        <Col span={10} order={2}>
+                                <div className="priceList">
+                                    <h2>COLOUR</h2>
+                                    {this.colourList()}
+                                </div>
+                        </Col>
+                        <Col span={10} order={3}>
+                            <div className="priceList">
+                                    <h2>PERM</h2>
+                                    {this.permList()}
+                                </div>
+                        </Col>
+                        <Col span={10} order={4}>
+                            <div className="priceList">
+                                    <h2>Other</h2>
+                                    {this.otherList()}
+                                </div>
+                        </Col>
+                    </Row>  
                 </div>
-                {this.priceList()}
-
-            </div>
+                    <Sline />
+            </div >
         )
     }
 }
