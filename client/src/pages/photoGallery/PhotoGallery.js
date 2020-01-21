@@ -9,7 +9,7 @@ import './gallery.css'
 const PhotoFunction = props => (
 
     <tr>
-        <img src={props.photos.photo} style={{ width: "200px", margin: "20px", height: "150px", cursor: "pointer" }} class="photos_pg" alt="photogalleryimages"
+        <img src={props.photos.photo} class="photos_pg" alt="photogalleryimages"
             onClick={
                 props.popup_open
             } />
