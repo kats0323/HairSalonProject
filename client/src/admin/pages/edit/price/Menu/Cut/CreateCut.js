@@ -83,7 +83,7 @@ export default class CreateCut extends Component {
     }
     render() {
         return (
-            <div style={{ paddingLeft: "300px" }}>
+            <div>
                 <h3>Create New Cut Menu</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">

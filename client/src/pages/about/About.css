@@ -2,3 +2,13 @@
     padding-left: 19.5%;
     padding-right: 19.5%;
 }
+.about_img{
+    border-radius: 80%;
+    width: 20vw;
+    height: 33vh;
+}
+.about_position{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+

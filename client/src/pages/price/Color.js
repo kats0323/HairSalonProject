@@ -68,7 +68,7 @@ export default class ColorList extends Component {
                         {this.colorList()}
                     </div>
                 </div>
-                <Link to="/prices"><button>MENU</button></Link>
+                <Link to="/prices">MENU</Link>
                 <Sline />
             </div >
         )
