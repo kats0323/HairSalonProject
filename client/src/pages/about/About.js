@@ -9,14 +9,14 @@ const AboutFunction = props => (
 
     <div>
         {props.language === "Japanese" ? (
-            <div>
-                <p>{props.about.ja_introduction}</p>
-                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+            <div className="about_position">
+                <img src={props.about.photo} className="about_img" alt="avatar" />
+                <h3 className="about_intro">{props.about.ja_introduction}</h3>
             </div>
         ) : (
-                <div>
-                    <p>{props.about.en_introduction}</p>
-                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+                <div className="about_position">
+                    <img src={props.about.photo} className="about_img" alt="avatar" />
+                    <h3 className="about_intro">{props.about.en_introduction}</h3>
                 </div>
             )}
     </div>
@@ -68,18 +68,12 @@ export default class About extends Component {
 
                 <div className="aboutPad">
                     <Line />
-                    <Row>
-                        <Col>
-                            <h1 style={{ textAlign: "center" }}>About</h1>
-                            <h3>
-                                {this.aboutList()}
-                            </h3>
-                        </Col>
-                    </Row>
+                    <h1 style={{ textAlign: "center" }}>About Miho</h1>
+                    {this.aboutList()}
                     <Line />
                 </div>
                 <Footer />
-            </div>
+            </div >
 
         )
     }
