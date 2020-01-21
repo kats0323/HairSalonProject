@@ -64,8 +64,8 @@ class TopPage extends Component {
                     <h1>Salon Information</h1>
                     <i class="fab fa-instagram"></i>
                     <div class="info-icons">
-                        <Icon type="facebook" theme="filled" style={{color:"green",fontSize:"40px", paddingRight:"10px"}} />
-                        <Icon type="instagram" theme="filled" style={{color:"green",fontSize:"40px",paddingLeft:"10px"}} />
+                        <Icon type="facebook" theme="filled" style={{ color: "green", fontSize: "40px", paddingRight: "10px" }} />
+                        <Icon type="instagram" theme="filled" style={{ color: "green", fontSize: "40px", paddingLeft: "10px" }} />
 
                     </div>
                 </div>

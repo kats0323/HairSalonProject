@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
-export default class CreatePhoto extends Component {
+
+class CreatePhoto extends Component {
 
     constructor(props) {
         super(props);
@@ -28,19 +31,36 @@ export default class CreatePhoto extends Component {
         window.location = '/admin/photos/create';
     }
     render() {
-        return (
-            <div className="container" style={{ paddingLeft: "200px" }}>
-                <div className="row">
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="file" onChange={this.onPhotoChange} />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
-                        </div>
-                    </form>
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="container" style={{ paddingLeft: "200px" }}>
+                    <div className="row">
+                        <form onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                <input type="file" onChange={this.onPhotoChange} />
+                            </div>
+                            <div className="form-group">
+                                <button className="btn btn-primary" type="submit">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )
+        }
     }
 }
+CreatePhoto.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(CreatePhoto);
+
