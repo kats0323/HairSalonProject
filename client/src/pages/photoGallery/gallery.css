@@ -16,7 +16,7 @@
     height: 200px;
 }
 .popup-wrapper{
-    background: rgba(0, 0, 0,0.5);
+    background: rgba(255, 255, 255, 0.534);
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@
     width: 100%;
     padding-top: 8%;
     padding-right: 0;
-    background-color: rgba(0, 0, 0,0.7);
+    background-color: rgba(0, 255, 34, 0.52);
     position: relative;
     height: 100vh;
 }
@@ -44,6 +44,20 @@
     right: 8px;
     cursor: pointer;
     color: white;
+}
+
+.photos_pg{
+    width: 210px;
+    height: 220px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px){
+    .imagePad {
+        padding-left: 14%;
+        padding-right: 10%;
+    }
 }
 
 @media only screen and (max-width: 769px) {
@@ -70,3 +84,14 @@
         height: 100vh;
     }
 }
+
+
+@media only screen and (max-width: 320px) {
+    .imagePad {
+        padding-left: 11%;
+        padding-right: 11%;
+    }
+}
+
+
+
