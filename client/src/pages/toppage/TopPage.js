@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import 'antd/dist/antd.css';
 import './carousel.css';
 import './TopPage.css';
+import './topPage.respon.css'
 import { Link } from "react-router-dom";
 import { Carousel } from 'antd';
 import { Row, Col, Icon } from 'antd';

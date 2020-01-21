@@ -4,7 +4,7 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import './not_authorised.css'
-import './author.respon.css'
+
 
 
 const BlogFunction = props => (

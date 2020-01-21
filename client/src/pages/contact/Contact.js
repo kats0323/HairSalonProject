@@ -56,7 +56,7 @@ const ContactFunction = props => (
                 {props.contacts.post_code}
                 <br />
                 <h4>shop_photo1</h4>
-                <img src={props.contacts.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shopphoto" />
+                <img className='place_photo'src={props.contacts.shop_photo1}  alt="shopphoto" />
                 <br />
                 <h4>shop_info_ja</h4>
                 {props.contacts.shop_info_ja}
