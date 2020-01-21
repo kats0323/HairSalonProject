@@ -220,9 +220,17 @@ class CreateContact extends Component {
     render() {
         if (!this.props.isAuthenticated) {
             return (
-                <div>
-                    <h1> NOT AUTHORISED</h1>
-                    <a href="/admin">GO TO DASHBOARD</a>
+                <div className='not-allowed'>
+                    {/* ここだけ */}
+                    <div className='cool-green-logo'>
+                        <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} />
+                        {/* <hr className='logo-line'width="600" color="green" noshade></hr> */}
+                    </div>
+                    <h1 className='not-author'> NOT AUTHORISED</h1>
+                    <p className='message_'>Plese logoin before you go into admin page </p>
+                    <div className='dashboard_'>
+                        <a href="/admin">GO TO DASHBOARD</a>
+                    </div>
                 </div>
             )
         } else {
