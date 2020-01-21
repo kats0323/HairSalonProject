@@ -1,12 +1,16 @@
-.blogPad{
-    padding-left: 20%;
-    padding-right: 20%;
-}
+
 .blogFlex{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    font-family: 'Open Sans', sans-serif;
 }
+
+
+.blogFlex img{
+    width: 80%;
+}
+
 .ant-btn-primary{
     background-color:green !important;
     border-color: none;
