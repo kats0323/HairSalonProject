@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import 'antd/dist/antd.css';
 import './carousel.css';
 import './TopPage.css';
-import Facebook from './facebook-square-brands.svg';
-import Instagram from './instagram-brands.svg';
 import { Link } from "react-router-dom";
 import { Carousel } from 'antd';
 import { Row, Col, Icon } from 'antd';
@@ -66,8 +64,8 @@ class TopPage extends Component {
                     <h1>Salon Information</h1>
                     <i class="fab fa-instagram"></i>
                     <div class="info-icons">
-                        <Icon type="facebook" theme="filled" style={{color:"green",fontSize:"40px", paddingRight:"10px"}} />
-                        <Icon type="instagram" theme="filled" style={{color:"green",fontSize:"40px",paddingLeft:"10px"}} />
+                        <Icon type="facebook" theme="filled" style={{ color: "green", fontSize: "40px", paddingRight: "10px" }} />
+                        <Icon type="instagram" theme="filled" style={{ color: "green", fontSize: "40px", paddingLeft: "10px" }} />
 
                     </div>
                 </div>

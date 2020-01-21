@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 
-export default class CreatePrice extends Component {
+class CreatePrice extends Component {
     constructor(props) {
         super(props)
 
@@ -82,70 +84,86 @@ export default class CreatePrice extends Component {
 
     }
     render() {
-        return (
-            <div style={{ paddingLeft: "300px" }}>
-                <h3>Create New Price</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Japanese Course: </label>
-                        <input type="text"
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
+                </div>
+            )
+        } else {
+            return (
+                <div style={{ paddingLeft: "300px" }}>
+                    <h3>Create New Price</h3>
+                    <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            <label>Japanese Course: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_course}
-                            onChange={this.onChangeJaCourse}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Course: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_course}
+                                onChange={this.onChangeJaCourse}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Course: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_course}
-                            onChange={this.onChangeEnCourse}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Japanese Price: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.en_course}
+                                onChange={this.onChangeEnCourse}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Japanese Price: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_price}
-                            onChange={this.onChangeJaPrice}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Price: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_price}
+                                onChange={this.onChangeJaPrice}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Price: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_price}
-                            onChange={this.onChangeEnPrice}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Japanese Detail: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.en_price}
+                                onChange={this.onChangeEnPrice}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Japanese Detail: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_detail}
-                            onChange={this.onChangeJaDetail}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Detail: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_detail}
+                                onChange={this.onChangeJaDetail}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Detail: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_detail}
-                            onChange={this.onChangeEnDetail}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="submit" value="Create Price" className="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
-        )
+                                className="form-control"
+                                value={this.state.en_detail}
+                                onChange={this.onChangeEnDetail}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="submit" value="Create Price" className="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            )
+        }
+
     }
-
 }
+CreatePrice.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(CreatePrice);

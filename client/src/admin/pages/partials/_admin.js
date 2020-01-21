@@ -15,6 +15,7 @@ if (localStorage.token) {
 }
 
 const Admin = () => {
+  console.log("ADMIN")
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
