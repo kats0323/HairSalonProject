@@ -58,7 +58,7 @@ export default class PhotoGallery extends Component {
 
 
     photoList() {
-        return this.state.photos.map(currentphoto => {
+        return this.state.photos.reverse().map(currentphoto => {
             return <PhotoFunction photos={currentphoto} key={currentphoto._id} popup_open={this.popup_open} />;
         })
     }

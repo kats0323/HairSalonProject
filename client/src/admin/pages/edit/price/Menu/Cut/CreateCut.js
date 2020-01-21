@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-export default class CreateColor extends Component {
+export default class CreateCut extends Component {
     constructor(props) {
         super(props)
 
@@ -57,7 +57,7 @@ export default class CreateColor extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const color = {
+        const cut = {
             ja_course: this.state.ja_course,
             en_course: this.state.en_course,
             ja_price: this.state.ja_price,
@@ -67,7 +67,7 @@ export default class CreateColor extends Component {
         }
 
 
-        axios.post('/color/add', color)
+        axios.post('/cut/add', cut)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -78,13 +78,13 @@ export default class CreateColor extends Component {
             ja_detail: "",
             en_detail: ""
         })
-        window.location = "/admin/services/color"
+        window.location = "/admin/services/cut"
 
     }
     render() {
         return (
             <div style={{ paddingLeft: "300px" }}>
-                <h3>Create New Color Menu</h3>
+                <h3>Create New Cut Menu</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Japanese Course: </label>
@@ -141,7 +141,7 @@ export default class CreateColor extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Create Color" className="btn btn-primary" />
+                        <input type="submit" value="Create Cut" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
