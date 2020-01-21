@@ -42,10 +42,10 @@ class Navbar extends Component {
         return (
             <div className='na' >
                 <div className="nav_bar">
-                    <div class="logo-center">
+                    <div className="logo-center">
                         <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} /> </Link>
                     </div>
-                    <div class="style-line">
+                    <div className="style-line">
                         <Line />
                     </div>
 
