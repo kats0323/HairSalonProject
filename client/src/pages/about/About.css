@@ -2,7 +2,10 @@
     padding-left: 19.5%;
     padding-right: 19.5%;
 }
-.about_img{
+
+.about_photo img{
+    border-radius: 3%;  
+}.about_img{
     border-radius: 80%;
     width: 20vw;
     height: 33vh;
@@ -11,4 +14,5 @@
     padding-top: 3%;
     padding-bottom: 3%;
 }
+
 

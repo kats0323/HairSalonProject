@@ -26,7 +26,9 @@
 .priceList h2{
     color: green;
 }
-
+.menu_title{
+  text-align: center;
+}
 
 .menu_price{
 display: flex;

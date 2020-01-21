@@ -23,16 +23,16 @@ class TopPage extends Component {
                 <Line />
                 <Carousel autoplay>
                     <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image17.jpg'} alt="img1" />
+                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image4.jpeg'} alt="img1" />
                     </div>
                     <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image21.jpg'} alt="img2" />
+                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image6.jpeg'} alt="img2" />
                     </div>
                     <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/hair2.jpg'} alt="img3" />
+                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/image30.jpeg'} alt="img3" />
                     </div>
                     <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image11.jpg'} alt="img4" />
+                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image3.jpeg'} alt="img4" />
                     </div>
                 </Carousel>
 
