@@ -13,6 +13,8 @@ import CreateBlog from "../edit/blog/CreateBlog";
 import BlogList from "../edit/blog/BlogList";
 import CreateContact from "../edit/contact/CreateContact";
 import ContactList from "../edit/contact/ContactList";
+import CreateColor from "../edit/price/Menu/Color/CreateColor";
+import ColorList from "../edit/price/Menu/Color/ColorList";
 import { Provider } from "react-redux";
 import store from "../../store"
 
@@ -36,6 +38,8 @@ function overallAdmin() {
                     <Route path="/admin/blogs" exact component={BlogList} />
                     <Route path="/admin/contacts/create" exact component={CreateContact} />
                     <Route path="/admin/contacts" exact component={ContactList} />
+                    <Route path="/admin/services/color/create" exact component={CreateColor} />
+                    <Route path="/admin/services/color" exact component={ColorList} />
                 </Switch>
             </Router>
         </Provider>
