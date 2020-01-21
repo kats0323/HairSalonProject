@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 import axios from 'axios';
 
 
@@ -18,7 +19,7 @@ const CutFunction = props => (
 )
 
 
-export default class CutList extends Component {
+class CutList extends Component {
     constructor(props) {
         super(props);
 
@@ -53,25 +54,50 @@ export default class CutList extends Component {
     }
 
     render() {
-        return (
-            <div >
-                <h3>Cut List</h3>
-                <table className="table">
-                    <thead className="thead-light">
-                        <tr>
-                            <th>Japanese Course</th>
-                            <th>English Course</th>
-                            <th>Japanese Price</th>
-                            <th>English Price</th>
-                            <th>Japanese Detail</th>
-                            <th>English Course</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.cutList()}
-                    </tbody>
-                </table>
-            </div>
-        )
+        if (!this.props.isAuthenticated) {
+            return (
+                <div className='not-allowed'>
+                    {/* ここだけ */}
+                    <div className='cool-green-logo'>
+                        <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} />
+                        {/* <hr className='logo-line'width="600" color="green" noshade></hr> */}
+                    </div>
+                    <h1 className='not-author'> NOT AUTHORISED</h1>
+                    <p className='message_'>Plese logoin before you go into admin page </p>
+                    <div className='dashboard_'>
+                        <a href="/admin">GO TO LOGIN PAGE</a>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div >
+                    <h3>Cut List</h3>
+                    <table className="table">
+                        <thead className="thead-light">
+                            <tr>
+                                <th>Japanese Course</th>
+                                <th>English Course</th>
+                                <th>Japanese Price</th>
+                                <th>English Price</th>
+                                <th>Japanese Detail</th>
+                                <th>English Course</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.cutList()}
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
     }
 }
+
+CutList.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(CutList);
