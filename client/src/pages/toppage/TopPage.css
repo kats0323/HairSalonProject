@@ -44,9 +44,7 @@
 .salon-top{
     padding-top: 40px;
 }
-.salon-bottom{
-    padding-bottom: 140px;
-}
+
 .salon-info {
     font-family: 'Open Sans', sans-serif;
     padding-top: 50px;
@@ -55,7 +53,7 @@
 
 .info-icons{
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .info-icons a{
     color: green;

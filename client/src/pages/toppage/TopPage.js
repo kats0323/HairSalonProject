@@ -6,7 +6,7 @@ import Facebook from './facebook-square-brands.svg';
 import Instagram from './instagram-brands.svg';
 import { Link } from "react-router-dom";
 import { Carousel } from 'antd';
-import { Row, Col } from 'antd';
+import { Row, Col, Icon } from 'antd';
 import { Button } from 'antd';
 
 
@@ -60,19 +60,19 @@ class TopPage extends Component {
                 </div>
 
                 <div class="salon-top" />
+
                 <Line />
                 <div class="salon-info">
                     <h1>Salon Information</h1>
                     <i class="fab fa-instagram"></i>
                     <div class="info-icons">
-                        <a href="https://www.facebook.com/mihoitostyle/" > <img src={Facebook} style={{ width: "3%", paddingRight: "10px" }} alt="facebook" /> </a>
-                        <a href="https://www.instagram.com/mihostyle.sydney/" > <img src={Instagram} style={{ width: "3%", paddingLeft: "10px" }} alt="insta" /> </a>
+                        <Icon type="facebook" theme="filled" style={{color:"green",fontSize:"40px", paddingRight:"10px"}} />
+                        <Icon type="instagram" theme="filled" style={{color:"green",fontSize:"40px",paddingLeft:"10px"}} />
+
                     </div>
                 </div>
-                <Line />
                 <div class="salon-bottom" />
-
-
+                <Line />
             </div>
 
         );

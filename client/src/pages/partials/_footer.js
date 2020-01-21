@@ -4,8 +4,10 @@ import '../partials/footer.style.css'
 class Footer extends Component {
   render() {
     return (
-      <div class="footer">
-        Miho's Style &copy;
+      <div style={{paddingTop:"10%"}}>
+        <div class="footer">
+          Miho's Style &copy;
+        </div>
       </div>
     );
   };

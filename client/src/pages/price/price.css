@@ -4,11 +4,43 @@
 
 .price_background{
     font-family: 'Open Sans', sans-serif;
-
+    font-weight: 300;
     color: seagreen important!;
 }
 
 .pricePad{
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 15%;
+}
+
+.pricePadding{
+    padding-top: 4.4%;
+}
+
+.priceList{
+    width: 450px;
+    text-align: center; 
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.priceList h2{
+    color: green;
+}
+
+
+@media only screen and (max-width: 412px) {
+    .pricePad{
+        padding-left: 0%;
+    }
+
+    .priceList h2{
+        font-size: 1rem;
+    }
+    .priceList h3{
+        font-size: 1rem;
+    }
+    .priceList h4{
+        font-size: 1rem;
+    }
+
 }
