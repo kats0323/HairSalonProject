@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 const PriceFunction = props => (
     <tr>
@@ -17,7 +19,7 @@ const PriceFunction = props => (
 )
 
 
-export default class PriceList extends Component {
+class PriceList extends Component {
     constructor(props) {
         super(props);
 
@@ -52,25 +54,41 @@ export default class PriceList extends Component {
     }
 
     render() {
-        return (
-            <div >
-                <h3>Prices LIst</h3>
-                <table className="table">
-                    <thead className="thead-light">
-                        <tr>
-                            <th>Japanese Course</th>
-                            <th>English Course</th>
-                            <th>Japanese Price</th>
-                            <th>English Price</th>
-                            <th>Japanese Detail</th>
-                            <th>English Course</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.priceList()}
-                    </tbody>
-                </table>
-            </div>
-        )
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
+                </div>
+            )
+        } else {
+            return (
+                <div >
+                    <h3>Prices LIst</h3>
+                    <table className="table">
+                        <thead className="thead-light">
+                            <tr>
+                                <th>Japanese Course</th>
+                                <th>English Course</th>
+                                <th>Japanese Price</th>
+                                <th>English Price</th>
+                                <th>Japanese Detail</th>
+                                <th>English Course</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.priceList()}
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
     }
 }
+PriceList.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(PriceList);

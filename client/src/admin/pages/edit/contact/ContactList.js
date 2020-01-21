@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 const ContactFunction = props => (
 
@@ -88,7 +90,7 @@ const ContactFunction = props => (
 )
 
 
-export default class ContactList extends Component {
+class ContactList extends Component {
     constructor(props) {
         super(props);
 
@@ -123,12 +125,29 @@ export default class ContactList extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <h1>Contact</h1>
-                <br />
-                {this.contactList()}
-            </div>
-        )
+        if (!this.props.isAuthenticated) {
+            return (
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h1>Contact</h1>
+                    <br />
+                    {this.contactList()}
+                </div>
+            )
+        }
     }
 }
+
+ContactList.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(ContactList);
