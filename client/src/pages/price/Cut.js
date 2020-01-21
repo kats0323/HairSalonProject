@@ -68,7 +68,7 @@ export default class CutList extends Component {
                         {this.cutList()}
                     </div>
                 </div>
-                <Link to="/prices"><button>MENU</button></Link>
+                <Link to="/prices">MENU</Link>
                 <Sline />
             </div >
         )

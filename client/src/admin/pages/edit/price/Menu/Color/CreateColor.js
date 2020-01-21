@@ -83,7 +83,7 @@ export default class CreateColor extends Component {
     }
     render() {
         return (
-            <div style={{ paddingLeft: "300px" }}>
+            <div>
                 <h3>Create New Color Menu</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
