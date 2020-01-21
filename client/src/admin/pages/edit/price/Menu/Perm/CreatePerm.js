@@ -83,7 +83,7 @@ export default class CreatePerm extends Component {
     }
     render() {
         return (
-            <div style={{ paddingLeft: "300px" }}>
+            <div>
                 <h3>Create New Perm Menu</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">

@@ -57,7 +57,7 @@ height: 330px !important;
   .menu_cut_img:hover .active_cut {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
   }
   
   .menu_perm_img {
@@ -73,7 +73,7 @@ height: 330px !important;
   .menu_perm_img:hover .active_perm {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
   }
 
 
