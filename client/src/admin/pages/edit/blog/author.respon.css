@@ -1,0 +1,56 @@
+@media only screen and (max-width: 1200px){
+    .not-author{
+        margin-top: 100px;
+        font-size: 30px;
+    }
+
+    .message_{
+        font-size: 20px;
+    }
+    .cool-green-logo{
+        margin-top: 80px;
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-bottom: 20px;
+        border-bottom: 0.9px solid green;
+    }    
+
+    .dashboard_{
+        margin-top: 80px;
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-bottom: 25px;
+        border-bottom: 0.9px solid green;
+    }
+}
+
+@media only screen and (max-width:800px){
+    .message_{
+        font-size: 15px;
+    }
+    .not-author{
+        margin-top: 100px;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .cool-green-logo{
+        margin-top: 80px;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding-bottom: 20px;
+        border-bottom: 0.9px solid green;
+    }    
+   
+    .dashboard_{
+        margin-top: 80px;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding-bottom: 25px;
+        border-bottom: 0.9px solid green;
+    }
+   
+}
+
+

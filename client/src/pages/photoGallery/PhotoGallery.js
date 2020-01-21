@@ -66,7 +66,7 @@ export default class PhotoGallery extends Component {
     render() {
         const ColoredLine = ({ color }) => (
             <div className="line-style">
-                <hr style={{ color: "green", border: "0.4px solid", width:"60%" }} />
+                <hr style={{ color: "green", border: "0.4px solid", width: "60%" }} />
             </div>
 
         );
@@ -80,11 +80,11 @@ export default class PhotoGallery extends Component {
 
                         <h1 class="title-gallery-center">PhotoGallery</h1>
                         <div class="imagePad">
-                        <Row type="flex" justify="start" >
-                            {this.photoList()}
-                        </Row> 
+                            <Row type="flex" justify="start" >
+                                {this.photoList()}
+                            </Row>
                         </div>
-            
+
                         <div class="popup-wrapper" onClick={this.popupClose}>
                             <div class="popup">
                                 <div class="popup-close" onClick={this.popupCloseXbuuton}>X</div>
