@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import '../partials/navbar.style.css'
 import { Menu } from "antd";
 import Price from "../price/Price";
+import Cut from "../price/Cut";
+import Perm from "../price/Perm";
+import Color from "../price/Color";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 import PropTypes from "prop-types";
@@ -68,20 +71,35 @@ class Navbar extends Component {
                     </Menu>
 
                 </div>
+                {location.pathname === "/services/color" ? (
+                    <Color language={this.state.language} />
+                ) : (
+                        console.log("")
+                    )}
+                {location.pathname === "/services/cut" ? (
+                    <Cut language={this.state.language} />
+                ) : (
+                        console.log("")
+                    )}
+                {location.pathname === "/services/perm" ? (
+                    <Perm language={this.state.language} />
+                ) : (
+                        console.log("")
+                    )}
                 {location.pathname === "/prices" ? (
                     <Price language={this.state.language} />
                 ) : (
-                        console.log("not price page")
+                        console.log("")
                     )}
                 {location.pathname === "/about" ? (
                     <About language={this.state.language} />
                 ) : (
-                        console.log("not about page")
+                        console.log("")
                     )}
                 {location.pathname === "/contacts" ? (
                     <Contact language={this.state.language} />
                 ) : (
-                        console.log("not price page")
+                        console.log("")
                     )}
             </div >
 
