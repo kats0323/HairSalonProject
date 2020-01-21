@@ -9,14 +9,15 @@ const AboutFunction = props => (
 
     <div>
         {props.language === "Japanese" ? (
-            <div>
-                <p>{props.about.ja_introduction}</p>
+            <div className="about_photo">
                 <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+                <p>{props.about.ja_introduction}</p>
+
             </div>
         ) : (
-                <div>
-                    <p>{props.about.en_introduction}</p>
+                <div className="about_photo">
                     <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+                    <p>{props.about.en_introduction}</p>
                 </div>
             )}
     </div>
@@ -70,7 +71,7 @@ export default class About extends Component {
                     <Line />
                     <Row>
                         <Col>
-                            <h1 style={{ textAlign: "center" }}>About</h1>
+                            <h1 style={{ textAlign: "center" }}>About Miho</h1>
                             <h3>
                                 {this.aboutList()}
                             </h3>
