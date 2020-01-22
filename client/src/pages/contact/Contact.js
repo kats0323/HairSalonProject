@@ -143,9 +143,7 @@ export default class Contact extends Component {
             .catch((error) => {
                 console.log(error);
             })
-    }
 
-    componentDidMount() {
         axios.get('/locations/')
             .then(response => {
                 this.setState({ locations: response.data })
