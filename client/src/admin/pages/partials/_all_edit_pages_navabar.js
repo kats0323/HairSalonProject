@@ -13,7 +13,7 @@ import CreateContact from "../edit/contact/CreateContact";
 import ContactList from "../edit/contact/ContactList";
 import '../partials/Navbar.css'
 import { BrowserRouter as Router, Switch, Link, Route, Redirect } from "react-router-dom";
-import { NavDropdown, Navbar } from 'react-bootstrap';
+import { NavDropdown, Navbar,Nav,Form,FormControl,Button } from 'react-bootstrap';
 import { connect } from "react-redux";
 import PropTypes from "prop-types"
 import { logout } from "../../actions/auth";
@@ -28,54 +28,53 @@ const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <Router >
                 <Switch>
 
+            <Navbar bg="green" expand="lg">
+                <Navbar.Brand ><Link to="/"><img className='logo-green'src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /></Link>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
 
-                    <Navbar bg="dark" variant="dark" className="admin_navbar">
-                        <Link to="/"><img className='logo-green'src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" style={{ height: "50px", paddingRight: "30px" }} /></Link>
-
-                        {/* About */}
-                        <NavDropdown title="About" id="basic-nav-dropdown">
+                  
+                         <NavDropdown title="About" id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to="/admin/about">About List</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item>< Link to="/admin/about/create">Create About</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {/* Blog */}
                         <NavDropdown title="Blog" id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to="/admin/blogs">Blog List</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/admin/blogs/create"> Create Blog</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {/* Price */}
                         <NavDropdown title="Price" id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to="/admin/prices">Price List</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/admin/prices/create">Create Price</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {/* Contact */}
                         <NavDropdown title="Contact" id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to="/admin/contacts">Contact List</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/admin/contacts/create">Create Contact</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {/* Photos */}
                         <NavDropdown title="Photos" id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to="/admin/photos">Photo Gralley</Link></NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/admin/photos/create">Create Photo</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {!loading && { isAuthenticated } ? (
-                            <Link to="#!" onClick={logout}>Logout</Link>
-                        ) : (
-                                null
-                            )}
-
-                    </Navbar>
-
-                </Switch>
+                        <NavDropdown.Divider />
+                        <Nav.Link > {!loading && { isAuthenticated } ? (
+                                <Link to="#!" onClick={logout}>Logout</Link>
+                            ) : (null)}
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </Switch>
 
                 <Switch>
                     <Route path="/admin/prices" exact component={PriceList} />
