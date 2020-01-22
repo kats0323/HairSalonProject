@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from "axios";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 
-class CreateContact extends Component {
 
+class CreateContact extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this);
         this.onChangeLineId = this.onChangeLineId.bind(this);
         this.onChangeFacebook = this.onChangeFacebook.bind(this);
         this.onChangeInstagram = this.onChangeInstagram.bind(this);
-        this.onChangeContactInfoEn = this.onChangeContactInfoEn.bind(this);
-        this.onChangeContactInfoJa = this.onChangeContactInfoJa.bind(this);
+        this.onChangeContactInfo1En = this.onChangeContactInfo1En.bind(this);
+        this.onChangeContactInfo1Ja = this.onChangeContactInfo1Ja.bind(this);
+        this.onChangeContactInfo2En = this.onChangeContactInfo2En.bind(this);
+        this.onChangeContactInfo2Ja = this.onChangeContactInfo2Ja.bind(this);
         this.onChangeContactExtraInfoEn = this.onChangeContactExtraInfoEn.bind(this);
         this.onChangeContactExtraInfoJa = this.onChangeContactExtraInfoJa.bind(this);
         this.onChangeOpeningHorsMon = this.onChangeOpeningHorsMon.bind(this);
@@ -23,27 +25,17 @@ class CreateContact extends Component {
         this.onChangeOpeningHorsFri = this.onChangeOpeningHorsFri.bind(this);
         this.onChangeOpeningHorsSat = this.onChangeOpeningHorsSat.bind(this);
         this.onChangeOpeningHorsSun = this.onChangeOpeningHorsSun.bind(this);
-        this.onChangeStreet = this.onChangeStreet.bind(this);
-        this.onChangeSuburb = this.onChangeSuburb.bind(this);
-        this.onChangeState = this.onChangeState.bind(this);
-        this.onChangeGoogle = this.onChangeGoogle.bind(this);
-        this.onChangePostCode = this.onChangePostCode.bind(this);
-        this.onChangeShopPhoto1 = this.onChangeShopPhoto1.bind(this);
-        // this.onChangeShopPhoto2 = this.onChangeShopPhoto2.bind(this);
-        this.onChangeShopInfoEn = this.onChangeShopInfoEn.bind(this);
-        this.onChangeShopInfoJa = this.onChangeShopInfoJa.bind(this);
-        this.onChangeShopExtraInfoEn = this.onChangeShopExtraInfoEn.bind(this);
-        this.onChangeShopExtraInfoJa = this.onChangeShopExtraInfoJa.bind(this);
-
-
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             phone_number: "",
             line_id: "",
             facebook: "",
             instagram: "",
-            contact_info_en: "",
-            contact_info_ja: "",
+            contact_info_1_en: "",
+            contact_info_1_ja: "",
+            contact_info_2_en: "",
+            contact_info_2_ja: "",
             contact_extra_info_en: "",
             contact_extra_info_ja: "",
             opening_hors_mon: "",
@@ -52,21 +44,10 @@ class CreateContact extends Component {
             opening_hors_thu: "",
             opening_hors_fri: "",
             opening_hors_sat: "",
-            opening_hors_sun: "",
-            street: "",
-            suburb: "",
-            state: "",
-            google: "",
-            post_code: "",
-            shop_photo1: "",
-            // shop_photo2: "",
-            shop_info_en: "",
-            shop_info_ja: "",
-            shop_extra_info_en: "",
-            shop_extra_info_ja: ""
+            opening_hors_sun: ""
+
         }
     }
-
     onChangePhoneNumber(e) {
         this.setState({
             phone_number: e.target.value
@@ -91,15 +72,26 @@ class CreateContact extends Component {
         })
     }
 
-    onChangeContactInfoEn(e) {
+    onChangeContactInfo1En(e) {
         this.setState({
-            contact_info_en: e.target.value
+            contact_info_1_en: e.target.value
         })
     }
 
-    onChangeContactInfoJa(e) {
+    onChangeContactInfo1Ja(e) {
         this.setState({
-            contact_info_ja: e.target.value
+            contact_info_1_ja: e.target.value
+        })
+    }
+    onChangeContactInfo2En(e) {
+        this.setState({
+            contact_info_2_en: e.target.value
+        })
+    }
+
+    onChangeContactInfo2Ja(e) {
+        this.setState({
+            contact_info_2_ja: e.target.value
         })
     }
     onChangeContactExtraInfoEn(e) {
@@ -152,349 +144,252 @@ class CreateContact extends Component {
         })
     }
 
-    onChangeOpeningHorsJa(e) {
-        this.setState({
-            opening_hors_ja: e.target.value
-        })
-    }
-    onChangeStreet(e) {
-        this.setState({
-            street: e.target.value
-        })
-    }
+    onSubmit(e) {
+        e.preventDefault();
 
-    onChangeSuburb(e) {
-        this.setState({
-            suburb: e.target.value
-        })
-    }
+        const contact = {
+            phone_number: this.state.phone_number,
+            line_id: this.state.line_id,
+            facebook: this.state.facebook,
+            instagram: this.state.instagram,
+            contact_info_1_en: this.state.contact_info_1_en,
+            contact_info_1_ja: this.state.contact_info_1_ja,
+            contact_info_2_en: this.state.contact_info_2_en,
+            contact_info_2_ja: this.state.contact_info_2_ja,
+            contact_extra_info_en: this.state.contact_extra_info_en,
+            contact_extra_info_ja: this.state.contact_extra_info_ja,
+            opening_hors_mon: this.state.opening_hors_mon,
+            opening_hors_tue: this.state.opening_hors_tue,
+            opening_hors_wed: this.state.opening_hors_wed,
+            opening_hors_thu: this.state.opening_hors_thu,
+            opening_hors_fri: this.state.opening_hors_fri,
+            opening_hors_sat: this.state.opening_hors_sat,
+            opening_hors_sun: this.state.opening_hors_sun
+        }
 
-    onChangeState(e) {
-        this.setState({
-            state: e.target.value
-        })
-    }
+        console.log(contact);
 
-    onChangeGoogle(e) {
-        this.setState({
-            google: e.target.value
-        })
-    }
+        axios.post('/contacts/add', contact)
+            .then(res => console.log(res.data));
 
-    onChangePostCode(e) {
         this.setState({
-            post_code: e.target.value
+            phone_number: "",
+            line_id: "",
+            facebook: "",
+            instagram: "",
+            contact_info_1_en: "",
+            contact_info_1_ja: "",
+            contact_info_2_en: "",
+            contact_info_2_ja: "",
+            contact_extra_info_en: "",
+            contact_extra_info_ja: "",
+            opening_hors_mon: "",
+            opening_hors_tue: "",
+            opening_hors_wed: "",
+            opening_hors_thu: "",
+            opening_hors_fri: "",
+            opening_hors_sat: "",
+            opening_hors_sun: ""
         })
-    }
+        window.location = "/admin/contacts"
 
-    onChangeShopPhoto1(e) {
-        this.setState({ shop_photo1: e.target.files[0] })
     }
-
-    // onChangeShopPhoto2(e) {
-    //     this.setState({ shop_photo2: e.target.files[1] })
-    // }
-
-    onChangeShopInfoJa(e) {
-        this.setState({
-            shop_info_ja: e.target.value
-        })
-    }
-    onChangeShopInfoEn(e) {
-        this.setState({
-            shop_info_en: e.target.value
-        })
-    }
-
-    onChangeShopExtraInfoJa(e) {
-        this.setState({
-            shop_extra_info_ja: e.target.value
-        })
-    }
-    onChangeShopExtraInfoEn(e) {
-        this.setState({
-            shop_extra_info_en: e.target.value
-        })
-    }
-
     render() {
         if (!this.props.isAuthenticated) {
             return (
-                <div className='not-allowed'>
-                    {/* ここだけ */}
-                    <div className='cool-green-logo'>
-                        <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} />
-                        {/* <hr className='logo-line'width="600" color="green" noshade></hr> */}
-                    </div>
-                    <h1 className='not-author'> NOT AUTHORISED</h1>
-                    <p className='message_'>Plese logoin before you go into admin page </p>
-                    <div className='dashboard_'>
-                        <a href="/admin">GO TO DASHBOARD</a>
-                    </div>
+                <div>
+                    <h1> NOT AUTHORISED</h1>
+                    <a href="/admin">GO TO DASHBOARD</a>
                 </div>
             )
         } else {
             return (
-                <div className="container" >
-                    <div className="row">
-                        <form action="/contacts/add" method="POST" enctype="multipart/form-data" >
-                            <div className="form-group">
-                                <label>Phone Number: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="phone_number"
-                                    value={this.state.phone_number}
-                                    onChange={this.onChangePhoneNumber}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Line Id: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="line_id"
-                                    value={this.state.line_id}
-                                    onChange={this.onChangeLineId}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Facebook: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="facebook"
-                                    value={this.state.facebook}
-                                    onChange={this.onChangeFacebook}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Instagra: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="instagra"
-                                    value={this.state.instagra}
-                                    onChange={this.onChangeInstagram}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Contact Info English: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="contact_info_en"
-                                    value={this.state.contact_info_en}
-                                    onChange={this.onChangeContactInfoEn}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Contact Info Japanese: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="contact_info_ja"
-                                    value={this.state.contact_info_ja}
-                                    onChange={this.onChangeContactInfoJa}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Contact Extra Info English: </label>
-                                <input type="text"
+                <div style={{ paddingLeft: "300px" }}>
+                    <h3>Create New Contact</h3>
+                    <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            <label>Phone Number: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="phone_number"
+                                value={this.state.phone_number}
+                                onChange={this.onChangePhoneNumber}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Line Id: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="line_id"
+                                value={this.state.line_id}
+                                onChange={this.onChangeLineId}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Facebook: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="facebook"
+                                value={this.state.facebook}
+                                onChange={this.onChangeFacebook}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Instagra: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="instagra"
+                                value={this.state.instagra}
+                                onChange={this.onChangeInstagram}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Info English 1: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="contact_info_1_en"
+                                value={this.state.contact_info_1_en}
+                                onChange={this.onChangeContactInfo1En}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Info Japanese 1: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="contact_info_1_ja"
+                                value={this.state.contact_info_1_ja}
+                                onChange={this.onChangeContactInfo1Ja}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Extra Info English 2: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="contact_extra_info_en"
-                                    value={this.state.contact_extra_info_en}
-                                    onChange={this.onChangeContactExtraInfoEn}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Contact Extra Info Japanese: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="contact_extra_info_2_en"
+                                value={this.state.contact_extra_info_2_en}
+                                onChange={this.onChangeContactExtraInfo2En}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Info Japanese 2: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                name="contact_info_2_ja"
+                                value={this.state.contact_info_2_ja}
+                                onChange={this.onChangeContactInfo2Ja}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Extra Info English: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="contact_extra_info_ja"
-                                    value={this.state.contact_extra_info_ja}
-                                    onChange={this.onChangeContactExtraInfoJa}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Monday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="contact_extra_info_en"
+                                value={this.state.contact_extra_info_en}
+                                onChange={this.onChangeContactExtraInfoEn}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Contact Extra Info Japanese: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_mon"
-                                    value={this.state.opening_hors_mon}
-                                    onChange={this.onChangeOpeningHorsMon}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Tueday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="contact_extra_info_ja"
+                                value={this.state.contact_extra_info_ja}
+                                onChange={this.onChangeContactExtraInfoJa}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Monday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_tue"
-                                    value={this.state.opening_hors_tue}
-                                    onChange={this.onChangeOpeningHorsTue}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours English　Wednesday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_mon"
+                                value={this.state.opening_hors_mon}
+                                onChange={this.onChangeOpeningHorsMon}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Tueday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_wed"
-                                    value={this.state.opening_hors_wed}
-                                    onChange={this.onChangeOpeningHorsWed}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Thursday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_tue"
+                                value={this.state.opening_hors_tue}
+                                onChange={this.onChangeOpeningHorsTue}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours English　Wednesday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_thu"
-                                    value={this.state.opening_hors_thu}
-                                    onChange={this.onChangeOpeningHorsThu}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Friday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_wed"
+                                value={this.state.opening_hors_wed}
+                                onChange={this.onChangeOpeningHorsWed}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Thursday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_fri"
-                                    value={this.state.opening_hors_fri}
-                                    onChange={this.onChangeOpeningHorsFri}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Saturday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_thu"
+                                value={this.state.opening_hors_thu}
+                                onChange={this.onChangeOpeningHorsThu}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Friday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_sat"
-                                    value={this.state.opening_hors_sat}
-                                    onChange={this.onChangeOpeningHorsSat}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Opening Hours Sunday: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_fri"
+                                value={this.state.opening_hors_fri}
+                                onChange={this.onChangeOpeningHorsFri}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Saturday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="opening_hors_sun"
-                                    value={this.state.opening_hors_sun}
-                                    onChange={this.onChangeOpeningHorsSun}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Street: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="street"
-                                    value={this.state.street}
-                                    onChange={this.onChangeStreet}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Suburb: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="suburb"
-                                    value={this.state.suburb}
-                                    onChange={this.onChangeSuburb}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>State: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="state"
-                                    value={this.state.state}
-                                    onChange={this.onChangeState}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Google: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="google"
-                                    value={this.state.google}
-                                    onChange={this.onChangeGoogle}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Post Code: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="post_code"
-                                    value={this.state.post_code}
-                                    onChange={this.onChangePostCode}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Shop Info English: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="shop_info_en"
-                                    value={this.state.shop_info_en}
-                                    onChange={this.onChangeShopInfoEn}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Shop Info Japanese: </label>
-                                <input type="text"
-                                    required
-                                    className="form-control"
-                                    name="shop_info_ja"
-                                    value={this.state.shop_info_ja}
-                                    onChange={this.onChangeShopInfoJa}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Shop Extra Info English: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_sat"
+                                value={this.state.opening_hors_sat}
+                                onChange={this.onChangeOpeningHorsSat}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Opening Hours Sunday: </label>
+                            <input type="text"
 
-                                    className="form-control"
-                                    name="shop_extra_info_en"
-                                    value={this.state.shop_extra_info_en}
-                                    onChange={this.onChangeShopExtraInfoEn}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Shop Extra Info Japanese: </label>
-                                <input type="text"
+                                className="form-control"
+                                name="opening_hors_sun"
+                                value={this.state.opening_hors_sun}
+                                onChange={this.onChangeOpeningHorsSun}
+                            />
+                        </div>
 
-                                    className="form-control"
-                                    name="shop_extra_info_ja"
-                                    value={this.state.shop_extra_info_ja}
-                                    onChange={this.onChangeShopExtraInfoJa}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input type="file" name="photo" onChange={this.onChangeShopPhoto1} />
-                            </div>
-                            {/* <div className="form-group">
-                            <input type="file" name="shop_photo2" onChange={this.onChangeShopPhoto2} />
-                        </div> */}
-                            <div className="form-group">
-                                <button className="btn btn-primary" type="submit">Upload</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary" type="submit">Upload</button>
+                        </div>
+
+
+                    </form>
                 </div>
             )
         }
+
     }
 }
-
 CreateContact.propTypes = {
     isAuthenticated: PropTypes.bool
 }

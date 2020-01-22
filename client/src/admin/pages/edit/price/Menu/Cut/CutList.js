@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const CutFunction = props => (
@@ -13,7 +14,7 @@ const CutFunction = props => (
         <td id="japanese">{props.cuts.ja_detail}</td>
         <td id="english">{props.cuts.en_detail}</td>
         <td>
-            <button href="#" onClick={() => { props.deleteCut(props.cuts._id) }}>delete</button>
+            <Link to={"/admin/services/cut/edit/" + props.cuts._id}>edit</Link> |  <button href="#" onClick={() => { props.deleteCut(props.cuts._id) }}>delete</button>
         </td>
     </tr>
 )

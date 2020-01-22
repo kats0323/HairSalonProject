@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 const PermFunction = props => (
     <tr>
@@ -13,7 +13,7 @@ const PermFunction = props => (
         <td id="japanese">{props.perms.ja_detail}</td>
         <td id="english">{props.perms.en_detail}</td>
         <td>
-            <button href="#" onClick={() => { props.deletePerm(props.perms._id) }}>delete</button>
+            <Link to={"/admin/services/perms/edit/" + props.perms._id}>edit</Link> |<button href="#" onClick={() => { props.deletePerm(props.perms._id) }}>delete</button>
         </td>
     </tr>
 )
