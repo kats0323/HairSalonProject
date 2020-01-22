@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const ColorFunction = props => (
@@ -13,7 +14,7 @@ const ColorFunction = props => (
         <td id="japanese">{props.colors.ja_detail}</td>
         <td id="english">{props.colors.en_detail}</td>
         <td>
-            <button href="#" onClick={() => { props.deleteColor(props.colors._id) }}>delete</button>
+            <Link to={"/admin/services/color/edit/" + props.colors._id}>edit</Link> | <button href="#" onClick={() => { props.deleteColor(props.colors._id) }}>delete</button>
         </td>
     </tr>
 )
