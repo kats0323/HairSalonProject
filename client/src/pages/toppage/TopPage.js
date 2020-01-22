@@ -14,44 +14,43 @@ class TopPage extends Component {
 
         //  this is the hr line 
         const Line = ({ color }) => (
-            <div class="style-line">
-                <hr style={{ color: "green", border: "0.4px solid", width: "60%", }} />
+            <div className="style-line">
+                <hr style={{ color: "green", border: "0.4px solid", width: "60%"}} />
             </div>
         );
         return (
             <div>
-                <Line />
                 <Carousel autoplay>
-                    <div class="Carousel-box">
+                    <div className="Carousel-box">
                         <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image4.jpeg'} alt="img1" />
                     </div>
-                    <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image6.jpeg'} alt="img2" />
+                    <div className="Carousel-box">
+                        <img className="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image6.jpeg'} alt="img2" />
                     </div>
-                    <div class="Carousel-box">
+                    <div className="Carousel-box">
                         <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/image30.jpeg'} alt="img3" />
                     </div>
-                    <div class="Carousel-box">
-                        <img class="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image3.jpeg'} alt="img4" />
+                    <div className="Carousel-box">
+                        <img className="Carousel-photo" src={process.env.PUBLIC_URL + '/img/_image3.jpeg'} alt="img4" />
                     </div>
                 </Carousel>
 
                 <div class="style-home">
                     <h1>Style</h1>
-                    <Row>
-                        <Col>
-                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                        </Col>
-                        <Col>
-                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                        </Col>
-                        <Col>
-                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                        </Col>
-                        <Col>
-                            <img class="style-showcase" src={process.env.PUBLIC_URL + '/img/temp.jpg'} alt="temp" />
-                        </Col>
-                    </Row>
+                        <Row>
+                            <Col>
+                                <img className="style-showcase" src={process.env.PUBLIC_URL + '/img/_image4.jpeg'} alt="temp" />
+                            </Col>
+                            <Col>
+                                <img className="style-showcase" src={process.env.PUBLIC_URL + '/img/_image6.jpeg'} alt="temp" />
+                            </Col>
+                            <Col>
+                                <img className="style-showcase" src={process.env.PUBLIC_URL + '/img/image30.jpeg'} alt="temp" />
+                            </Col>
+                            <Col>
+                                <img className="style-showcase" src={process.env.PUBLIC_URL + '/img/_image3.jpeg'} alt="temp" />
+                            </Col>
+                        </Row>
                     <div class="button-top">
                         <Link to="/photos"> <Button>View More style</Button> </Link>
                     </div>
@@ -70,7 +69,6 @@ class TopPage extends Component {
                     </div>
                 </div>
                 <div class="salon-bottom" />
-                <Line />
             </div>
 
         );

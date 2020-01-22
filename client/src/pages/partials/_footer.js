@@ -3,10 +3,18 @@ import '../partials/footer.style.css'
 
 class Footer extends Component {
   render() {
+    const Line = ({ color }) => (
+      <div className="style-line">
+          <hr style={{ color: "green", border: "0.7px solid", width: "60%", }} />
+      </div>
+    );
     return (
-      <div style={{paddingTop:"10%"}}>
-        <div class="footer">
-          Miho's Style &copy;
+      <div>
+        <Line />
+        <div style={{paddingTop:"3%"}}>
+          <div className="footer">
+            Miho's Style &copy;
+          </div>
         </div>
       </div>
     );

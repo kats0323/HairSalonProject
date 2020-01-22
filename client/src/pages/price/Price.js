@@ -19,7 +19,6 @@ export default class Price extends Component {
     render() {
         return (
             <div class="price_background">
-                <Sline />
                 <div className="menu_price container">
                     <Link to="/services/cut">
                         <h3 className="menu_title">CUT</h3>

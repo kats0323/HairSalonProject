@@ -221,21 +221,15 @@ export default class Contact extends Component {
     }
 
     render() {
-        const Line = ({ color }) => (
-            <div class="style-line">
-                <hr style={{ color: "green", border: "0.4px solid", width: "61%", }} />
-            </div>
-        );
+ 
         return (
             <div>
-                <Line />
                 <div className="contactPad">
                     <h1>Contact</h1>
                     <br />
                     {this.contactList()}
                     {this.locationList()}
                 </div>
-                <Line />
 
                 <Footer />
             </div>

@@ -39,18 +39,18 @@ class Navbar extends Component {
     render() {
         // hr style
         const Line = ({ color }) => (
-            <hr style={{ color: "green", border: "0.7px solid", width: "60%", }} />
+            <div className="style-line">
+                <hr style={{ color: "green", border: "0.7px solid", width: "60%", }} />
+            </div>
         );
         const { location } = this.props
         return (
             <div className='na' >
                 <div className="nav_bar">
                     <div className="logo-center">
-                        <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} /> </Link>
+                        <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "8vh" }} /> </Link>
                     </div>
-                    <div className="style-line">
                         <Line />
-                    </div>
 
                     <Menu
                         id="nav_bar_main"
@@ -69,8 +69,10 @@ class Navbar extends Component {
                         <Menu.Item key="9" className="nav_bar_nest"><Link to="/photos">PhotoGallery</Link></Menu.Item>
                         <Menu.Item key="10" className="nav_bar_nest"><Link to="/blogs">Blog</Link></Menu.Item>
                     </Menu>
+                        <Line />
 
                 </div>
+                
                 {location.pathname === "/services/color" ? (
                     <Color language={this.state.language} />
                 ) : (
