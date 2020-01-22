@@ -79,13 +79,17 @@
         }
 
     } */
-    @media only screen and (max-width: 769px) {
-        /* .style-home{
-            display: none;
-        } */
+    @media only screen and (max-width: 1400px) {
+        .style-home{
+            padding: 0;
+        }
 
         .style-home .ant-row .ant-col:last-child{
             display: none;
+        }
+
+        .slick-slide{
+            height: 500px !important;
         }
         
 }

@@ -9,9 +9,12 @@ class Footer extends Component {
       </div>
     );
     return (
-      <div className='footer-div'>
-        <div class="footer">
-          Miho's Style &copy;
+      <div>
+        <Line />
+        <div className='footer-div'>
+          <div class="footer">
+            Miho's Style &copy;
+          </div>
         </div>
       </div>
     );

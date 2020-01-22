@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 
 const LocationFunction = props => (
-    console.log("llllllllll", props),
     <div>
         <h4>street</h4>
         {props.locations.street}
