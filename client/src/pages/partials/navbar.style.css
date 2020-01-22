@@ -9,12 +9,14 @@
     /* background: linear-gradient(to right, #45ce5e, #a8ff78); */
 }
 .nav_bar_nest{
-    padding-top: 24px;
+    padding-top: 1.24%;
     font-family: 'Montserrat', sans-serif;
 
 }
 
-
+.ant-menu-item {
+    font-size: 1.8rem;
+}
 .ant-menu-submenu-selected {
     border-bottom: 0px !important;
 }
@@ -32,7 +34,6 @@
 
 
 .nav_bar_nest{
-    
     color: white !important;
 }
 
@@ -40,7 +41,16 @@
 
 
 .logo-center{
-    padding-top: 24px;
+    padding-top: 1.24%;
     justify-content: center;
     display: flex;
 }
+
+@media only screen and (max-width: 600px) {
+    .ant-menu-item {
+        font-size: 1.4em;
+    }
+    #nav_bar_main{
+        padding-left: 18%;
+    }
+  }

@@ -76,7 +76,6 @@ export default class PhotoGallery extends Component {
             <div id="popup" >
                 <div id="popup_background">
                     <div>
-                        <ColoredLine />
 
                         <h1 class="title-gallery-center">PhotoGallery</h1>
                         <div class="imagePad">

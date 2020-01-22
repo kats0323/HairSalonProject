@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col } from 'antd';
 import './About.css'
 import Footer from '../partials/_footer'
 
@@ -11,12 +10,16 @@ const AboutFunction = props => (
         {props.language === "Japanese" ? (
 
             <div className="about_position">
-                <img src={props.about.photo} className="about_img" alt="avatar" />
+                <div className="aboutImageCenter">
+                    <img src={props.about.photo} className="about_img" alt="avatar" />
+                </div>
                 <h3 className="about_intro">{props.about.ja_introduction}</h3>
             </div>
         ) : (
                 <div className="about_position">
+                <div className="aboutImageCenter">
                     <img src={props.about.photo} className="about_img" alt="avatar" />
+                </div>
                     <h3 className="about_intro">{props.about.en_introduction}</h3>
                 </div>
 
@@ -60,20 +63,12 @@ export default class About extends Component {
     }
 
     render() {
-        const Line = ({ color }) => (
-            <div class="style-line">
-                <hr style={{ color: "green", border: "0.4px solid", width: "100%", }} />
-            </div>
-        );
         return (
             <div>
-
                 <div className="aboutPad">
-                    <Line />
                     <h1 style={{ textAlign: "center" }}>About Miho</h1>
                     {this.aboutList()}
 
-                    <Line />
                 </div>
                 <Footer />
             </div >
