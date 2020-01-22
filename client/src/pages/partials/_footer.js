@@ -4,7 +4,7 @@ import '../partials/footer.style.css'
 class Footer extends Component {
   render() {
     return (
-      <div style={{paddingTop:"10%"}}>
+      <div className='footer-div'>
         <div class="footer">
           Miho's Style &copy;
         </div>

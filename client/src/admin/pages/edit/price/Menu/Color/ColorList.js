@@ -19,6 +19,8 @@ const ColorFunction = props => (
 )
 
 
+
+
 class ColorList extends Component {
     constructor(props) {
         super(props);

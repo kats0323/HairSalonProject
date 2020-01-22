@@ -9,7 +9,8 @@
 }
 
 .pricePad{
-    padding-left: 15%;
+  margin-left: 220px;
+  margin-right: 220px;
 }
 
 .pricePadding{
@@ -17,10 +18,9 @@
 }
 
 .priceList{
-    width: 450px;
     text-align: center; 
-    padding-left: 5%;
-    padding-right: 5%;
+   margin-left: 220px;
+   margin-right: 220px;
 }
 
 .priceList h2{
@@ -30,12 +30,16 @@
   text-align: center;
 }
 
+.menu-link{
+  font-size: 20px;
+}
+
 .menu_price{
 display: flex;
+justify-content: center;
 margin-top: 30px;
-margin-bottom: 30px;
-margin-right: 30px !important;
-
+margin-bottom: 40px;
+margin-left: 30px;
 }
 
 .menu_price img{
@@ -91,13 +95,182 @@ height: 330px !important;
   .menu_color_img:hover .active_color {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
+  }
+
+  .title-color-menu{
+    font-size: 25px;
+  }
+
+  .pricePad{
+    text-align: center;
+  }
+
+  .title-color-perm{
+    font-size: 25px;
+  }
+
+ .line-dot{
+  border-bottom: dashed 1px green;
+ }
+
+  @media only screen and (max-width: 1025px){
+    .pricePad{
+      margin-left: 100px;
+      margin-right: 100px;
+      text-align: center;
+    }
+
+    .title-color-menu{
+      font-size: 30px;
+    }
   }
 
 
-@media only screen and (max-width: 380px) {
-    .menu_price{
-        display: block;
-        }
+@media only screen and (max-width: 414px){
+  .menu_price{
+    display: block;
+    justify-content: center;
+  }
+  .menu_cut_img{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+  .menu_color_img{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+  .menu_perm_img{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
 
+  .menu_price{
+    display: block;
+    justify-content: center;
+    width: 230px;
+  }
+
+  .menu_title{
+    margin: 10px;
+  }
+
+
+  #english{
+    font-size: 15px;
+  }
+
+  .title-cut{
+    font-size: 15px;
+  }
+
+  .priceList {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
+.pricePad {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+}
+
+@media only screen and (max-width: 320px){
+  .menu_price{
+    display: block;
+    justify-content: center;
+    width: 230px;
+  }
+
+
+
+  .menu_title{
+    margin: 10px;
+  }
+
+
+  #english{
+    font-size: 15px;
+  }
+
+  .title-cut{
+    font-size: 15px;
+  }
+
+  .priceList {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+}
+
+#english{
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 380px) {
+  .menu_price{
+    display: block;
+    justify-content: center;
+    width: 230px;
+  }
+
+  .menu_title{
+    margin: 10px;
+  }
+
+
+  #english{
+    font-size: 15px;
+  }
+
+  .title-cut{
+    font-size: 15px;
+  }
+
+  .priceList {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+}
+
+@media only screen and (max-width: 320px){
+  .menu_price{
+    display: block;
+    justify-content: center;
+    width: 230px;
+  }
+
+  .menu_title{
+    margin: 10px;
+  }
+
+
+  #english{
+    font-size: 15px;
+  }
+
+  .title-cut{
+    font-size: 15px;
+  }
+
+  .priceList {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.pricePad {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+}
+
+
