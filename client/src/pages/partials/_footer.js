@@ -9,12 +9,9 @@ class Footer extends Component {
       </div>
     );
     return (
-      <div>
-        <Line />
-        <div style={{paddingTop:"3%"}}>
-          <div className="footer">
-            Miho's Style &copy;
-          </div>
+      <div className='footer-div'>
+        <div class="footer">
+          Miho's Style &copy;
         </div>
       </div>
     );

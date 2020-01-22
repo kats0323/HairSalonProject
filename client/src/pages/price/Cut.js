@@ -10,25 +10,36 @@ const Sline = ({ color }) => (
     </div>
 );
 
+const LineDot = ({ color }) =>(
+    <div className='line-dot'>
+        <span></span>
+    </div>
+);
+
 const CutFunction = props => (
     <div className="price_background">
         {props.language === "Japanese" ? (
             <div>
                 <div className="pricePadding">
-                    {props.cuts.ja_course && <h3 className="japanese">{props.cuts.ja_course}</h3>}
-                    {props.cuts.ja_price && <h4>{props.cuts.ja_detail}</h4>}
-                    {props.cuts.ja_detail && <h5 className="japanese">{props.cuts.ja_detail}</h5>}
+                 
+                        {props.cuts.ja_course && <h3 className="japanese">{props.cuts.ja_course}</h3>}
+                        {props.cuts.ja_price && <h4 className='title-cut'>{props.cuts.ja_detail}</h4>}
+                        {props.cuts.ja_detail && <h5 className="japanese">{props.cuts.ja_detail}</h5>}
+                    <LineDot/>
+                
                 </div>
             </div>
         ) : (
                 <div>
                     <div className="pricePadding">
+                 
                         {props.cuts.en_course && <h3 id="english">{props.cuts.en_course}</h3 >}
-                        {props.cuts.en_price && <h4>{props.cuts.en_price}</h4>}
+                        {props.cuts.en_price && <h4 className='title-cut'>{props.cuts.en_price}</h4>}
                         {props.cuts.en_detail && <h5 id="english">{props.cuts.en_detail}</h5>}
+                    <LineDot/>
                     </div>
                 </div>
-            )}
+        )}
     </div>
 )
 
@@ -64,11 +75,13 @@ export default class CutList extends Component {
                 <Sline />
                 <div >
                     <div className="priceList">
-                        <h2>CUT</h2>
-                        {this.cutList()}
+                        <h2 className='title-cut'>CUT</h2>
+                        <lineDot>
+                            {this.cutList()}
+                        </lineDot>
+                        <Link to="/prices" className='menu-link'>MENU</Link>
                     </div>
                 </div>
-                <Link to="/prices">MENU</Link>
                 <Sline />
             </div >
         )
