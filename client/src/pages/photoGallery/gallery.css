@@ -53,6 +53,26 @@
     cursor: pointer;
 }
 
+.photos_pg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translatez(0);
+    transition: transform 0.25s ease-out;
+}
+
+.photos_pg:hover{
+    transform: scale(1.05);
+}
+
+
 @media only screen and (max-width: 1024px){
     .imagePad {
         padding-left: 14%;
