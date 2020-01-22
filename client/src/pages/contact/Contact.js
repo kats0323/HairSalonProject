@@ -109,7 +109,7 @@ const LocationFunction = props => (
         {props.language === "Japanese" ? (
             <div>
                 <h4>phone_number</h4>
-                0{props.locations.street}
+                {props.locations.street}
                 <br />
                 <h4>line_id</h4>
                 {props.locations.suburb}
