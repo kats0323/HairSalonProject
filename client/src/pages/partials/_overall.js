@@ -4,9 +4,9 @@ import Footer from './_footer'
 import TopPage from "../toppage/TopPage";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import Blog from "../blog/Blog";
-import Cut from "../price/Cut";
-import Perm from "../price/Perm";
-import Color from "../price/Color";
+// import Cut from "../price/Cut";
+// import Perm from "../price/Perm";
+// import Color from "../price/Color";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 

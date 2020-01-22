@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { connect } from "react-redux";
+import PropTypes from 'prop-types'
 
 
 
-export default class CreateCut extends Component {
+class CreateCut extends Component {
     constructor(props) {
         super(props)
 
@@ -82,71 +84,95 @@ export default class CreateCut extends Component {
 
     }
     render() {
-        return (
-            <div style={{ paddingLeft: "300px" }}>
-                <h3>Create New Cut Menu</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Japanese Course: </label>
-                        <input type="text"
+        if (!this.props.isAuthenticated) {
+            return (
+                <div className='not-allowed'>
+                    {/* ここだけ */}
+                    <div className='cool-green-logo'>
+                        <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "80px" }} />
+                        {/* <hr className='logo-line'width="600" color="green" noshade></hr> */}
+                    </div>
+                    <h1 className='not-author'> NOT AUTHORISED</h1>
+                    <p className='message_'>Plese logoin before you go into admin page </p>
+                    <div className='dashboard_'>
+                        <a href="/admin">GO TO LOGIN PAGE</a>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h3>Create New Cut Menu</h3>
+                    <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            <label>Japanese Course: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_course}
-                            onChange={this.onChangeJaCourse}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Course: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_course}
+                                onChange={this.onChangeJaCourse}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Course: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_course}
-                            onChange={this.onChangeEnCourse}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Japanese Price: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.en_course}
+                                onChange={this.onChangeEnCourse}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Japanese Price: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_price}
-                            onChange={this.onChangeJaPrice}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Price: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_price}
+                                onChange={this.onChangeJaPrice}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Price: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_price}
-                            onChange={this.onChangeEnPrice}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Japanese Detail: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.en_price}
+                                onChange={this.onChangeEnPrice}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Japanese Detail: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.ja_detail}
-                            onChange={this.onChangeJaDetail}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>English Detail: </label>
-                        <input type="text"
+                                className="form-control"
+                                value={this.state.ja_detail}
+                                onChange={this.onChangeJaDetail}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>English Detail: </label>
+                            <input type="text"
 
-                            className="form-control"
-                            value={this.state.en_detail}
-                            onChange={this.onChangeEnDetail}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="submit" value="Create Cut" className="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
-        )
+                                className="form-control"
+                                value={this.state.en_detail}
+                                onChange={this.onChangeEnDetail}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="submit" value="Create Cut" className="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            )
+        }
     }
-
 }
+
+CreateCut.propTypes = {
+    isAuthenticated: PropTypes.bool
+}
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(CreateCut);
 

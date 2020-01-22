@@ -55,7 +55,7 @@ const OtherPriceFunction = props => (
     </div>
 )
 
-export default class PermList extends Component {
+export default class Perm extends Component {
     constructor(props) {
         super(props);
         this.state = { perms: [] };
@@ -102,7 +102,7 @@ export default class PermList extends Component {
                         {this.otherList()}
                     </div>
                 </div>
-                <Link to="/prices"><button>MENU</button></Link>
+                <Link to="/prices">MENU</Link>
                 <Sline />
             </div >
         )

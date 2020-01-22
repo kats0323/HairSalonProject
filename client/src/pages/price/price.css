@@ -3,9 +3,7 @@
 }
 
 .price_background{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    color: seagreen important!;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .pricePad{
@@ -26,19 +24,21 @@
 .priceList h2{
     color: green;
 }
+.menu_title{
+  text-align: center;
+}
+
 
 
 .menu_price{
-display: flex;
-margin-top: 30px;
-margin-bottom: 30px;
-margin-right: 30px !important;
-
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
 }
 
 .menu_price img{
-width: 280px;
-height: 330px !important;
+  width: 280px;
+  height: 330px !important;
 }
 
 .menu_cut_img {
@@ -50,12 +50,12 @@ height: 330px !important;
     left: 0;
     top: 0;
     opacity: 0;
-    transition: 2.5s; 
+    transition: 0.5s; 
   }
   .menu_cut_img:hover .active_cut {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
   }
   
   .menu_perm_img {
@@ -66,12 +66,12 @@ height: 330px !important;
     left: 0;
     top: 0;
     opacity: 0;
-    transition: 2.5s; 
+    transition: 0.5s; 
   }
   .menu_perm_img:hover .active_perm {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
   }
 
 
@@ -84,12 +84,12 @@ height: 330px !important;
     left: 0;
     top: 0;
     opacity: 0;
-    transition: 2.5s; 
+    transition: 0.5s; 
   }
   .menu_color_img:hover .active_color {
     opacity: 1;
     width: 280px;
-height: 330px !important;
+    height: 330px !important;
   }
 
 

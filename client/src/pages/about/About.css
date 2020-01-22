@@ -2,3 +2,29 @@
     padding-left: 19.5%;
     padding-right: 19.5%;
 }
+.aboutPad h1{
+    margin-bottom: 0;
+    padding-top: 5%;
+}
+
+
+.aboutImageCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+.about_photo img{
+    border-radius: 3%;  
+}
+.about_img{
+    border-radius: 80%;
+    width: 380px;
+    height: 36vh;
+}
+.about_position{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+

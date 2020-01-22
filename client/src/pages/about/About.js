@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col } from 'antd';
 import './About.css'
 import Footer from '../partials/_footer'
 
@@ -9,15 +8,21 @@ const AboutFunction = props => (
 
     <div>
         {props.language === "Japanese" ? (
-            <div>
-                <p>{props.about.ja_introduction}</p>
-                <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+
+            <div className="about_position">
+                <div className="aboutImageCenter">
+                    <img src={props.about.photo} className="about_img" alt="avatar" />
+                </div>
+                <h3 className="about_intro">{props.about.ja_introduction}</h3>
             </div>
         ) : (
-                <div>
-                    <p>{props.about.en_introduction}</p>
-                    <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+                <div className="about_position">
+                <div className="aboutImageCenter">
+                    <img src={props.about.photo} className="about_img" alt="avatar" />
                 </div>
+                    <h3 className="about_intro">{props.about.en_introduction}</h3>
+                </div>
+
             )}
     </div>
 )
@@ -58,28 +63,15 @@ export default class About extends Component {
     }
 
     render() {
-        const Line = ({ color }) => (
-            <div class="style-line">
-                <hr style={{ color: "green", border: "0.4px solid", width: "100%", }} />
-            </div>
-        );
         return (
             <div>
-
                 <div className="aboutPad">
-                    <Line />
-                    <Row>
-                        <Col>
-                            <h1 style={{ textAlign: "center" }}>About</h1>
-                            <h3>
-                                {this.aboutList()}
-                            </h3>
-                        </Col>
-                    </Row>
-                    <Line />
+                    <h1 style={{ textAlign: "center" }}>About Miho</h1>
+                    {this.aboutList()}
+
                 </div>
                 <Footer />
-            </div>
+            </div >
 
         )
     }
