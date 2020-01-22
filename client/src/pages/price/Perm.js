@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './price.css'
 import { Link } from "react-router-dom";
+import './price.css'
 import axios from 'axios';
+
 
 
 const Sline = ({ color }) => (
@@ -9,6 +11,12 @@ const Sline = ({ color }) => (
         <hr style={{ color: "green", border: "0.4px solid", width: "60%", }} />
     </div>
 );
+
+
+const LineDot = ({ color }) =>(
+    <div className='line-dot'><span></span></div>
+);
+
 
 const PermFunction = props => (
     <div className="price_background">
@@ -18,6 +26,7 @@ const PermFunction = props => (
                     {props.perms.ja_course && <h3 className="japanese">{props.perms.ja_course}</h3>}
                     {props.perms.ja_price && <h4>{props.perms.ja_detail}</h4>}
                     {props.perms.ja_detail && <h5 className="japanese">{props.perms.ja_detail}</h5>}
+                    <LineDot/>
                 </div>
             </div>
         ) : (
@@ -26,6 +35,7 @@ const PermFunction = props => (
                         {props.perms.en_course && <h3 id="english">{props.perms.en_course}</h3 >}
                         {props.perms.en_price && <h4>{props.perms.en_price}</h4>}
                         {props.perms.en_detail && <h5 id="english">{props.perms.en_detail}</h5>}
+                        <LineDot/>
                     </div>
                 </div>
             )}
@@ -89,20 +99,16 @@ export default class Perm extends Component {
             <div class="price_background">
                 <Sline />
                 <div class="pricePad">
-
-
                     <div className="priceList">
                         <h2>PERM</h2>
                         {this.permList()}
                     </div>
-
-
                     <div className="priceList">
                         <h2>OTHER</h2>
                         {this.otherList()}
                     </div>
+                    <Link to="/prices" className='title-color-perm'>MENU</Link>
                 </div>
-                <Link to="/prices">MENU</Link>
                 <Sline />
             </div >
         )
