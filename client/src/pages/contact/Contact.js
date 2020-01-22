@@ -108,31 +108,31 @@ const LocationFunction = props => (
     <div>
         {props.language === "Japanese" ? (
             <div>
-                <h4>phone_number</h4>
-                0{props.locations.street}
+                <h4>street</h4>
+                {props.locations.street}
                 <br />
-                <h4>line_id</h4>
+                <h4>suburb</h4>
                 {props.locations.suburb}
                 <br />
-                <h4>facebook</h4>
+                <h4>state</h4>
                 {props.locations.state}
                 <br />
-                <h4>instagram</h4>
-                {props.locations.google}
+                <h4>google</h4>
+                <iframe src={props.locations.google}></iframe>
                 <br />
-                <h4>opening_hors_mon</h4>
+                <h4>post_code</h4>
                 {props.locations.post_code}
                 <br />
-                <h4>opening_hors_tue</h4>
+                <h4>shop_photo1</h4>
                 {props.locations.shop_photo1}
                 <br />
-                <h4>opening_hors_wed</h4>
+                <h4>shop_info_1_ja</h4>
                 {props.locations.shop_info_1_ja}
                 <br />
-                <h4>opening_hors_thu</h4>
+                <h4>shop_info_2_ja</h4>
                 {props.locations.shop_info_2_ja}
                 <br />
-                <h4>opening_hors_fri</h4>
+                <h4>shop_extra_info_ja</h4>
                 {props.locations.shop_extra_info_ja}
                 <br />
 
@@ -140,32 +140,32 @@ const LocationFunction = props => (
         ) : (
                 <div>
 
-                    <h4>phone_number</h4>
-                    0{props.locations.street}
+                    <h4>street</h4>
+                    {props.locations.street}
                     <br />
-                    <h4>line_id</h4>
+                    <h4>suburb</h4>
                     {props.locations.suburb}
                     <br />
-                    <h4>facebook</h4>
+                    <h4>state</h4>
                     {props.locations.state}
                     <br />
-                    <h4>instagram</h4>
-                    {props.locations.google}
+                    <h4>google</h4>
+                    <iframe src={props.locations.google}></iframe>
                     <br />
-                    <h4>opening_hors_mon</h4>
+                    <h4>post_code</h4>
                     {props.locations.post_code}
                     <br />
-                    <h4>opening_hors_tue</h4>
+                    <h4>shop_photo1</h4>
                     {props.locations.shop_photo1}
                     <br />
-                    <h4>opening_hors_wed</h4>
-                    {props.locations.shop_info_1_ja}
+                    <h4>shop_info_1_en</h4>
+                    {props.locations.shop_info_1_en}
                     <br />
-                    <h4>opening_hors_thu</h4>
-                    {props.locations.shop_info_2_ja}
+                    <h4>shop_info_2_en</h4>
+                    {props.locations.shop_info_2_en}
                     <br />
-                    <h4>opening_hors_fri</h4>
-                    {props.locations.shop_extra_info_ja}
+                    <h4>shop_extra_info_en</h4>
+                    {props.locations.shop_extra_info_en}
                     <br />
 
                 </div>
@@ -221,7 +221,7 @@ export default class Contact extends Component {
     }
 
     render() {
- 
+
         return (
             <div>
                 <div className="contactPad">
