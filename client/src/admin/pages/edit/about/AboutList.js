@@ -3,18 +3,33 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
+import { Card } from "antd";
+import "../../partials/edit.css"
 
 const AboutFunction = props => (
-    <tr>
-        <h2>{props.about.en_introduction}</h2>
-        <h4>{props.about.ja_introduction}</h4>
-        <br />
-        <img src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
-        <td>
-            <Link to={"/admin/about/edit/" + props.about._id}>edit</Link> |    <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>delete</button>
-        </td>
 
-    </tr >
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
+            <p style={{ fontSize: "20px", color: "black" }}>English Introduction</p>
+            <p className="admin_words">{props.about.en_introduction}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>自己紹介</p>
+            <p>{props.about.ja_introduction}</p>
+            <br />
+            <img className="adminImg" src={props.about.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="avatar" />
+            <br />
+            <button><Link to={"/admin/about/create/"}>Create</Link></button>
+            <br />
+            <br />
+            <button><Link to={"/admin/about/edit/" + props.about._id}>Edit</Link></button>
+            <br />
+            <br />
+            <button href="#" onClick={() => { props.deleteAbout(props.about._id) }}>Delete</button>
+            <br />
+            <br />
+        </Card>
+    </div>
+
 )
 
 
@@ -71,9 +86,9 @@ class AboutList extends Component {
         } else {
             return (
 
-                <div>
+                <div style={{ textAlign: "center" }}>
 
-                    <h1>About</h1>
+                    <h1 class="admin_title_page">About Admin Page</h1>
                     <br />
                     <h3>
                         {this.aboutList()}
@@ -84,6 +99,7 @@ class AboutList extends Component {
         }
     }
 }
+
 
 AboutList.propTypes = {
     isAuthenticated: PropTypes.bool

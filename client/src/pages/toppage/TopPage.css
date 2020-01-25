@@ -6,12 +6,10 @@
 }
 .Carousel-photo{
     background-size: cover;
-
     width:50%;
 }
 
 .style-home{
-    padding-top: 5%;
     text-align: center;
     padding-left: 20%;
     padding-right: 20%;
@@ -63,22 +61,21 @@
     height: 900px !important;
 }
 
-/* .style-home .ant-row .ant-col:last-child{
-    display: none;
-} */
+.ant-btn{
+    color: green;
+}
+.ant-btn:hover{
+    color: green;
+    border: green 3px solid;
+}
+.Carousel-photo{
+    height: 700px !important;
+}
+.Carousel-box img{
+    object-fit: cover;
+    height: 600px
+}
 
-
-/* nth-last-child(1) */
-
-    /* @media only screen and (max-width: 769) {
-        .style-home .ant-row .ant-col:last-child{
-            display: none;
-        }
-        body {
-            background-color: green;
-        }
-
-    } */
     @media only screen and (max-width: 1400px) {
         .style-home{
             padding: 0;

@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
+import { Card } from "antd";
 import './not_authorised.css'
+import "../../partials/edit.css"
 
 
 
 const BlogFunction = props => (
-    <tr>
-        <td>{props.blogs.title}</td>
-        <td>{props.blogs.content}</td>
-        <img src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="blogphoto" />
-        <td>
+
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
+            <p style={{ fontSize: "20px", color: "black" }}>Title/タイトル</p>/p>
+            <p className="admin_words">{props.blogs.title}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Contents/内容</p>
+            <p>{props.blogs.content}</p>
+            <br />
+            <img className="adminImg" src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="photo_blog" />
+            <br />
+            <button><Link to={"/admin/blogs/create/"}>Create</Link></button>
+            <br />
+            <br />
+            <button><Link to={"/admin/blogs/edit/" + props.blogs._id}>Edit</Link></button>
+            <br />
+            <br />
             <button href="#" onClick={() => { props.deleteBlog(props.blogs._id) }}>delete</button>
-        </td>
-    </tr >
+            <br />
+        </Card>
+    </div>
+
 )
 class BlogList extends Component {
     constructor(props) {
@@ -62,8 +78,8 @@ class BlogList extends Component {
             )
         } else {
             return (
-                <div style={{ paddingLeft: "350px" }}>
-                    <h1>Blog</h1>
+                <div style={{ textAlign: "center" }}>
+                    <h1 class="admin_title_page">Blog</h1>
                     <br />
                     {this.blogList()}
                 </div>
@@ -71,6 +87,7 @@ class BlogList extends Component {
         }
     }
 }
+
 BlogList.propTypes = {
     isAuthenticated: PropTypes.bool
 }

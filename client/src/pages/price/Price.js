@@ -32,7 +32,7 @@ export default class Price extends Component {
                         <h3 className="menu_title">COLOR</h3>
                         <div className="menu_color_img">
 
-                            <img src={process.env.PUBLIC_URL + '/img/image14.jpeg'} alt="Color" />
+                            <img src={process.env.PUBLIC_URL + '/img/_image7.jpeg'} alt="Color" />
                             <img src={process.env.PUBLIC_URL + '/img/more_info.jpg'} alt="" class="active_color"></img>
                         </div>
                     </Link>

@@ -3,64 +3,94 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
+import { Card } from "antd";
 
 const ContactFunction = props => (
 
-    <div>
-        <h4>phone_number</h4>
-        0{props.contacts.phone_number}
-        <br />
-        <h4>line_id</h4>
-        {props.contacts.line_id}
-        <br />
-        <h4>facebook</h4>
-        {props.contacts.facebook}
-        <br />
-        <h4>instagram</h4>
-        {props.contacts.instagram}
-        <br />
-        <h4>contact_info_1_en</h4>
-        {props.contacts.contact_info_1_en}
-        <br />
-        <h4>contact_info_1_ja</h4>
-        {props.contacts.contact_info_1_ja}
-        <br />
-        <h4>contact_info_2_en</h4>
-        {props.contacts.contact_info_2_en}
-        <br />
-        <h4>contact_info_2_ja</h4>
-        {props.contacts.contact_info_2_ja}
-        <br />
-        <h4>contact_extra_info_en</h4>
-        {props.contacts.contact_extra_info_en}
-        <br />
-        <h4>contact_extra_info_ja</h4>
-        {props.contacts.contact_extra_info_ja}
-        <br />
-        <h4>opening_hors_mon</h4>
-        {props.contacts.opening_hors_mon}
-        <br />
-        <h4>opening_hors_tue</h4>
-        {props.contacts.opening_hors_tue}
-        <br />
-        <h4>opening_hors_wed</h4>
-        {props.contacts.opening_hors_wed}
-        <br />
-        <h4>opening_hors_thu</h4>
-        {props.contacts.opening_hors_thu}
-        <br />
-        <h4>opening_hors_fri</h4>
-        {props.contacts.opening_hors_fri}
-        <br />
-        <h4>opening_hors_sat</h4>
-        {props.contacts.opening_hors_sat}
-        <br />
-        <h4>opening_hors_sun</h4>
-        {props.contacts.opening_hors_sun}
-        <br />
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
 
-        <Link to={"/admin/contacts/edit/" + props.contacts._id}>edit</Link> | <button href="#" onClick={() => { props.deleteContact(props.contacts._id) }}>delete</button>
+            <p style={{ fontSize: "20px", color: "black" }}>Number/電話番号</p>
+            <p className="admin_words">{props.contacts.phone_number}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Line ID</p>
+            <p className="admin_words">{props.contacts.line_id}</p>
+            <br />
+
+
+            <p style={{ fontSize: "20px", color: "black" }}>Facebook</p>
+            <p className="admin_words">{props.contacts.facebook}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Instagram Account ID</p>
+            <p className="admin_words">{props.contacts.instagram}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Contact Information 1</p>
+            <p className="admin_words">{props.contacts.contact_info_1_en}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>コンタクト情報１</p>
+            <p className="admin_words">{props.contacts.contact_info_1_ja}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Contact Information 2</p>
+            <p className="admin_words">{props.contacts.contact_info_2_en}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>コンタクト情報2</p>
+            <p className="admin_words">{props.contacts.contact_info_2_ja}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Contact Extra Information</p>
+            <p className="admin_words">{props.contacts.contact_extra_info_en}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>コンタクトエクストラ情報</p>
+            <p className="admin_words">{props.contacts.contact_extra_info_ja}</p>
+            <br />
+            <h3>Opening Hours</h3>
+            <p style={{ fontSize: "20px", color: "black" }}>Monday/月曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_mon}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Tuesday/火曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_tue}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Wednesday/水曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_wed}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Thursday/木曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_thu}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Friday/金曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_fri}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}>Saturday/土曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_sat}</p>
+            <br />
+
+            <p style={{ fontSize: "20px", color: "black" }}> Sunday/日曜</p>
+            <p className="admin_words">{props.contacts.opening_hors_sun}</p>
+            <br />
+            <br />
+            <button><Link to={"/admin/contacts/create/"}>Create</Link></button>
+            <br />
+            <br />
+            <button><Link to={"/admin/contacts/edit/" + props.contacts._id}>Edit</Link></button>
+            <br />
+            <br />
+            <button href="#" onClick={() => { props.deleteBlog(props.contacts._id) }}>Delete</button>
+            <br />
+            <br />
+        </Card>
     </div>
+
 
 )
 
@@ -117,8 +147,8 @@ class ContactList extends Component {
             )
         } else {
             return (
-                <div>
-                    <h1>Contact</h1>
+                <div style={{ textAlign: "center" }}>
+                    <h1 class="admin_title_page">Contact Admin Page</h1>
                     <br />
                     {this.contactList()}
                 </div>
@@ -126,6 +156,7 @@ class ContactList extends Component {
         }
     }
 }
+
 
 ContactList.propTypes = {
     isAuthenticated: PropTypes.bool

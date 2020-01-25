@@ -4,27 +4,33 @@
 }
 .aboutPad h1{
     margin-bottom: 0;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 
 .aboutImageCenter{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     padding-bottom: 2%;
+    display: flex;
+    justify-content: center;
 }
 .about_photo img{
     border-radius: 3%;  
+    
 }
 .about_img{
-    border-radius: 80%;
-    width: 380px;
-    height: 36vh;
+    width: 500px;
+    height: 40vh;
+    padding-right: 10px;
+    padding-top: 1%;
 }
 .about_position{
-    padding-top: 3%;
+    padding-top: 1%;
     padding-bottom: 3%;
+}
+.about_intro{
+font-size: 26px;
+padding-top: 1%;
+color: #666c67;
 }
 
 

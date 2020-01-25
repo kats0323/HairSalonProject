@@ -3,14 +3,20 @@
 
 
 .navbar{
-   background-color: green;
+   background-color: green !important;
+}
+.dropdown-menu{
+    background-color: green !important;
+}
+.dropdown-menu :hover{
+    background-color: green !important;
 }
 
 .navbar-light{
     color: white;
 }
-.navbar-nav{
-    color: white;
+.navbar-nav a{
+    color: white !important;
 }
 
 .nav-link {
