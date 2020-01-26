@@ -147,7 +147,7 @@ class ContactList extends Component {
         } else {
             return (
                 <div style={{ textAlign: "center" }}>
-                    <h1 class="admin_title_page">Contact Admin Page</h1>
+                    <h1 className="admin_title_page">Contact Admin Page</h1>
                     <br />
                     <br />
                     <button><Link to={"/admin/contacts/create/"}>Create</Link></button>

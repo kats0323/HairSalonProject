@@ -88,7 +88,7 @@ class AboutList extends Component {
 
                 <div style={{ textAlign: "center" }}>
 
-                    <h1 class="admin_title_page">About Admin Page</h1>
+                    <h1 className="admin_title_page">About Admin Page</h1>
                     <br />
                     <h3>
                         {this.aboutList()}

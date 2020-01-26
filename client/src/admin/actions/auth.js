@@ -13,7 +13,6 @@ export const loadUser = () => async dispatch => {
         setAuthToken(localStorage.token)
     }
     try {
-        console.log("AUTH ROUTE CALLED")
         const res = await axios.get("/auth");
         dispatch({
             type: USER_LOADED,
@@ -44,7 +43,7 @@ export const register = ({ email, password }) => async dispatch => {
             type: REGISTER_SUCCESS,
             payload: res.data
         })
-        console.log("REGISTER")
+
         dispatch(loadUser())
     } catch (err) {
         const errors = err.response.data.errors;
@@ -75,7 +74,6 @@ export const login = (email, password) => async dispatch => {
             type: LOGIN_SUCCESS,
             payload: res.data
         })
-        console.log("LOGIN")
         dispatch(loadUser())
     } catch (err) {
         const errors = err.response.data.errors;

@@ -10,7 +10,7 @@ const Sline = ({ color }) => (
     </div>
 );
 
-const LineDot = ({ color }) =>(
+const LineDot = ({ color }) => (
     <div className='line-dot'>
         <span></span>
     </div>
@@ -21,25 +21,25 @@ const CutFunction = props => (
         {props.language === "Japanese" ? (
             <div>
                 <div className="pricePadding">
-                 
-                        {props.cuts.ja_course && <h3 className="japanese">{props.cuts.ja_course}</h3>}
-                        {props.cuts.ja_price && <h4 className='title-cut'>{props.cuts.ja_detail}</h4>}
-                        {props.cuts.ja_detail && <h5 className="japanese">{props.cuts.ja_detail}</h5>}
-                    <LineDot/>
-                
+
+                    {props.cuts.ja_course && <h3 className="japanese">{props.cuts.ja_course}</h3>}
+                    {props.cuts.ja_price && <h4 className='title-cut'>{props.cuts.ja_detail}</h4>}
+                    {props.cuts.ja_detail && <h5 className="japanese">{props.cuts.ja_detail}</h5>}
+                    <LineDot />
+
                 </div>
             </div>
         ) : (
                 <div>
                     <div className="pricePadding">
-                 
+
                         {props.cuts.en_course && <h3 id="english">{props.cuts.en_course}</h3 >}
                         {props.cuts.en_price && <h4 className='title-cut'>{props.cuts.en_price}</h4>}
                         {props.cuts.en_detail && <h5 id="english">{props.cuts.en_detail}</h5>}
-                    <LineDot/>
+                        <LineDot />
                     </div>
                 </div>
-        )}
+            )}
     </div>
 )
 
@@ -71,7 +71,7 @@ export default class CutList extends Component {
 
     render() {
         return (
-            <div class="price_background">
+            <div className="price_background">
                 <Sline />
                 <div >
                     <div className="priceList">

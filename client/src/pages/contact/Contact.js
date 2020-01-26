@@ -5,13 +5,6 @@ import Footer from '../partials/_footer'
 import { Row, Col, Icon } from 'antd';
 
 
-
-const Sline = ({ color }) => (
-    <div className="style-line">
-        <hr style={{ color: "green", border: "0.4px solid", width: "60%", }} />
-    </div>
-);
-
 const ContactFunction = props => (
 
     <div>

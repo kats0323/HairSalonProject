@@ -5,7 +5,7 @@ export default function EditDashboard() { //exporting this component into react 
     return (
         <div>
             <AllEditPagesNavbar />
-            <h1 class="main"> Admin Page </h1>
+            <h1 className="main"> Admin Page </h1>
         </div>
     );
 }

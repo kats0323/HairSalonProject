@@ -78,7 +78,7 @@ class BlogList extends Component {
         } else {
             return (
                 <div style={{ textAlign: "center" }}>
-                    <h1 class="admin_title_page">Blog</h1>
+                    <h1 className="admin_title_page">Blog</h1>
                     <br />
                     <br />
                     <button><Link to={"/admin/blogs/create/"}>Create</Link></button>
