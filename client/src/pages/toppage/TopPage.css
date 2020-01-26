@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+.title_top{
+    padding-top: 35px;
+}
+.ant-carousel .slick-dots li.slick-active button {
+    background: rgb(1, 43, 12);
+}
+.ant-carousel .slick-dots li button {
+    background: green;
+}
 .Carousel-box{
     display: flex !important;
     justify-content: center;
@@ -13,7 +22,12 @@
     text-align: center;
     padding-left: 20%;
     padding-right: 20%;
-
+    padding-top: 15px;
+    font-family: 'Abril Fatface'
+}
+.style-home span{
+    color: green;
+    padding-bottom: 10px;
 }
 
 .style-line{
@@ -35,6 +49,9 @@
 .button-top {
     padding-top:40px;
 }
+.button-top span{
+    font-size: 20px;
+}
 .ant-btn {
     height: 100px;
     width: 300px;
@@ -44,7 +61,7 @@
 }
 
 .salon-info {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Abril Fatface';
     padding-top: 50px;
     text-align: center;
 }
@@ -56,11 +73,6 @@
 .info-icons a{
     color: green;
 }
-
-.slick-slide{
-    height: 900px !important;
-}
-
 .ant-btn{
     color: green;
 }
@@ -69,24 +81,88 @@
     border: green 3px solid;
 }
 .Carousel-photo{
-    height: 700px !important;
+    height: 600px !important;
 }
 .Carousel-box img{
-    object-fit: cover;
     height: 600px
+}
+.style_position{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+.icon :hover{
+color: black;
 }
 
     @media only screen and (max-width: 1400px) {
-        .style-home{
-            padding: 0;
+
+        .style-showcase{
+            width: 150px;
+            height: 170px;
         }
 
-        .style-home .ant-row .ant-col:last-child{
-            display: none;
+        .Carousel-photo{
+            width: 600px;
+           height: 500px !important;
         }
-
-        .slick-slide{
+        .Carousel-box img{
             height: 500px !important;
+            width: 600px;
         }
-        
-}
+        .title_top{
+            padding-top: 25px;
+        }
+    }
+
+
+        @media only screen and (max-width: 768px){
+            .style-showcase{
+                width: 100px;
+                height: 120px;
+            }
+            .Carousel-photo{
+                width: 500px;
+               height: 400px !important;
+            }
+            .Carousel-box img{
+                height: 400px !important;
+                width: 500px;
+            }
+            .title_top{
+                padding-top: 15px;
+            }
+      
+          }
+          @media only screen and (max-width: 420px){
+            .style-showcase{
+                width: 80px;
+                height: 100px;
+                padding-left: 5px;
+            }
+            .Carousel-photo{
+                width: 300px;
+               height: 200px !important;
+            }
+            .Carousel-box img{
+                height: 200px !important;
+                width: 300px;
+            }
+            .style-home h1{
+                font-size: 20px;
+            }
+            .ant-btn{
+                width: 150px;
+                height: 60px;
+            }
+            .button-top span{
+                font-size: 10px;
+            }
+            .salon-info h1{
+                font-size: 20px;
+            }
+            .salon-info{
+                padding-top: 20px;
+            }
+      
+          }

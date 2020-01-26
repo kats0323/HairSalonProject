@@ -1,50 +1,57 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
+import { Card } from "antd";
+import "../../partials/edit.css"
 
 const LocationFunction = props => (
-    <div>
-        <h4>street</h4>
-        {props.locations.street}
-        <br />
-        <h4>suburb</h4>
-        {props.locations.suburb}
-        <br />
-        <h4>State</h4>
-        {props.locations.state}
-        <br />
-        <h4>state</h4>
-        {props.locations.post_code}
-        location
-        <h4>google</h4>
-        <iframe src={props.locations.google} title="google"></iframe>
-        <br />
-        {props.locations.google}
-        <br />
-        <h4>shop_info_1_en</h4>
-        {props.locations.shop_info_1_en}
-        <br />
-        <h4>shop_info_1_ja</h4>
-        {props.locations.shop_info_1_ja}
-        <br />
-        <h4>shop_info_2_en</h4>
-        {props.locations.shop_info_2_en}
-        <br />
-        <h4>shop_info_2_ja</h4>
-        {props.locations.shop_info_2_ja}
-        <br />
-        <h4>shop_extra_info_en</h4>
-        {props.locations.shop_extra_info_en}
-        <br />
-        <h4>shop_extra_info_ja</h4>
-        {props.locations.shop_extra_info_ja}
-        <br />
-        <h4>shop_photo1</h4>
-        <img src={props.locations.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="shop_photo" />
-
-        <Link to={"/admin/locations/edit/" + props.locations._id}>edit</Link> | <button href="#" onClick={() => { props.deleteLocation(props.locations._id) }}>delete</button>
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
+            <p style={{ fontSize: "20px", color: "black" }}>Street</p>
+            <p className="admin_words">{props.locations.street}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Suburb</p>
+            <p className="admin_words">{props.locations.suburb}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>State</p>
+            <p className="admin_words">{props.locations.state}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Post Code</p>
+            <p className="admin_words">{props.locations.post_code}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Shop Information 1</p>
+            <p className="admin_words">{props.locations.shop_info_1_en}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>情報１</p>
+            <p className="admin_words">{props.locations.shop_info_1_ja}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Shop Information 2</p>
+            <p className="admin_words">{props.locations.shop_info_2_en}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>情報２</p>
+            <p className="admin_words">{props.locations.shop_info_2_ja}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Extra Information</p>
+            <p className="admin_words">{props.locations.shop_extra_info_en}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>エクストラ情報</p>
+            <p className="admin_words">{props.locations.shop_extra_info_ja}</p>
+            <br />
+            <img className="adminImg" src={props.locations.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="photo_shop" />
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Google map</p>
+            <p className="admin_words">{props.locations.google}</p>
+            <br />
+            <iframe src={props.locations.google} title="google" class="iframe_size"></iframe>
+            <br />
+            <button> <Link to={"/admin/locations/edit/" + props.locations._id}>Edit</Link></button>
+            <br />
+            <br />
+            <button href="#" onClick={() => { props.deleteLocation(props.locations._id) }}>Delete</button>
+            <br />
+        </Card>
     </div>
 
 )
@@ -102,8 +109,11 @@ class LocationList extends Component {
             )
         } else {
             return (
-                <div>
+                <div style={{ textAlign: "center" }}>
                     <h1>Location</h1>
+                    <br />
+                    <button><Link to={"/admin/locations/create/"}>Create</Link></button>
+                    <br />
                     <br />
                     {this.locationList()}
                 </div>

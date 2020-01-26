@@ -66,7 +66,7 @@ export default class About extends Component {
         return (
             <div>
                 <div className="aboutPad">
-                    <h1 style={{ textAlign: "center", fontSize: "35px" }}>About <span style={{ color: "green", fontSize: "40px" }}>Miho</span></h1>
+                    <h1 className="aboutTitle" style={{ textAlign: "center", fontSize: "35px" }}>About <span style={{ color: "green", fontSize: "40px" }}> Miho</span></h1>
                     {this.aboutList()}
 
                 </div>

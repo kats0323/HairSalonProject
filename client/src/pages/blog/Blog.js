@@ -8,8 +8,8 @@ import { Button, Icon } from 'antd';
 const BlogFunction = props => (
     <div className="blogStyle">
         <div className="blogCol">
-            <h3>{props.blogs.title}</h3>
-            <p>{props.blogs.content}</p>
+            <h3 className="blog_title_contents">{props.blogs.title}</h3>
+            <p className="blog_contents">{props.blogs.content}</p>
             <img src={props.blogs.photo} alt="blogPicture" />
         </div>
     </div >
@@ -95,7 +95,7 @@ export default class Blog extends Component {
     render() {
         return (
             <div>
-                <h1 style={{ textAlign: "center", paddingBottom: "10px" }}>Blog</h1>
+                <h1 className="blogTitle" style={{ textAlign: "center", paddingBottom: "10px" }}>Blog</h1>
                 <div style={{ paddingLeft: "25%", paddingRight: "25%", paddingBottom: "6vh" }}>
                     <div className="blogPad" style={{ width: "100%", paddingBottom: "2%" }}>
                         <div className="blogFlex">

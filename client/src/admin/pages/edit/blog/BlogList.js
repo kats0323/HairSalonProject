@@ -20,8 +20,7 @@ const BlogFunction = props => (
             <p>{props.blogs.content}</p>
             <br />
             <img className="adminImg" src={props.blogs.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="photo_blog" />
-            <br />
-            <button><Link to={"/admin/blogs/create/"}>Create</Link></button>
+
             <br />
             <br />
             <button><Link to={"/admin/blogs/edit/" + props.blogs._id}>Edit</Link></button>
@@ -80,6 +79,9 @@ class BlogList extends Component {
             return (
                 <div style={{ textAlign: "center" }}>
                     <h1 class="admin_title_page">Blog</h1>
+                    <br />
+                    <br />
+                    <button><Link to={"/admin/blogs/create/"}>Create</Link></button>
                     <br />
                     {this.blogList()}
                 </div>

@@ -23,10 +23,10 @@ const ContactFunction = props => (
                     <div className="contact_table">
 
                         <div className="tel_table" style={{ fontSize: "25px", textAlign: "center" }}>
-                            <Row className="test" style={{ paddingTop: "10px" }}>
-                                <p style={{ color: "silver" }}>TEL:</p>
+                            <div className="test" style={{ paddingTop: "10px" }}>
+                                <p style={{ color: "#7d7d7d" }}>TEL</p>
                                 <div style={{ color: "green", fontSize: "30px" }}>{props.contacts.phone_number}</div>
-                            </Row>
+                            </div>
                         </div>
 
 
@@ -34,10 +34,10 @@ const ContactFunction = props => (
 
 
                         <div className="line_table" style={{ fontSize: "25px", textAlign: "center" }}>
-                            <Row className="test" style={{ paddingTop: "10px" }}>
-                                <p style={{ float: "left", color: "silver", paddingRight: "30px" }}>Line ID:</p>
+                            <div className="test" style={{ paddingTop: "10px" }}>
+                                <p style={{ color: "#7d7d7d" }}>Line ID</p>
                                 <div style={{ color: "green", fontSize: "30px" }}>{props.contacts.line_id}</div>
-                            </Row>
+                            </div>
                         </div>
 
                         <div className="border_table" style={{ color: "green", border: "0.5px solid", width: "100%", textAlign: "center" }}></div>
@@ -59,7 +59,8 @@ const ContactFunction = props => (
                     </div>
                     <div className="openingHours" style={{ textAlign: "center", paddingTop: "10px" }}>
                         <div className="border_table" style={{ color: "green", border: "0.5px solid", width: "100%", textAlign: "center" }}></div>
-                        <h2 style={{ paddingTop: "15px" }}>Opening Hours</h2>
+                        <h1 className="contact_all_title" style={{ paddingTop: "15px" }}>Opening Hours</h1>
+                        <br />
                         {props.contacts.opening_hors_mon && <h3 style={{ paddingTop: "5px" }} > {props.contacts.opening_hors_mon}</h3>}
                         {props.contacts.opening_hors_tue && <h3 style={{ paddingTop: "5px" }}>{props.contacts.opening_hors_tue}</h3>}
                         {props.contacts.opening_hors_wed && <h3 style={{ paddingTop: "5px" }}>{props.contacts.opening_hors_wed}</h3>}
@@ -79,10 +80,10 @@ const ContactFunction = props => (
                         <div className="contact_table">
 
                             <div className="tel_table" style={{ fontSize: "25px", textAlign: "center" }}>
-                                <Row style={{ paddingTop: "10px" }}>
-                                    <p style={{ color: "#7d7d7d" }}>TEL:</p>
+                                <div style={{ paddingTop: "10px" }}>
+                                    <p style={{ color: "#7d7d7d" }}>TEL</p>
                                     <div style={{ color: "green", fontSize: "30px" }}>{props.contacts.phone_number}</div>
-                                </Row>
+                                </div>
                             </div>
 
 
@@ -90,10 +91,10 @@ const ContactFunction = props => (
 
 
                             <div className="line_table" style={{ fontSize: "25px", textAlign: "center" }}>
-                                <Row style={{ paddingTop: "10px" }}>
-                                    <p style={{ float: "left", color: "#7d7d7d", paddingRight: "30px" }}>Line ID:</p>
+                                <div style={{ paddingTop: "10px" }}>
+                                    <p style={{ color: "#7d7d7d" }}>Line ID</p>
                                     <div style={{ color: "green", fontSize: "30px" }}>{props.contacts.line_id}</div>
-                                </Row>
+                                </div>
                             </div>
 
                             <div className="border_table" style={{ color: "green", border: "0.5px solid", width: "100%", textAlign: "center" }}></div>
@@ -103,19 +104,19 @@ const ContactFunction = props => (
                         </div>
                         <div className="contact_sns" style={{ textAlign: "center" }}>
                             <p style={{ fontSize: "20px", paddingTop: "5px", color: "#7d7d7d" }}>Check <span style={{ color: "green" }}>Miho's Style</span> SNS</p>
-                            <Row style={{ paddingTop: "10px" }}>
+                            <div className="icon_position" style={{ paddingTop: "10px" }}>
 
-                                <Col style={{ paddingTop: "5px", color: "green !important" }}>
-                                    <a href={props.contacts.facebook}><Icon type="facebook" theme="filled" className="facebookIcon" style={{ fontSize: "3rem", color: "green" }} /></a>
-                                </Col>
-                                <Col style={{ paddingTop: "5px", color: "green" }}>
-                                    <a href={props.contacts.instagram}><Icon className="instaIcon" type="instagram" theme="filled" style={{ fontSize: "3rem", color: "green" }} /></a>
-                                </Col>
-                            </Row>
+
+                                <a href={props.contacts.facebook}><Icon type="facebook" theme="filled" className="facebookIcon" style={{ fontSize: "3rem", color: "green", paddingRight: "15px" }} /></a>
+
+                                <a href={props.contacts.instagram}><Icon className="instaIcon" type="instagram" theme="filled" style={{ fontSize: "3rem", color: "green" }} /></a>
+
+                            </div>
                         </div>
                         <div className="openingHours" style={{ textAlign: "center", paddingTop: "10px" }}>
                             <div className="border_table" style={{ color: "green", border: "0.5px solid", width: "100%", textAlign: "center" }}></div>
-                            <h2 style={{ paddingTop: "15px" }}>Opening Hours</h2>
+                            <h1 className="contact_all_title" style={{ paddingTop: "15px" }}>Opening Hours</h1>
+                            <br />
                             {props.contacts.opening_hors_mon && <h3 style={{ paddingTop: "5px" }} > {props.contacts.opening_hors_mon}</h3>}
                             {props.contacts.opening_hors_tue && <h3 style={{ paddingTop: "5px" }}>{props.contacts.opening_hors_tue}</h3>}
                             {props.contacts.opening_hors_wed && <h3 style={{ paddingTop: "5px" }}>{props.contacts.opening_hors_wed}</h3>}
@@ -146,18 +147,16 @@ const LocationFunction = props => (
             props.language === "Japanese" ? (
 
                 <div>
-                    <h3 style={{ textAlign: "center", color: "green", paddingTop: "15px" }}>Address</h3>
+                    <h3 className="contact_all_title" style={{ textAlign: "center", color: "green", paddingTop: "15px" }}>Address</h3>
 
                     <div style={{ textAlign: "center", fontSize: "25px", fontWeight: "bold" }} >{props.locations.street} </div>
                     <div style={{ textAlign: "center", fontSize: "25px", fontWeight: "bold" }} >{props.locations.suburb} </div>
                     <div style={{ textAlign: "center", fontSize: "25px", fontWeight: "bold" }} >{props.locations.state} {props.locations.post_code}</div>
                     <Row>
-                        <div className="img_contact">
-                            <Col> <img src={props.locations.shop_photo1} alt="shopphoto" style={{ width: "400px", height: "400px" }} /></Col>
-                            <Col>
-                                <iframe src={props.locations.google} title="googlemap" style={{ width: "400px", height: "400px" }} ></iframe>
-                            </Col>
-                        </div>
+                        <Col> <img src={props.locations.shop_photo1} alt="shopphoto" style={{ width: "400px", height: "400px" }} /></Col>
+                        <Col>
+                            <iframe src={props.locations.google} title="googlemap" style={{ width: "400px", height: "400px" }} ></iframe>
+                        </Col>
                     </Row>
                     <p style={{ color: "bloack" }}><span style={{ color: "green", fontSize: "25px", paddingTop: "5px" }}>* </span>  {props.locations.shop_info_1_ja}</p>
                     <p style={{ color: "bloack" }}><span style={{ color: "green", fontSize: "25px", paddingTop: "5px" }}>* </span>  {props.locations.shop_info_2_ja}</p>
@@ -169,7 +168,7 @@ const LocationFunction = props => (
             ) : (
 
                     <div>
-                        <h3 style={{ textAlign: "center", color: "green", paddingTop: "15px" }}>Address</h3>
+                        <h3 className="contact_all_title" style={{ textAlign: "center", color: "green", paddingTop: "15px" }}>Address</h3>
 
                         <div style={{ textAlign: "center", fontSize: "25px", fontWeight: "bold" }} >{props.locations.street} </div>
                         <div style={{ textAlign: "center", fontSize: "25px", fontWeight: "bold" }} >{props.locations.suburb} </div>
@@ -240,11 +239,11 @@ export default class Contact extends Component {
         return (
             <div>
                 <div className="contactPad">
-                    <h1 style={{ textAlign: "center" }}>Contact</h1>
+                    <h1 className="contact_all_title" style={{ textAlign: "center" }}>Contact</h1>
 
 
                     {this.contactList()}
-                    <h1 style={{ textAlign: "center", paddingTop: "15px" }}>Location</h1>
+                    <h1 className="contact_all_title" style={{ textAlign: "center", paddingTop: "15px" }}>Location</h1>
                     {this.locationList()}
                 </div>
 

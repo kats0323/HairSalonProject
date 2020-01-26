@@ -48,17 +48,27 @@ const OtherPriceFunction = props => (
         {props.language === "Japanese" ? (
             <div>
                 <div className="pricePadding">
-                    {props.other.ja_price && <h3>{props.other.ja_price}</h3>}
+                    {props.other.ja_price && <h3 className="japanese">{props.other.ja_price}</h3>}
                     {props.other.ja_course && <h4 className="japanese">{props.other.ja_course}</h4>}
                     {props.other.ja_detail && <h5 className="japanese">{props.other.ja_detail}</h5>}
+                    {props.other.ja_course !== "" ? (
+                        <LineDot />
+                    ) : (
+                            console.log("")
+                        )}
                 </div>
             </div>
         ) : (
                 <div>
                     <div className="pricePadding">
                         {props.other.en_course && <h3 className="english">{props.other.en_course}</h3>}
-                        {props.other.en_price && <h4>{props.other.en_price}</h4>}
+                        {props.other.en_price && <h4 className="english">{props.other.en_price}</h4>}
                         {props.other.en_detail && <h5 className="english">{props.other.en_detail}</h5>}
+                        {props.other.en_course !== "" ? (
+                            <LineDot />
+                        ) : (
+                                console.log("")
+                            )}
                     </div>
                 </div>
             )}

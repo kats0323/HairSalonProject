@@ -4,6 +4,7 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import { Card } from "antd";
+import "../../partials/edit.css"
 
 const ContactFunction = props => (
 
@@ -78,9 +79,7 @@ const ContactFunction = props => (
             <p style={{ fontSize: "20px", color: "black" }}> Sunday/日曜</p>
             <p className="admin_words">{props.contacts.opening_hors_sun}</p>
             <br />
-            <br />
-            <button><Link to={"/admin/contacts/create/"}>Create</Link></button>
-            <br />
+
             <br />
             <button><Link to={"/admin/contacts/edit/" + props.contacts._id}>Edit</Link></button>
             <br />
@@ -149,6 +148,9 @@ class ContactList extends Component {
             return (
                 <div style={{ textAlign: "center" }}>
                     <h1 class="admin_title_page">Contact Admin Page</h1>
+                    <br />
+                    <br />
+                    <button><Link to={"/admin/contacts/create/"}>Create</Link></button>
                     <br />
                     {this.contactList()}
                 </div>

@@ -68,8 +68,6 @@ const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
                                 <NavDropdown title="Photos" id="basic-nav-dropdown">
                                     <NavDropdown.Item><Link to="/admin/photos" className="nav_title_dropdown">Photo Gralley</Link></NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item><Link to="/admin/photos/create" className="nav_title_dropdown">Create Photo</Link></NavDropdown.Item>
                                 </NavDropdown>
 
                                 <NavDropdown.Divider />
@@ -95,6 +93,9 @@ const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     <Route path="/admin/blogs" exact component={BlogList} />
                     <Route path="/admin/contacts/create" exact component={CreateContact} />
                     <Route path="/admin/contacts" exact component={ContactList} />
+                    <Route path="/admin/services/cut" exact component={CutList} />
+                    <Route path="/admin/services/perm" exact component={PermList} />
+                    <Route path="/admin/services/color" exact component={ColorList} />
                 </Switch>
             </Router >
         </div>

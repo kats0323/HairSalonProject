@@ -1,19 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 .contactPad {
     padding-left: 20%;
     padding-right: 20%;
-
 }
-
-
+.contact_all_title{
+    font-family: 'Abril Fatface'
+}
 .contactNum{
     padding-left: 20%;
-
 }
 .facebookIcon :hover{
 color: #004d25;
 }
 .instaIcon :hover{
     color: #004d25;
+}
+.icon_position{
+    display: flex;
+    justify-content: center;
+}
+.tel_table{
+    display: flex !important;
+    justify-content: space-around;
+}
+.line_table{
+    display: flex !important;
+    justify-content: space-around;
 }
 @media only screen and (max-width: 1030px) {
     .ant-row {
@@ -31,6 +44,7 @@ color: #004d25;
     width: 600px !important;
     height: 500px !important;
 }
+
   }
 
   @media only screen and (max-width: 770px) {

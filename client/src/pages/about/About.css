@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Noto+Sans+JP&display=swap');
 .aboutPad{
     padding-left: 19.5%;
     padding-right: 19.5%;
@@ -30,7 +32,58 @@
 .about_intro{
 font-size: 26px;
 padding-top: 1%;
-color: #666c67;
+color: #000000;
+font-family: 'Noto Sans JP'
 }
+.aboutTitle{
+    font-family: 'Abril Fatface';
+}
+@media only screen and (max-width: 1024px) {
+    .about_img{
+        width: 600px;
+        height: 450px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .about_intro{
+        font-size: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+    .about_img{
+        width: 500px;
+        height: 350px;
+    }
+  }
+
+
+@media only screen and (max-width: 414px) {
+    .about_img{
+        width: 300px;
+        height: 200px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .about_intro{
+        font-size: 18px;
+    }
+    .aboutTitle{
+        font-size: 28px !important;
+    }
+    .aboutTitle span{
+        font-size: 32px !important;
+    }
+
+  }
+  @media only screen and (max-width: 380px) {
+    .about_img{
+        width: 270px;
+        height: 170px;
+    }
+    .about_intro{
+        font-size: 15px;
+    }
+  }
 
 
