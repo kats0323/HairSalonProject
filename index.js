@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use('/public', express.static('public'));
-app.get("/", (req, res) => res.send("API running"))
+
 app.use("/users", require("./routes/users"));
 app.use("/auth", require("./routes/auth"));
 
