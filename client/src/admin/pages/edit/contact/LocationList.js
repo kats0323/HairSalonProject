@@ -9,36 +9,38 @@ import "../../partials/edit.css"
 const LocationFunction = props => (
     <div className="edit_container">
         <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
-            <p style={{ fontSize: "20px", color: "black" }}>Street</p>
-            <p className="admin_words">{props.locations.street}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>Suburb</p>
-            <p className="admin_words">{props.locations.suburb}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>State</p>
-            <p className="admin_words">{props.locations.state}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>Post Code</p>
-            <p className="admin_words">{props.locations.post_code}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>Shop Information 1</p>
-            <p className="admin_words">{props.locations.shop_info_1_en}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>情報１</p>
-            <p className="admin_words">{props.locations.shop_info_1_ja}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>Shop Information 2</p>
-            <p className="admin_words">{props.locations.shop_info_2_en}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>情報２</p>
-            <p className="admin_words">{props.locations.shop_info_2_ja}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>Extra Information</p>
-            <p className="admin_words">{props.locations.shop_extra_info_en}</p>
-            <br />
-            <p style={{ fontSize: "20px", color: "black" }}>エクストラ情報</p>
-            <p className="admin_words">{props.locations.shop_extra_info_ja}</p>
-            <br />
+            <div className="word_position">
+                <p style={{ fontSize: "20px", color: "black" }}>Street</p>
+                <p className="admin_words">{props.locations.street}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>Suburb</p>
+                <p className="admin_words">{props.locations.suburb}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>State</p>
+                <p className="admin_words">{props.locations.state}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>Post Code</p>
+                <p className="admin_words">{props.locations.post_code}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>Shop Information 1</p>
+                <p className="admin_words">{props.locations.shop_info_1_en}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>情報１</p>
+                <p className="admin_words">{props.locations.shop_info_1_ja}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>Shop Information 2</p>
+                <p className="admin_words">{props.locations.shop_info_2_en}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>情報２</p>
+                <p className="admin_words">{props.locations.shop_info_2_ja}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>Extra Information</p>
+                <p className="admin_words">{props.locations.shop_extra_info_en}</p>
+                <br />
+                <p style={{ fontSize: "20px", color: "black" }}>エクストラ情報</p>
+                <p className="admin_words">{props.locations.shop_extra_info_ja}</p>
+                <br />
+            </div>
             <img className="adminImg" src={props.locations.shop_photo1} style={{ width: "500px", margin: "20px", height: "300px" }} alt="photo_shop" />
             <br />
             <p style={{ fontSize: "20px", color: "black" }}>Google map</p>

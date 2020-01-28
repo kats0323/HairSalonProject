@@ -65,7 +65,7 @@ export default class CutList extends Component {
 
     cutList() {
         return this.state.cuts.map(currentcut => {
-            return <CutFunction cuts={currentcut} deleteCut={this.deleteCut} key={currentcut._id} />;
+            return <CutFunction cuts={currentcut} deleteCut={this.deleteCut} key={currentcut._id} language={this.props.language} />;
         })
     }
 
@@ -76,13 +76,13 @@ export default class CutList extends Component {
                 <div >
                     <div className="priceList">
                         <h2 className='title-cut'>CUT</h2>
-                        <lineDot>
-                            {this.cutList()}
-                        </lineDot>
+
+                        {this.cutList()}
+
                         <Link to="/prices" className='menu-link'>MENU</Link>
                     </div>
                 </div>
-                <Sline />
+
             </div >
         )
     }

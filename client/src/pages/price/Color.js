@@ -10,6 +10,7 @@ const Sline = ({ color }) => (
     </div>
 );
 
+
 const LineDot = ({ color }) => (
     <div className='line-dot'><span></span></div>
 );
@@ -21,7 +22,7 @@ const ColorFunction = props => (
                 <div className="pricePadding">
 
                     {props.colors.ja_course && <h3 className="japanese">{props.colors.ja_course}</h3>}
-                    {props.colors.ja_price && <h4>{props.colors.ja_detail}</h4>}
+                    {props.colors.ja_price && <h4>{props.colors.ja_price}</h4>}
                     {props.colors.ja_detail && <h5 className="japanese">{props.colors.ja_detail}</h5>}
                     <LineDot />
                 </div>
@@ -62,7 +63,7 @@ export default class ColorList extends Component {
 
     colorList() {
         return this.state.colors.map(currentcolor => {
-            return <ColorFunction colors={currentcolor} key={currentcolor._id} />;
+            return <ColorFunction colors={currentcolor} key={currentcolor._id} language={this.props.language} />;
         })
     }
 
@@ -73,13 +74,13 @@ export default class ColorList extends Component {
                 <div className="pricePad">
                     <div className="priceList">
                         <h2 className='title-color'>COLOR</h2>
-                        <lineDot>
-                            {this.colorList()}
-                        </lineDot>
+
+                        {this.colorList()}
+
                         <Link to="/prices" className='title-color-menu'>MENU</Link>
                     </div>
                 </div>
-                <Sline />
+
             </div >
         )
     }
