@@ -21,12 +21,17 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types"
 import { logout } from "../../actions/auth";
 
-const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => { //exporting this component into react app
 
+const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => { //exporting this component into react app
+ 
+    
+ 
+    
     if (!isAuthenticated) {
         return <Redirect to="/login" />
     }
     return (
+            
         <div>
             <Router >
                 <Switch>
@@ -37,6 +42,9 @@ const AllEditPagesNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto">
+
+
+
 
 
                                 <NavDropdown title="About" id="basic-nav-dropdown">
