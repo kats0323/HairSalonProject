@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 .ant-card-body{
     padding: 0 !important;
 }
@@ -19,6 +20,8 @@
     text-align: center; 
    margin-left: 220px;
    margin-right: 220px;
+   padding-top: 10px;
+   font-family: 'Abril Fatface';
 }
 
 .priceList h2{
@@ -26,7 +29,10 @@
 }
 .menu_title{
   text-align: center;
+   font-family: 'Abril Fatface';
+   text-decoration-color: lightcoral;
 }
+
 
 .menu-link{
   font-size: 20px;

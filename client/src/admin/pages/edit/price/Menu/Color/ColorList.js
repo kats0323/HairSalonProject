@@ -3,20 +3,41 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Card } from "antd";
+import "../../../../partials/edit.css"
 
 
 const ColorFunction = props => (
-    <tr>
-        <td id="japanese">{props.colors.ja_course}</td>
-        <td id="english">{props.colors.en_course}</td>
-        <td>{props.colors.ja_price}</td>
-        <td>{props.colors.en_price}</td>
-        <td id="japanese">{props.colors.ja_detail}</td>
-        <td id="english">{props.colors.en_detail}</td>
-        <td>
-            <Link to={"/admin/services/color/edit/" + props.colors._id}>edit</Link> | <button href="#" onClick={() => { props.deleteColor(props.colors._id) }}>delete</button>
-        </td>
-    </tr>
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
+            <p style={{ fontSize: "20px", color: "black" }}>コース</p>
+            <p className="admin_words">{props.colors.ja_course}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Course</p>
+            <p className="admin_words">{props.colors.en_course}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>プライス</p>
+            <p className="admin_words">{props.colors.ja_price}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Price</p>
+            <p className="admin_words">{props.colors.en_price}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>詳細</p>
+            <p className="admin_words">{props.colors.ja_detail}</p>
+            <br />
+            <p style={{ fontSize: "20px", color: "black" }}>Detail</p>
+            <p className="admin_words">{props.colors.en_detail}</p>
+            <br />
+            <br />
+            <br />
+            <button> <Link to={"/admin/services/color/edit/" + props.colors._id}>Edit</Link></button>
+            <br />
+            <br />
+            <button href="#" onClick={() => { props.deleteColor(props.colors._id) }}>Delete</button>
+            <br />
+        </Card>
+    </div>
+
 )
 
 
@@ -74,23 +95,13 @@ class ColorList extends Component {
             )
         } else {
             return (
-                <div >
+                <div style={{ textAlign: "center" }}>
                     <h3>Color List</h3>
-                    <table className="table">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Japanese Course</th>
-                                <th>English Course</th>
-                                <th>Japanese Price</th>
-                                <th>English Price</th>
-                                <th>Japanese Detail</th>
-                                <th>English Course</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.colorList()}
-                        </tbody>
-                    </table>
+                    <br />
+                    <button><Link to={"/admin/services/color/create/"}>Create</Link></button>
+                    <br />
+
+                    {this.colorList()}
                 </div>
             )
         }

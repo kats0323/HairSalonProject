@@ -10,7 +10,7 @@ const Sline = ({ color }) => (
     </div>
 );
 
-const LineDot = ({ color }) =>(
+const LineDot = ({ color }) => (
     <div className='line-dot'><span></span></div>
 );
 
@@ -19,21 +19,21 @@ const ColorFunction = props => (
         {props.language === "Japanese" ? (
             <div>
                 <div className="pricePadding">
-                   
-                        {props.colors.ja_course && <h3 className="japanese">{props.colors.ja_course}</h3>}
-                        {props.colors.ja_price && <h4>{props.colors.ja_detail}</h4>}
-                        {props.colors.ja_detail && <h5 className="japanese">{props.colors.ja_detail}</h5>}
-                    <LineDot/>
+
+                    {props.colors.ja_course && <h3 className="japanese">{props.colors.ja_course}</h3>}
+                    {props.colors.ja_price && <h4>{props.colors.ja_detail}</h4>}
+                    {props.colors.ja_detail && <h5 className="japanese">{props.colors.ja_detail}</h5>}
+                    <LineDot />
                 </div>
             </div>
         ) : (
                 <div>
                     <div className="pricePadding">
-                      
-                            {props.colors.en_course && <h3 id="english">{props.colors.en_course}</h3 >}
-                            {props.colors.en_price && <h4>{props.colors.en_price}</h4>}
-                            {props.colors.en_detail && <h5 id="english">{props.colors.en_detail}</h5>}
-                        <LineDot/>
+
+                        {props.colors.en_course && <h3 id="english">{props.colors.en_course}</h3 >}
+                        {props.colors.en_price && <h4>{props.colors.en_price}</h4>}
+                        {props.colors.en_detail && <h5 id="english">{props.colors.en_detail}</h5>}
+                        <LineDot />
                     </div>
                 </div>
             )}
@@ -68,9 +68,9 @@ export default class ColorList extends Component {
 
     render() {
         return (
-            <div class="price_background">
+            <div className="price_background">
                 <Sline />
-                <div class="pricePad">
+                <div className="pricePad">
                     <div className="priceList">
                         <h2 className='title-color'>COLOR</h2>
                         <lineDot>

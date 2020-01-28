@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types'
+import "../../partials/edit.css"
+import { Card } from "antd";
 
 
 const PhotoFunction = props => (
-    <div>
-        <img src={props.photos.photo} alt="pg" id="image_class" style={{ width: "500px", margin: "20px", height: "300px", cursor: "pointer" }} />
-        <button href="#" onClick={() => { props.deletePhoto(props.photos._id) }}>delete</button>
+    <div className="edit_container">
+        <Card className="container" style={{ border: "3px solid #004d25", backgroundColor: "#a4d5bd", display: "flex", justifyContent: "center" }}>
+
+            <img className="adminImg" src={props.photos.photo} style={{ width: "500px", margin: "20px", height: "300px" }} alt="photo_ga" />
+            <br />
+            <br />
+            <button href="#" onClick={() => { props.deletePhoto(props.photos._id) }}>delete</button>
+            <br />
+            <br />
+        </Card>
     </div>
 )
 
@@ -68,16 +77,13 @@ class PhotoList extends Component {
             )
         } else {
             return (
-                <div style={{ paddingLeft: "200px" }}>
+                <div style={{ textAlign: "center" }}>
                     <h3>Photo Gallery</h3>
-                    <table className="table">
-                        <thead className="thead-light">
-
-                        </thead>
-                        <tbody>
-                            {this.photoList()}
-                        </tbody>
-                    </table>
+                    <br />
+                    <button><Link to={"/admin/blogs/create/"}>Create</Link></button>
+                    <br />
+                    {this.photoList()}
+                    <button><Link to={"/admin/"}>Admin Page</Link></button>
                 </div>
             )
         }

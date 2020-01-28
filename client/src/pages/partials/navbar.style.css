@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 
 #nav_bar_main{
     height: 60px;
@@ -9,9 +10,8 @@
     /* background: linear-gradient(to right, #45ce5e, #a8ff78); */
 }
 .nav_bar_nest{
-    padding-top: 1.24%;
-    font-family: 'Montserrat', sans-serif;
-
+    padding-top: 1.10%;
+    font-family: 'Abril Fatface'
 }
 
 .ant-menu-item {

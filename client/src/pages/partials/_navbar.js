@@ -50,7 +50,7 @@ class Navbar extends Component {
                     <div className="logo-center">
                         <Link to="/"> <img src={process.env.PUBLIC_URL + '/img/GreenLogo.png'} alt="logo" style={{ height: "8vh" }} /> </Link>
                     </div>
-                        <Line />
+                    <Line />
 
                     <Menu
                         id="nav_bar_main"
@@ -69,10 +69,10 @@ class Navbar extends Component {
                         <Menu.Item key="9" className="nav_bar_nest"><Link to="/photos">PhotoGallery</Link></Menu.Item>
                         <Menu.Item key="10" className="nav_bar_nest"><Link to="/blogs">Blog</Link></Menu.Item>
                     </Menu>
-                        <Line />
+                    <Line />
 
                 </div>
-                
+
                 {location.pathname === "/services/color" ? (
                     <Color language={this.state.language} />
                 ) : (

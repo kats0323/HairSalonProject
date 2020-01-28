@@ -1,11 +1,22 @@
-
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 .blogFlex{
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
 }
-
+.blogTitle{
+    font-family: 'Abril Fatface';
+  
+}
+.blog_title_contents{
+    color: green;
+    border-bottom: dotted 0.5px rgb(71, 71, 71);
+    padding-bottom: 5px;
+}
+.blog_contents{
+    font-size: 25px;
+}
 
 
 .blogFlex img{
@@ -56,5 +67,8 @@
     }
     .blogCol p{
         font-size: 0.8em;
+    }
+    .blog_contents{
+        font-size: 15px;
     }
   }

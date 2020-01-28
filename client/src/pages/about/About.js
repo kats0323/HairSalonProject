@@ -17,9 +17,9 @@ const AboutFunction = props => (
             </div>
         ) : (
                 <div className="about_position">
-                <div className="aboutImageCenter">
-                    <img src={props.about.photo} className="about_img" alt="avatar" />
-                </div>
+                    <div className="aboutImageCenter">
+                        <img src={props.about.photo} className="about_img" alt="avatar" />
+                    </div>
                     <h3 className="about_intro">{props.about.en_introduction}</h3>
                 </div>
 
@@ -66,7 +66,7 @@ export default class About extends Component {
         return (
             <div>
                 <div className="aboutPad">
-                    <h1 style={{ textAlign: "center" }}>About Miho</h1>
+                    <h1 className="aboutTitle" style={{ textAlign: "center", fontSize: "35px" }}>About <span style={{ color: "green", fontSize: "40px" }}> Miho</span></h1>
                     {this.aboutList()}
 
                 </div>

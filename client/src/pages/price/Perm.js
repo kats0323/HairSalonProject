@@ -13,7 +13,7 @@ const Sline = ({ color }) => (
 );
 
 
-const LineDot = ({ color }) =>(
+const LineDot = ({ color }) => (
     <div className='line-dot'><span></span></div>
 );
 
@@ -26,7 +26,7 @@ const PermFunction = props => (
                     {props.perms.ja_course && <h3 className="japanese">{props.perms.ja_course}</h3>}
                     {props.perms.ja_price && <h4>{props.perms.ja_detail}</h4>}
                     {props.perms.ja_detail && <h5 className="japanese">{props.perms.ja_detail}</h5>}
-                    <LineDot/>
+                    <LineDot />
                 </div>
             </div>
         ) : (
@@ -35,7 +35,7 @@ const PermFunction = props => (
                         {props.perms.en_course && <h3 id="english">{props.perms.en_course}</h3 >}
                         {props.perms.en_price && <h4>{props.perms.en_price}</h4>}
                         {props.perms.en_detail && <h5 id="english">{props.perms.en_detail}</h5>}
-                        <LineDot/>
+                        <LineDot />
                     </div>
                 </div>
             )}
@@ -48,17 +48,27 @@ const OtherPriceFunction = props => (
         {props.language === "Japanese" ? (
             <div>
                 <div className="pricePadding">
-                    {props.other.ja_price && <h3>{props.other.ja_price}</h3>}
+                    {props.other.ja_price && <h3 className="japanese">{props.other.ja_price}</h3>}
                     {props.other.ja_course && <h4 className="japanese">{props.other.ja_course}</h4>}
                     {props.other.ja_detail && <h5 className="japanese">{props.other.ja_detail}</h5>}
+                    {props.other.ja_course !== "" ? (
+                        <LineDot />
+                    ) : (
+                            console.log("")
+                        )}
                 </div>
             </div>
         ) : (
                 <div>
                     <div className="pricePadding">
                         {props.other.en_course && <h3 className="english">{props.other.en_course}</h3>}
-                        {props.other.en_price && <h4>{props.other.en_price}</h4>}
+                        {props.other.en_price && <h4 className="english">{props.other.en_price}</h4>}
                         {props.other.en_detail && <h5 className="english">{props.other.en_detail}</h5>}
+                        {props.other.en_course !== "" ? (
+                            <LineDot />
+                        ) : (
+                                console.log("")
+                            )}
                     </div>
                 </div>
             )}
