@@ -62,19 +62,16 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.put('/update/:id', upload.single('photo'), (req, res) => {
+router.put('/update/:id', (req, res) => {
     console.log("PHOTO=====", req.body)
     const url = req.protocol + '://' + req.get('host')
     const en_introduction = req.body.en_introduction;
     const ja_introduction = req.body.ja_introduction;
-    // const photo = url + '/public/' + '29b22d78-cdc6-4cc9-94a8-516a904b7d98' + '-' + req.body.photo;
-    const photo = url + '/public/' + req.body.photo;
     const { id } = req.params
     About.findById(id)
         .then(about => {
             about.en_introduction = en_introduction
             about.ja_introduction = ja_introduction
-            about.photo = photo
             console.log("ABOUT AFTER", about)
             about.save()
                 .then(about => res.send(about))

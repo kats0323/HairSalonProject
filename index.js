@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use('/public', express.static('public'));
-app.get("/", (req, res) => res.send("API running"))
+
 app.use("/users", require("./routes/users"));
 app.use("/auth", require("./routes/auth"));
 
@@ -42,6 +42,15 @@ app.use('/locations', locationRouter);
 app.use('/cut', cutRouter);
 app.use('/perm', permRouter);
 app.use('/color', colorRouter);
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+
+    })
+}
 
 app.listen(PORT, () => {
     console.log(`Server started on PORT${PORT}`)

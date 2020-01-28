@@ -119,7 +119,7 @@ export default class Perm extends Component {
                     </div>
                     <Link to="/prices" className='title-color-perm'>MENU</Link>
                 </div>
-                <Sline />
+
             </div >
         )
     }
