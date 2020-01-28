@@ -24,7 +24,9 @@
 }
 
 
-
-@media only screen and (max-width: 330px){
-    
+@media only screen and (max-width: 20px){
+    .navbar-expand-lg {
+        flex-flow: row nowrap ;
+        justify-content: flex-start;
+    }
 }
