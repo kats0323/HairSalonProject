@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import '../partials/footer.style.css'
 
 class Footer extends Component {
@@ -13,7 +14,7 @@ class Footer extends Component {
         <Line />
         <div className='footer-div'>
           <div className="footer">
-            Miho's Style &copy;
+            <Link to="/login">Miho's Style &copy;</Link>
           </div>
         </div>
       </div>

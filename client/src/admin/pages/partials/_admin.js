@@ -25,8 +25,8 @@ const Admin = () => {
         <Fragment>
           <Alert />
           <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
 
             {/* This is the main admin page or the first place they will visit when they log in */}
             <Route exact path="/admin" component={EditDash} />
