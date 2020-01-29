@@ -56,7 +56,7 @@ class TopPage extends Component {
                     <i className="fab fa-instagram"></i>
                     <div className="info-icons">
                         <Icon className="icon" type="facebook" theme="filled" style={{ color: "green", fontSize: "40px", paddingRight: "10px" }} />
-                        <Icon className="icon" type="instagram" theme="filled" style={{ color: "green", fontSize: "40px", paddingLeft: "10px" }} />
+                        <Link to="/login"> <Icon className="icon" type="instagram" theme="filled" style={{ color: "green", fontSize: "40px", paddingLeft: "10px" }} /></Link>
 
                     </div>
                 </div>
