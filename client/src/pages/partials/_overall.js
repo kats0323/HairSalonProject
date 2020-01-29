@@ -4,6 +4,7 @@ import Footer from './_footer'
 import TopPage from "../toppage/TopPage";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import Blog from "../blog/Blog";
+import Admin from "../../admin/pages/partials/_admin";
 
 // import Cut from "../price/Cut";
 // import Perm from "../price/Perm";
@@ -16,6 +17,9 @@ export default function overall() {
     <div>
       <Router>
         <Switch>
+          <Route path="/login" >
+            <Admin />
+          </Route>
           {/* About Page */}
           <Route path="/about" >
             <Navbar />
@@ -24,7 +28,9 @@ export default function overall() {
           <Route path="/contacts">
             <Navbar />
           </Route >
+          
           {/* Price Page */}
+          
           <Route path="/prices" >
             <Navbar />
             <Footer />
